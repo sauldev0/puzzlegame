@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfpj15en837as"]
+
+[ext_resource type="Script" uid="uid://xcivy6vaw07u" path="res://scripts/menu_pausa.gd" id="1_jhjql"]
+
+[node name="menu_pausa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jhjql")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -91.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="menupausa" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Menu"
+
+[node name="pop_up_menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="restart" type="Button" parent="pop_up_menu"]
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="resume" type="Button" parent="pop_up_menu"]
+layout_mode = 2
+text = "Resume"
+
+[node name="levels" type="Button" parent="pop_up_menu"]
+layout_mode = 2
+text = "Niveles"
+
+[node name="mainmenu" type="Button" parent="pop_up_menu"]
+layout_mode = 2
+text = "Menu Principal"
+
+[node name="sound" type="Button" parent="pop_up_menu"]
+layout_mode = 2
+text = "Sonido"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 49.0
+
+[node name="intentos_screen" type="Label" parent="ColorRect"]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 92.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "intentos"
+
+[connection signal="pressed" from="VBoxContainer/menupausa" to="." method="_on_menupausa_pressed"]
+[connection signal="pressed" from="pop_up_menu/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="pop_up_menu/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="pop_up_menu/levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="pop_up_menu/mainmenu" to="." method="_on_mainmenu_pressed"]

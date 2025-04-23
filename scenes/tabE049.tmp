@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://ufc3m7mvpnke"]
+
+[ext_resource type="Texture2D" uid="uid://lnghpqwand3l" path="res://sprites/Objects/Basic_Furniture.png" id="1_ft1w4"]
+[ext_resource type="Script" path="res://scripts/table.gd" id="1_puv12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdgio"]
+atlas = ExtResource("1_ft1w4")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64x7h"]
+size = Vector2(14.5, 14.5)
+
+[node name="table" type="StaticBody2D"]
+script = ExtResource("1_puv12")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_qdgio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_64x7h")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 15)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+rotation = 3.11985
+target_position = Vector2(0, 15)
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+rotation = 1.57662
+target_position = Vector2(0, 15)
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]
+target_position = Vector2(15, 0)

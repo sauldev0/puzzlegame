@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0c551xym5rou"]
+
+[ext_resource type="Script" uid="uid://b6wnb0fo22f2j" path="res://scripts/pop_up_incorrect.gd" id="2_ttisu"]
+
+[node name="popupincorrect" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ttisu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.5
+offset_top = -114.0
+offset_right = 256.5
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.666667, 0.831373, 0.917647, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -99.5
+offset_right = 125.5
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Incorrecto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retry" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Intentar de nuevo"
+
+[node name="menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Menu"
+
+[connection signal="pressed" from="VBoxContainer/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/menu" to="." method="_on_menu_pressed"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvaldummhvx40"]
+
+[ext_resource type="Script" uid="uid://bq67ybtjmfju4" path="res://scripts/cursor.gd" id="1_3ngcq"]
+[ext_resource type="Texture2D" uid="uid://b7fjnvjf4riq3" path="res://sprites/Objects/Egg_item.png" id="1_bm2fa"]
+
+[node name="Cursor" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_3ngcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, -8)
+rotation = 2.36863
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_bm2fa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+rotation = -2.48458
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_bm2fa")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-8, 6)
+rotation = 0.539023
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_bm2fa")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(8, 6)
+rotation = -0.742907
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_bm2fa")

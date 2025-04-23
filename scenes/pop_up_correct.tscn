@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp3riqumoahq3"]
+
+[ext_resource type="Script" uid="uid://b2nqkxq7mne6l" path="res://scripts/pop_up_correct.gd" id="1_qv0hs"]
+
+[node name="popupcorrect" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qv0hs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = -152.5
+offset_right = 317.0
+offset_bottom = 152.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -99.5
+offset_right = 125.5
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.175354, 0.863281, 0.445107, 1)
+theme_override_font_sizes/font_size = 50
+text = "Correcto!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.840316, 0.921875, 0.118835, 1)
+theme_override_font_sizes/font_size = 30
+text = "ss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="nextlevel" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Siguiente nivel"
+
+[node name="menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Menu"
+
+[connection signal="pressed" from="VBoxContainer/nextlevel" to="." method="_on_nextlevel_pressed"]
+[connection signal="pressed" from="VBoxContainer/menu" to="." method="_on_menu_pressed"]

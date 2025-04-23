@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://xgp2lko8qic2"]
+
+[ext_resource type="Script" path="res://pruebafuncion.gd" id="2_cse47"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_cse47")

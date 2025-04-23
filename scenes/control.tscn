@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdcoj6vqfypj6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e77vi"]
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(63, 384)
+scale = Vector2(279, 196)
+texture_normal = SubResource("CanvasTexture_e77vi")
+action = "RightClick"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(846, 33)
+scale = Vector2(279, 196)
+texture_normal = SubResource("CanvasTexture_e77vi")
+action = "RightClick"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(843, 396)
+scale = Vector2(279, 196)
+texture_normal = SubResource("CanvasTexture_e77vi")
+action = "RightClick"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(81.0001, 51.0001)
+scale = Vector2(279, 196)
+texture_normal = SubResource("CanvasTexture_e77vi")
+action = "RightClick"
+visibility_mode = 1
