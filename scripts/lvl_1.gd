@@ -12,4 +12,4 @@ func _ready():
 
 
 func _on_persona_corte_malo_answer_correct():
-	print("correcto")
+	pass
