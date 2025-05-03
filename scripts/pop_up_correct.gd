@@ -6,7 +6,7 @@ func _ready():
 	pass
 
 func _on_menu_pressed():
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_select_menu.tscn")
 
 func _on_nextlevel_pressed():
 	get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")

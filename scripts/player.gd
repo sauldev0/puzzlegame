@@ -5,6 +5,7 @@ var Astar = AStarGrid2D
 @onready var collision_shape_2d = $Areaplayer/CollisionShape2D
 var current_id_path:Array[Vector2i] # lista que guarda los puntos (celdas) del camino que debe seguir el personaje
 var speed := 60
+@onready var animated_sprite = $AnimatedSprite2D2
 
 func _ready():
 	Tile_map = get_parent().get_node("TileMap")
@@ -24,6 +25,7 @@ func _physics_process(delta):
 	# si el personaje no tiene más puntos a los que ir
 	if current_id_path.is_empty():
 		collision_shape_2d.disabled = false # Está quieto → activar colisión
+		animated_sprite.play("default")
 		return
 	var target_position = Tile_map.map_to_local(current_id_path[0]) 
 	if global_position.distance_to(target_position) < 2:
@@ -35,8 +37,22 @@ func _physics_process(delta):
  	
 	collision_shape_2d.disabled = true # Está en movimiento → desactivar colisión
 	move_PlayerTo(target_position , delta) 
+	
+func update_animation(direction : Vector2):
+	if abs(direction.x) > abs(direction.y):
+		if direction.x > 0:
+			animated_sprite.play("right_walking")
+		else:
+			animated_sprite.play("left_walking")
+	else:
+		if direction.y > 0:
+			animated_sprite.play("down_walking")
+		else:
+			animated_sprite.play("up_walking")
+			
  
 func move_PlayerTo(target: Vector2, delta: float) -> void: 
 	var direction = (target- global_position).normalized()
 	global_position += direction * speed * delta
+	update_animation(direction)
 	move_and_slide()
