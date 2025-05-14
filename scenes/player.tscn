@@ -171,9 +171,8 @@ frame_progress = 0.55576
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1mae")
-animation = &"down_walking"
 autoplay = "default"
-frame_progress = 0.415013
+frame_progress = 0.635566
 
 [node name="Areaplayer" type="Area2D" parent="."]
 

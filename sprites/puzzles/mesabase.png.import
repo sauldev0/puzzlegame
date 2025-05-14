@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byponxspp78pv"
-path="res://.godot/imported/Bitmask references 2.png-8fa12e381082a6661cd6ac73a404bf2e.ctex"
+uid="uid://6bbyq5xatqqa"
+path="res://.godot/imported/mesabase.png-c45017acaf8bcf7c9f921d502a75f76a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tilesets/Bitmask references 2.png"
-dest_files=["res://.godot/imported/Bitmask references 2.png-8fa12e381082a6661cd6ac73a404bf2e.ctex"]
+source_file="res://sprites/puzzles/mesabase.png"
+dest_files=["res://.godot/imported/mesabase.png-c45017acaf8bcf7c9f921d502a75f76a.ctex"]
 
 [params]
 

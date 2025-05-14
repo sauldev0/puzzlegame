@@ -51,6 +51,7 @@ texture_normal = ExtResource("5_6y0h7")
 stretch_mode = 0
 
 [node name="UID" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="menu_pausa" parent="UID" instance=ExtResource("5_ghoj8")]
 process_mode = 3

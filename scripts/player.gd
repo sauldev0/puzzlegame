@@ -38,8 +38,10 @@ func _physics_process(delta):
 	collision_shape_2d.disabled = true # Está en movimiento → desactivar colisión
 	move_PlayerTo(target_position , delta) 
 	
+	
+# actualiza la animacion 
 func update_animation(direction : Vector2):
-	if abs(direction.x) > abs(direction.y):
+	if abs(direction.x) > abs(direction.y): # abs devuelve el valor absoluto
 		if direction.x > 0:
 			animated_sprite.play("right_walking")
 		else:
