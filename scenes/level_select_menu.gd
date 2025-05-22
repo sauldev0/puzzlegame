@@ -14,11 +14,15 @@ extends Node2D
 
 func _ready():
 	button.grab_focus()
+	print("lvl1 =" + str(LEVELCORE.lvl1_completed))
+	print("lvl2 =" + str(LEVELCORE.lvl2_completed))
+	
 	
 	# Nivel 1
 	if LEVELCORE.lvl1_completed == true:
 		lvl_1_locked.visible = false
 		lock_1.visible = false
+		
 	if LEVELCORE.lvl1_completed == false:
 		lvl_1_locked.visible = true
 		lock_1.visible = true
@@ -27,33 +31,33 @@ func _ready():
 	if LEVELCORE.lvl2_completed == true:
 		lvl_2_locked.visible = false
 		lock_2.visible = false
+		
 	if LEVELCORE.lvl2_completed == false:
 		lvl_2_locked.visible = true
-		lock_2.visible = true
 	
 		# Nivel 3
 	if LEVELCORE.lvl3_completed == true:
 		lvl_3_locked.visible = false
 		lock_2.visible = false
+		
 	if LEVELCORE.lvl3_completed == false:
 		lvl_3_locked.visible = true
-		lock_2.visible = true
 		
 func _on_button_pressed():
 	if LEVELCORE.lvl1_completed == false:
-		get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
 	else:
-		get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
 		
 func _on_button_2_pressed():
 	if LEVELCORE.lvl1_completed == false:
 		null
 	if LEVELCORE.lvl1_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
 		
 
 func _on_button_3_pressed():
 	if LEVELCORE.lvl2_completed == false:
 		null
-	if LEVELCORE.lvl1_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
+	if LEVELCORE.lvl2_completed == true:
+		get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")

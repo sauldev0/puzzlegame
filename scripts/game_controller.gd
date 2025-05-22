@@ -84,6 +84,7 @@ func sumar_puntos():
 
 func _on_table_player_correct():
 	game_victory()
+	
 
 func _on_table_player_incorrect():
 	game_end()
@@ -94,4 +95,6 @@ func _on_persona_corte_bueno_pressed():
 
 
 func _on_persona_corte_malo_pressed():
+	LEVELCORE.lvl2_completed = true
+	LEVELCORE.lvl3_completed = true
 	game_victory()

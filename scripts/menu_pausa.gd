@@ -26,4 +26,5 @@ func _on_mainmenu_pressed():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _on_levels_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/level_select_menu.tscn")

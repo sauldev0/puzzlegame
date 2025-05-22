@@ -1,5 +1,5 @@
 extends Node
 
-var lvl1_completed = true
-var lvl2_completed = true
-var lvl3_completed = true
+var lvl1_completed = false
+var lvl2_completed = false
+var lvl3_completed = false

@@ -58,7 +58,7 @@ text = "Menu Principal"
 
 [node name="sound" type="Button" parent="pop_up_menu"]
 layout_mode = 2
-text = "Sonido"
+text = "Sound"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
