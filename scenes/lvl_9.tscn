@@ -154,6 +154,4 @@ process_mode = 3
 [node name="popupincorrect" parent="UID" instance=ExtResource("8_fo8ka")]
 process_mode = 3
 
-[connection signal="player_correct" from="tables/table" to="UID/Game Controller" method="_on_table_player_correct"]
-[connection signal="player_incorrect" from="tables/table" to="UID/Game Controller" method="_on_table_player_incorrect"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]

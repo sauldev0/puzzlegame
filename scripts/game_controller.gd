@@ -26,29 +26,17 @@ Un profesor fue encontrado inconsciente en la biblioteca de la universidad, y cu
 3 : ""
 }
 
-func mostrar_popup_descripcion():
-	var nivel = GLOBAL.nivel_actual
-	popuptexto.set_description(descripciones.get(nivel, "Descripción no disponible."))
-
 func _ready():
 	get_tree().paused = false
 	popupcorrect.visible = false
 	popupincorrect.visible = false
- 
+	
 	print("game controller activo")
 	
-	# Encuentra todas las instancias de table en la escena
-	for table in get_tree().get_nodes_in_group("tables"):
-		if not table.player_correct.is_connected(_on_table_player_correct):
-			table.player_correct.connect(_on_table_player_correct)
-			
-		if not table.player_incorrect.is_connected(_on_table_player_incorrect):
-			table.player_incorrect.connect(_on_table_player_incorrect)
-			
-#func numero_de_intentos():
-	#if game_end().intentos > 3:
-		#print("454")
-			
+func mostrar_popup_descripcion():
+	var nivel = GLOBAL.nivel_actual
+	popuptexto.set_description(descripciones.get(nivel, "Descripción no disponible."))
+	
 func game_victory():
 	if GLOBAL.numero_de_intentos <=3:
 		puntos_nivel = puntos_nivel + 100
@@ -76,10 +64,3 @@ func sumar_puntos():
 	
 	print("Has conseguido " + str(puntos_nivel) + " puntos")
 	print("Total de puntos " + str(GLOBAL.score_total))
-
-func _on_table_player_correct():
-	game_victory()
-	
-
-func _on_table_player_incorrect():
-	game_end()
