@@ -17,11 +17,6 @@ Un profesor fue encontrado inconsciente en la biblioteca de la universidad, y cu
 •	Persona B: \"La Persona C fue quien atacó al profesor. \"
 •	Persona C: \"A y B están mintiendo. \"
 •	Persona D: \"Si C dice la verdad, entonces A es culpable. \"
-Reglas:
-Solo una persona es culpable.
-Al menos una persona miente, pero no necesariamente todos.
-
-Respuesta: la persona C es la culpable
 ",
 
 9 : "Anda por ahí un comensal que no estaba invitado. Sin embargo, tienes información que permite identificarlo.
@@ -88,13 +83,3 @@ func _on_table_player_correct():
 
 func _on_table_player_incorrect():
 	game_end()
-
-
-func _on_persona_corte_bueno_pressed():
-	game_end()
-
-
-func _on_persona_corte_malo_pressed():
-	LEVELCORE.lvl2_completed = true
-	LEVELCORE.lvl3_completed = true
-	game_victory()

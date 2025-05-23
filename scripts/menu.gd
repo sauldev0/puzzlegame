@@ -6,10 +6,10 @@ func _ready():
 	score_screen.text = "Fragmentos de puzzle reunidos: " + str(GLOBAL.score_total)
 
 func _on_play_pressed():
-	if LEVELCORE.lvl1_completed == false:
-		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
-	else:
-		get_tree().change_scene_to_file("res://scenes/level_select_menu.tscn")
+	#if LEVELCORE.lvl1_completed == false:
+		#get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
+	#else:
+	get_tree().change_scene_to_file("res://scenes/level_select_menu.tscn")
 
 func _on_options_pressed():
 	get_tree().change_scene_to_file("res://scenes/options.tscn")

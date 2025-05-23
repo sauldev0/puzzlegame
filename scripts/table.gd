@@ -13,7 +13,7 @@ func _on_area_entered(area):
 		#puntuacion = puntuacion + 1
 		#print (puntuacion)
 		player_correct.emit()
-		LEVELCORE.lvl1_completed = true
+		LEVELCORE.lvl3_completed = true
 		
 	else:
 		print("intenta otra vez")

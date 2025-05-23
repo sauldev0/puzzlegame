@@ -13,7 +13,7 @@
 [node name="lvl_1" type="Node2D"]
 script = ExtResource("1_t75eh")
 
-[node name="persona_corte_bueno" type="TextureButton" parent="."]
+[node name="persona_corte_bueno" type="TextureButton" parent="." groups=["buttons"]]
 offset_left = 120.0
 offset_top = 140.0
 offset_right = 570.0
@@ -22,7 +22,7 @@ texture_normal = ExtResource("6_6a3rq")
 stretch_mode = 0
 script = ExtResource("7_t75eh")
 
-[node name="persona_corte_malo" type="TextureButton" parent="."]
+[node name="persona_corte_malo" type="TextureButton" parent="." groups=["buttons"]]
 offset_left = 555.0
 offset_top = 146.0
 offset_right = 1005.0
@@ -54,7 +54,6 @@ process_mode = 3
 process_mode = 3
 
 [connection signal="pressed" from="persona_corte_bueno" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="answer_correct" from="persona_corte_malo" to="." method="_on_persona_corte_malo_answer_correct"]
 [connection signal="pressed" from="persona_corte_malo" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 

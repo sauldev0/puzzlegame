@@ -45,19 +45,19 @@ func _ready():
 		
 func _on_button_pressed():
 	if LEVELCORE.lvl1_completed == false:
-		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
 	else:
-		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
 		
 func _on_button_2_pressed():
 	if LEVELCORE.lvl1_completed == false:
 		null
 	if LEVELCORE.lvl1_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_2.tscn")
 		
 
 func _on_button_3_pressed():
 	if LEVELCORE.lvl2_completed == false:
 		null
 	if LEVELCORE.lvl2_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
