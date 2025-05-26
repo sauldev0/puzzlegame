@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqu4ti6ywiedy"]
+
+[ext_resource type="Script" uid="uid://ry5jw48c63nf" path="res://scripts/lvl_3.gd" id="1_tkm7p"]
+[ext_resource type="Texture2D" uid="uid://nqwyii8ynjgq" path="res://sprites/puzzles/personacortebueno.png" id="2_yxb5l"]
+[ext_resource type="Script" uid="uid://q2mrb3334ec0" path="res://scripts/verify_answer.gd" id="3_gegca"]
+[ext_resource type="Texture2D" uid="uid://ruthhe7axx31" path="res://sprites/puzzles/personacortemalo.png" id="4_7nyt0"]
+[ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="5_3ttfa"]
+[ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="6_qwpll"]
+[ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="7_v63pg"]
+[ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_mr1bn"]
+[ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_qgkrp"]
+
+[node name="lvl_3" type="Node2D"]
+script = ExtResource("1_tkm7p")
+
+[node name="persona_corte_bueno" type="TextureButton" parent="." groups=["buttons"]]
+offset_left = 120.0
+offset_top = 140.0
+offset_right = 570.0
+offset_bottom = 590.0
+texture_normal = ExtResource("2_yxb5l")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="persona_corte_malo" type="TextureButton" parent="." groups=["buttons"]]
+offset_left = 555.0
+offset_top = 146.0
+offset_right = 1005.0
+offset_bottom = 596.0
+texture_normal = ExtResource("4_7nyt0")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+is_correct = true
+
+[node name="UID" type="CanvasLayer" parent="."]
+
+[node name="menu_pausa" parent="UID" instance=ExtResource("5_3ttfa")]
+process_mode = 3
+
+[node name="popuptexto" parent="UID" instance=ExtResource("6_qwpll")]
+process_mode = 3
+offset_left = 1.0
+offset_top = -0.600006
+offset_right = 1.0
+offset_bottom = -0.599976
+
+[node name="Game Controller" parent="UID" instance=ExtResource("7_v63pg")]
+process_mode = 3
+
+[node name="popupcorrect" parent="UID" instance=ExtResource("8_mr1bn")]
+process_mode = 3
+
+[node name="popupincorrect" parent="UID" instance=ExtResource("9_qgkrp")]
+process_mode = 3
+
+[connection signal="pressed" from="persona_corte_bueno" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="persona_corte_malo" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
+[connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
+
+[editable path="UID/popupcorrect"]
