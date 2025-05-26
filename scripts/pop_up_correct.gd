@@ -15,7 +15,26 @@ func _on_nextlevel_pressed():
 	if GLOBAL.nivel_actual == 1:
 		get_tree().change_scene_to_file("res://scenes/lvl_2.tscn")
 	elif GLOBAL.nivel_actual == 2:
+		get_tree().change_scene_to_file("res://scenes/lvl_3.tscn")
+	elif GLOBAL.nivel_actual == 3:
+		get_tree().change_scene_to_file("res://scenes/lvl_4.tscn")
+	elif GLOBAL.nivel_actual == 4:
+		get_tree().change_scene_to_file("res://scenes/lvl_5.tscn")
+	elif GLOBAL.nivel_actual == 5:
+		get_tree().change_scene_to_file("res://scenes/lvl_6.tscn")
+	elif GLOBAL.nivel_actual == 6:
+		get_tree().change_scene_to_file("res://scenes/lvl_7.tscn")
+	elif GLOBAL.nivel_actual == 7:
+		get_tree().change_scene_to_file("res://scenes/lvl_8.tscn")
+	elif GLOBAL.nivel_actual == 8:
 		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
+	elif GLOBAL.nivel_actual == 9:
+		get_tree().change_scene_to_file("res://scenes/lvl_10.tscn")
+	elif GLOBAL.nivel_actual == 10:
+		get_tree().change_scene_to_file("res://scenes/lvl_11.tscn")
+	elif GLOBAL.nivel_actual == 11:
+		get_tree().change_scene_to_file("res://scenes/lvl_12.tscn")
 	else:
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/level_select_menu.tscn")
 		

@@ -33,10 +33,10 @@ offset_bottom = 40.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 60.0
-offset_right = 1138.0
-offset_bottom = 660.0
+offset_left = 41.0
+offset_top = 55.0
+offset_right = 1141.0
+offset_bottom = 655.0
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
@@ -79,29 +79,26 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer1" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1"]
+[node name="stars1" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/HBoxContainer1"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/stars1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/HBoxContainer1"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/stars1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/HBoxContainer1"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/stars1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
 [node name="LevelButton2" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -136,29 +133,26 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2"]
+[node name="stars2" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/stars2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/stars2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/stars2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
 [node name="LevelButton3" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -193,29 +187,26 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3"]
+[node name="stars3" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3/stars3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3/stars3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3/stars3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
 [node name="LevelButton4" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -250,51 +241,48 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4"]
+[node name="stars4" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4/stars4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4/stars4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4/stars4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("6_lh663")
 expand_mode = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="LevelButton" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="LevelButton5" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LabelLevel" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton/VBoxContainer"]
+[node name="LabelLevel5" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5/VBoxContainer"]
 layout_mode = 2
 text = "Nivel 5"
 label_settings = SubResource("LabelSettings_wjab1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton/VBoxContainer"]
+[node name="Button5" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 icon = ExtResource("3_or5k1")
@@ -303,7 +291,7 @@ expand_icon = true
 script = ExtResource("4_ns6ff")
 id_level = 10
 
-[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton/VBoxContainer"]
+[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Tiempo:"
@@ -311,47 +299,47 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton"]
+[node name="stars5" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5/stars5"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5/stars5"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5/stars5"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="LevelButton2" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="LevelButton6" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LabelLevel" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton2/VBoxContainer"]
+[node name="LabelLevel6" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6/VBoxContainer"]
 layout_mode = 2
 text = "Nivel 6"
 label_settings = SubResource("LabelSettings_wjab1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton2/VBoxContainer"]
+[node name="Button6" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 icon = ExtResource("3_or5k1")
@@ -360,7 +348,7 @@ expand_icon = true
 script = ExtResource("4_ns6ff")
 id_level = 10
 
-[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton2/VBoxContainer"]
+[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Tiempo:"
@@ -368,47 +356,47 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton2"]
+[node name="stars6" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton2/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6/stars6"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton2/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6/stars6"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton2/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6/stars6"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="LevelButton3" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="LevelButton7" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LabelLevel" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton3/VBoxContainer"]
+[node name="LabelLevel7" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7/VBoxContainer"]
 layout_mode = 2
 text = "Nivel 7"
 label_settings = SubResource("LabelSettings_wjab1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton3/VBoxContainer"]
+[node name="Button7" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 icon = ExtResource("3_or5k1")
@@ -417,7 +405,7 @@ expand_icon = true
 script = ExtResource("4_ns6ff")
 id_level = 10
 
-[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton3/VBoxContainer"]
+[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Tiempo:"
@@ -425,47 +413,47 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton3"]
+[node name="stars7" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton3/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7/stars7"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton3/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7/stars7"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton3/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7/stars7"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="LevelButton4" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="LevelButton8" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LabelLevel" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton4/VBoxContainer"]
+[node name="LabelLevel8" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8/VBoxContainer"]
 layout_mode = 2
 text = "Nivel 8"
 label_settings = SubResource("LabelSettings_wjab1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton4/VBoxContainer"]
+[node name="Button8" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 icon = ExtResource("3_or5k1")
@@ -474,7 +462,7 @@ expand_icon = true
 script = ExtResource("4_ns6ff")
 id_level = 10
 
-[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton4/VBoxContainer"]
+[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Tiempo:"
@@ -482,26 +470,27 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton4"]
+[node name="stars8" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton4/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8/stars8"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton4/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8/stars8"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton4/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8/stars8"]
+process_mode = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
@@ -511,22 +500,22 @@ expand_mode = 1
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="LevelButton" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="LevelButton9" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LabelLevel" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton/VBoxContainer"]
+[node name="LabelLevel9" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9/VBoxContainer"]
 layout_mode = 2
 text = "Nivel 9"
 label_settings = SubResource("LabelSettings_wjab1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton/VBoxContainer"]
+[node name="Button9" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 icon = ExtResource("3_or5k1")
@@ -535,7 +524,7 @@ expand_icon = true
 script = ExtResource("4_ns6ff")
 id_level = 10
 
-[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton/VBoxContainer"]
+[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Tiempo:"
@@ -543,47 +532,47 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton"]
+[node name="stars9" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9/stars9"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9/stars9"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9/stars9"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="LevelButton2" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="LevelButton10" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LabelLevel" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton2/VBoxContainer"]
+[node name="LabelLevel10" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10/VBoxContainer"]
 layout_mode = 2
 text = "Nivel 10"
 label_settings = SubResource("LabelSettings_wjab1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton2/VBoxContainer"]
+[node name="Button10" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 icon = ExtResource("3_or5k1")
@@ -592,7 +581,7 @@ expand_icon = true
 script = ExtResource("4_ns6ff")
 id_level = 10
 
-[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton2/VBoxContainer"]
+[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Tiempo:"
@@ -600,47 +589,47 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton2"]
+[node name="stars10" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton2/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10/stars10"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton2/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10/stars10"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton2/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10/stars10"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="LevelButton3" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="LevelButton11" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LabelLevel" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton3/VBoxContainer"]
+[node name="LabelLevel11" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11/VBoxContainer"]
 layout_mode = 2
 text = "Nivel 11"
 label_settings = SubResource("LabelSettings_wjab1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton3/VBoxContainer"]
+[node name="Button11" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 icon = ExtResource("3_or5k1")
@@ -649,7 +638,7 @@ expand_icon = true
 script = ExtResource("4_ns6ff")
 id_level = 10
 
-[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton3/VBoxContainer"]
+[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Tiempo:"
@@ -657,47 +646,47 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton3"]
+[node name="stars11" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton3/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11/stars11"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton3/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11/stars11"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton3/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11/stars11"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="LevelButton4" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="LevelButton12" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="LabelLevel" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton4/VBoxContainer"]
+[node name="LabelLevel12" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12/VBoxContainer"]
 layout_mode = 2
 text = "Nivel 12"
 label_settings = SubResource("LabelSettings_wjab1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton4/VBoxContainer"]
+[node name="Button12" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 icon = ExtResource("3_or5k1")
@@ -706,7 +695,7 @@ expand_icon = true
 script = ExtResource("4_ns6ff")
 id_level = 10
 
-[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton4/VBoxContainer"]
+[node name="LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Tiempo:"
@@ -714,32 +703,33 @@ label_settings = SubResource("LabelSettings_1svxa")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton4"]
+[node name="stars12" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton4/HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12/stars12"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton4/HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12/stars12"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton4/HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12/stars12"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 80
 
@@ -972,6 +962,7 @@ texture = ExtResource("6_lh663")
 expand_mode = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 80
 
@@ -1221,4 +1212,12 @@ text = "Regresar"
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton3/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton4/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton5/VBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton6/VBoxContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton7/VBoxContainer/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer2/LevelButton8/VBoxContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton9/VBoxContainer/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10/VBoxContainer/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11/VBoxContainer/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12/VBoxContainer/Button12" to="." method="_on_button_12_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
