@@ -16,7 +16,7 @@ func _ready():
 func validar(is_correct):
 	if is_correct:
 		#print("boton apretado ", is_correct)
-		LEVELCORE.lvl6_completed = true
+		#LEVELCORE.lvl6_completed = true
 		game_controller.call('game_victory')
 	else:
 		#print("boton apretado ", is_correct)

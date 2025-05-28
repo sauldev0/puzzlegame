@@ -41,11 +41,33 @@ func game_victory():
 	var estrellas = calcular_estrellas()
 	puntos_nivel = estrellas * 50  
 
-	sumar_puntos()
-	guardar_estrellas_por_nivel(GLOBAL.nivel_actual, estrellas)
+	var nivel = GLOBAL.nivel_actual
+	var ya_completado = false
+	
+	match nivel:
+		1: ya_completado = LEVELCORE.lvl1_completed
+		2: ya_completado = LEVELCORE.lvl2_completed
+		3: ya_completado = LEVELCORE.lvl3_completed
+		4: ya_completado = LEVELCORE.lvl4_completed
+		5: ya_completado = LEVELCORE.lvl5_completed
+		6: ya_completado = LEVELCORE.lvl6_completed
+		7: ya_completado = LEVELCORE.lvl7_completed
+		8: ya_completado = LEVELCORE.lvl8_completed
+		9: ya_completado = LEVELCORE.lvl9_completed
+		10: ya_completado = LEVELCORE.lvl10_completed
+		11: ya_completado = LEVELCORE.lvl11_completed
+		12: ya_completado = LEVELCORE.lvl12_completed
+	
+	if !ya_completado:
+		sumar_puntos()
+		guardar_estrellas_por_nivel(nivel, estrellas)
+		popupcorrect.visible = true 
+		score_label.text = "Has conseguido " + str(puntos_nivel) + " fragmentos de puzzle"
+	else:
+		popupcorrect.visible = true 
+		score_label.text = "El nivel ya ha sido completado 0 fragmentos de puzzle"
 
-	popupcorrect.visible = true 
-	score_label.text = "Has conseguido " + str(puntos_nivel) + " fragmentos de puzzle"
+	
 	GLOBAL.numero_de_intentos = 0
 	get_tree().paused = popupcorrect.visible
 	
@@ -65,44 +87,58 @@ func calcular_estrellas() -> int:
 	else:
 		return 1
 		
+#asigna la cantidad de estrellas si el nivel no ha sido completado previamente
 func guardar_estrellas_por_nivel(nivel: int, estrellas: int):
 	match nivel:
 		1:
-			LEVELCORE.lvl1_stars = max(estrellas, LEVELCORE.lvl1_stars)
-			LEVELCORE.lvl1_completed = true
+			if !LEVELCORE.lvl1_completed:
+				LEVELCORE.lvl1_stars = estrellas
+				LEVELCORE.lvl1_completed = true
 		2:
-			LEVELCORE.lvl2_stars = max(estrellas, LEVELCORE.lvl2_stars)
-			LEVELCORE.lvl2_completed = true
+			if !LEVELCORE.lvl2_completed:
+				LEVELCORE.lvl2_stars = estrellas
+				LEVELCORE.lvl2_completed = true
 		3:
-			LEVELCORE.lvl3_stars = max(estrellas, LEVELCORE.lvl3_stars)
-			LEVELCORE.lvl3_completed = true
+			if !LEVELCORE.lvl3_completed:
+				LEVELCORE.lvl3_stars = estrellas
+				LEVELCORE.lvl3_completed = true
 		4:
-			LEVELCORE.lvl4_stars = max(estrellas, LEVELCORE.lvl4_stars)
-			LEVELCORE.lvl4_completed = true
+			if !LEVELCORE.lvl4_completed:
+				LEVELCORE.lvl4_stars = estrellas
+				LEVELCORE.lvl4_completed = true
 		5:
-			LEVELCORE.lvl5_stars = max(estrellas, LEVELCORE.lvl5_stars)
-			LEVELCORE.lvl5_completed = true
+			if !LEVELCORE.lvl5_completed:
+				LEVELCORE.lvl5_stars = estrellas
+				LEVELCORE.lvl5_completed = true
 		6:
-			LEVELCORE.lvl6_stars = max(estrellas, LEVELCORE.lvl6_stars)
-			LEVELCORE.lvl6_completed = true
+			if !LEVELCORE.lvl6_completed:
+				LEVELCORE.lvl6_stars = estrellas
+				LEVELCORE.lvl6_completed = true
 		7:
-			LEVELCORE.lvl7_stars = max(estrellas, LEVELCORE.lvl7_stars)
-			LEVELCORE.lvl7_completed = true
+			if !LEVELCORE.lvl7_completed:
+				LEVELCORE.lvl7_stars = estrellas
+				LEVELCORE.lvl7_completed = true
 		8:
-			LEVELCORE.lvl8_stars = max(estrellas, LEVELCORE.lvl8_stars)
-			LEVELCORE.lvl8_completed = true
+			if !LEVELCORE.lvl8_completed:
+				LEVELCORE.lvl8_stars = estrellas
+				LEVELCORE.lvl8_completed = true
 		9:
-			LEVELCORE.lvl9_stars = max(estrellas, LEVELCORE.lvl9_stars)
-			LEVELCORE.lvl9_completed = true
+			if !LEVELCORE.lvl9_completed:
+				LEVELCORE.lvl9_stars = estrellas
+				LEVELCORE.lvl9_completed = true
 		10:
-			LEVELCORE.lvl10_stars = max(estrellas, LEVELCORE.lvl10_stars)
-			LEVELCORE.lvl10_completed = true
+			if !LEVELCORE.lvl10_completed:
+				LEVELCORE.lvl10_stars = estrellas
+				LEVELCORE.lvl10_completed = true
 		11:
-			LEVELCORE.lvl11_stars = max(estrellas, LEVELCORE.lvl11_stars)
-			LEVELCORE.lvl11_completed = true
+			if !LEVELCORE.lvl11_completed:
+				LEVELCORE.lvl11_stars = estrellas
+				LEVELCORE.lvl11_completed = true
 		12:
-			LEVELCORE.lvl12_stars = max(estrellas, LEVELCORE.lvl12_stars)
-			LEVELCORE.lvl12_completed = true
+			if !LEVELCORE.lvl12_completed:
+				LEVELCORE.lvl12_stars = estrellas
+				LEVELCORE.lvl12_completed = true
+
 
 func sumar_puntos():
 	GLOBAL.score_total = GLOBAL.score_total + puntos_nivel

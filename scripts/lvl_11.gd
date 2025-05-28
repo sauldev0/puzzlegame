@@ -16,7 +16,7 @@ func _ready():
 func validar(_area_entered, is_correct):
 	if is_correct:
 		#print(_area_entered," ", is_correct)
-		LEVELCORE.lvl11_completed = true
+		#LEVELCORE.lvl11_completed = true
 		game_controller.call('game_victory')
 	else:
 		#print(_area_entered," ", is_correct)

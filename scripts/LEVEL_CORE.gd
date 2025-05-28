@@ -61,6 +61,7 @@ func save_data():
 		"lvl10_stars" = lvl10_stars,
 		"lvl11_stars" = lvl11_stars,
 		"lvl12_stars" = lvl12_stars,
+		
 	}
 	file.store_var(data)
 	file = null
@@ -93,6 +94,7 @@ func load_data():
 			"lvl10_stars" = 0,
 			"lvl11_stars" = 0,
 			"lvl12_stars" = 0,
+		
 			
 			}
 		save_data()
@@ -124,5 +126,6 @@ func load_data():
 	lvl10_stars = data.lvl10_stars
 	lvl11_stars = data.lvl11_stars
 	lvl12_stars = data.lvl12_stars
+	
 	file = null
 	
