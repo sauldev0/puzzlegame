@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="7_rvqu5"]
 [ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="8_fo8ka"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qchni"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_60uvc"]
 texture = ExtResource("3_b6tof")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -36,7 +36,7 @@ texture_region_size = Vector2i(32, 32)
 1:5/0 = 0
 1:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_60uvc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6tof"]
 texture = ExtResource("3_qchni")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -70,8 +70,8 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 custom_data_layer_0/name = "Walkable"
 custom_data_layer_0/type = 1
-sources/0 = SubResource("TileSetAtlasSource_qchni")
-sources/4 = SubResource("TileSetAtlasSource_60uvc")
+sources/0 = SubResource("TileSetAtlasSource_60uvc")
+sources/4 = SubResource("TileSetAtlasSource_b6tof")
 
 [node name="lvl_9" type="Node2D"]
 script = ExtResource("1_w3xgr")

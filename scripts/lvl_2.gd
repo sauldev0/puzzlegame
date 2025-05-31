@@ -4,8 +4,8 @@ extends Node2D
 var numero_nivel = 2
 
 func _ready():
-	GLOBAL.nivel_actual = numero_nivel
-	print("Nivel actual:", GLOBAL.nivel_actual)
+	LEVELCORE.nivel_actual = numero_nivel
+	print("Nivel actual:", LEVELCORE.nivel_actual)
 	game_controller.mostrar_popup_descripcion()
 	
 	var opciones = get_tree().get_nodes_in_group("buttons") #almacena el resultado de busqueda de grupos

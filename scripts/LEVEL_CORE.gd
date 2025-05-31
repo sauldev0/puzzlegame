@@ -2,6 +2,11 @@ extends Node
 
 const SAVE_FILE = "user://savefile.dat"
 
+var nivel_actual = 0
+var score_total = 0
+var numero_de_intentos = 0
+var ui_was_touched := false
+
 var lvl1_completed = false
 var lvl2_completed = false
 var lvl3_completed = false
@@ -62,6 +67,8 @@ func save_data():
 		"lvl11_stars" = lvl11_stars,
 		"lvl12_stars" = lvl12_stars,
 		
+		"score_total" = score_total,
+		
 	}
 	file.store_var(data)
 	file = null
@@ -94,6 +101,8 @@ func load_data():
 			"lvl10_stars" = 0,
 			"lvl11_stars" = 0,
 			"lvl12_stars" = 0,
+			
+			"score_total" = 0,
 		
 			
 			}
@@ -126,6 +135,8 @@ func load_data():
 	lvl10_stars = data.lvl10_stars
 	lvl11_stars = data.lvl11_stars
 	lvl12_stars = data.lvl12_stars
+	
+	score_total = data.score_total
 	
 	file = null
 	

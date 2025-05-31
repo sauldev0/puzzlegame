@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkaeeo7nvjl8e"]
+
+[ext_resource type="Texture2D" uid="uid://c8i464i1s2de3" path="res://sprites/personajes/bibliotecariopuzzle2.png" id="1_nh2m4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obn6w"]
+radius = 22.0
+
+[node name="NPC" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(225, 187)
+texture = ExtResource("1_nh2m4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")

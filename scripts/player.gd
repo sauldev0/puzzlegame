@@ -11,9 +11,10 @@ func _ready():
 	Tile_map = get_parent().get_node("TileMap")
 	Astar = Tile_map.AstarGrid
 	
-func _input(event: InputEvent):
+func _unhandled_input(event: InputEvent): # se cambio a unhandled para evitar el movimiento en nodos de uid
 	if event.is_action_pressed("RightClick"):
 		get_coord()
+	
 	
 # calcula la ruta desde la posición actual hasta donde se hizo clic
 func get_coord():

@@ -53,6 +53,9 @@ process_mode = 3
 [node name="popupincorrect" parent="UID" instance=ExtResource("8_dgh7i")]
 process_mode = 3
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 324)
+
 [connection signal="pressed" from="persona_corte_bueno" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
 [connection signal="pressed" from="persona_corte_malo" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]

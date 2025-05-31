@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="questlogica"
-run/main_scene="uid://bof6n6dmpb4p5"
+run/main_scene="uid://bs08ehdf2j42p"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://benv48piv60bw"
 
@@ -19,11 +19,20 @@ config/icon="uid://benv48piv60bw"
 
 GLOBAL="*res://scripts/GLOBAL.gd"
 LEVELCORE="*res://scripts/LEVEL_CORE.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://scenes/dialogue/balloon.tscn"
 
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -32,10 +41,19 @@ RightClick={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+Interrogar={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
+]
+}
 
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogues/PersonaA_lvl2.dialogue", "res://dialogues/PersonaB_lvl2.dialogue", "res://dialogues/PersonaC_lvl2.dialogue", "res://dialogues/PersonaD_lvl2.dialogue", "res://dialogues/Profesor_lvl2.dialogue")
 
 [rendering]
 

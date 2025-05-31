@@ -3,7 +3,7 @@ extends Control
 @export var menu_size = 0.45
 @export var lerp_speed = 0.2
 @onready var texture_button = $VBoxContainer/TextureButton
-@onready var description_label = $VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/DescriptionLabel
+@onready var description_label = $VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/MarginContainer/DescriptionLabel
 
 var popped_up = true 
 var up_anchor = Vector2(1-menu_size,1)

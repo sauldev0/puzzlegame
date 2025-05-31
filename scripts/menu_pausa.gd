@@ -6,7 +6,7 @@ extends Control
 signal pressed_menu_pausa
 
 func _ready():
-	intentos_screen.text = "Llevas " + str(GLOBAL.numero_de_intentos) + " intentos"
+	intentos_screen.text = "Llevas " + str(LEVELCORE.numero_de_intentos) + " intentos"
 	
 	$pop_up_menu.visible = false
 

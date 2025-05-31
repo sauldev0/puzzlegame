@@ -4,6 +4,7 @@ const CANDADONIVEL = preload("res://sprites/puzzles/candadonivel.png")
 const PIEZAPUZZLEGRIS = preload("res://sprites/puzzles/piezapuzzlegris.png")
 const ESTRELLA_LLENA = preload("res://sprites/puzzles/estrella_llena.png")
 const ESTRELLA_VACIA = preload("res://sprites/puzzles/estrella_vacia.png")
+@onready var h_box_container_4 = $Control/ScrollContainer/VBoxContainer/HBoxContainer4
 
 @onready var button_1 = $Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/VBoxContainer/Button1
 @onready var button_2 = $Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/VBoxContainer/Button2
@@ -34,6 +35,7 @@ const ESTRELLA_VACIA = preload("res://sprites/puzzles/estrella_vacia.png")
 @onready var stars_12 = $Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12/stars12
 
 
+#asigna la textura de las estrellas segun las estrellas obtenidas del nivel
 func actualizar_estrellas(stars: int, container: Node):
 	for i in range(3):
 		var estrella = container.get_child(i)
@@ -46,6 +48,9 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _ready():
+	
+	if LEVELCORE.score_total >= 1200: #desbloquear nivel secreto
+		h_box_container_4.visible = true
 	#button.grab_focus()
 	print("¿Juego en pausa?", get_tree().paused)
 	print("lvl1 =" + str(LEVELCORE.lvl1_completed))

@@ -2,7 +2,7 @@ extends Control
 #@onready var score_label = $VBoxContainer/score_label
 
 func _ready():
-	#score_label.text = "Has conseguido " + str(GLOBAL.score_total) + " puntos"
+	#score_label.text = "Has conseguido " + str(LEVELCORE.score_total) + " puntos"
 	pass
 
 func _on_menu_pressed():
@@ -12,27 +12,27 @@ func _on_menu_pressed():
 
 func _on_nextlevel_pressed():
 	LEVELCORE.save_data()
-	if GLOBAL.nivel_actual == 1:
+	if LEVELCORE.nivel_actual == 1:
 		get_tree().change_scene_to_file("res://scenes/lvl_2.tscn")
-	elif GLOBAL.nivel_actual == 2:
+	elif LEVELCORE.nivel_actual == 2:
 		get_tree().change_scene_to_file("res://scenes/lvl_3.tscn")
-	elif GLOBAL.nivel_actual == 3:
+	elif LEVELCORE.nivel_actual == 3:
 		get_tree().change_scene_to_file("res://scenes/lvl_4.tscn")
-	elif GLOBAL.nivel_actual == 4:
+	elif LEVELCORE.nivel_actual == 4:
 		get_tree().change_scene_to_file("res://scenes/lvl_5.tscn")
-	elif GLOBAL.nivel_actual == 5:
+	elif LEVELCORE.nivel_actual == 5:
 		get_tree().change_scene_to_file("res://scenes/lvl_6.tscn")
-	elif GLOBAL.nivel_actual == 6:
+	elif LEVELCORE.nivel_actual == 6:
 		get_tree().change_scene_to_file("res://scenes/lvl_7.tscn")
-	elif GLOBAL.nivel_actual == 7:
+	elif LEVELCORE.nivel_actual == 7:
 		get_tree().change_scene_to_file("res://scenes/lvl_8.tscn")
-	elif GLOBAL.nivel_actual == 8:
+	elif LEVELCORE.nivel_actual == 8:
 		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
-	elif GLOBAL.nivel_actual == 9:
+	elif LEVELCORE.nivel_actual == 9:
 		get_tree().change_scene_to_file("res://scenes/lvl_10.tscn")
-	elif GLOBAL.nivel_actual == 10:
+	elif LEVELCORE.nivel_actual == 10:
 		get_tree().change_scene_to_file("res://scenes/lvl_11.tscn")
-	elif GLOBAL.nivel_actual == 11:
+	elif LEVELCORE.nivel_actual == 11:
 		get_tree().change_scene_to_file("res://scenes/lvl_12.tscn")
 	else:
 		get_tree().paused = false

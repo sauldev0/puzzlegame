@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dwfrrqfvcjgno"
+path="res://.godot/imported/Profesor_lvl2.dialogue-33c4da386b8f3b24ab4818e7e6432a40.tres"
+
+[deps]
+
+source_file="res://dialogues/Profesor_lvl2.dialogue"
+dest_files=["res://.godot/imported/Profesor_lvl2.dialogue-33c4da386b8f3b24ab4818e7e6432a40.tres"]
+
+[params]
+
+defaults=true

@@ -3,7 +3,7 @@ extends Control
 
 func _ready():
 	get_tree().paused = false
-	score_screen.text = "Fragmentos de puzzle reunidos: " + str(GLOBAL.score_total)
+	score_screen.text = "Fragmentos de puzzle reunidos: " + str(LEVELCORE.score_total)
 
 func _on_play_pressed():
 	#if LEVELCORE.lvl1_completed == false:

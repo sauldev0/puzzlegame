@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d0r56a4mttibv"
+path="res://.godot/imported/PersonaB_lvl2.dialogue-176f01d1b3da855cc87fd6bfce0074ea.tres"
+
+[deps]
+
+source_file="res://dialogues/PersonaB_lvl2.dialogue"
+dest_files=["res://.godot/imported/PersonaB_lvl2.dialogue-176f01d1b3da855cc87fd6bfce0074ea.tres"]
+
+[params]
+
+defaults=true
