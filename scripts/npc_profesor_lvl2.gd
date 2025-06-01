@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var is_correct:bool
 const PROFESOR_LVL_2 = preload("res://dialogues/Profesor_lvl2.dialogue")
 var is_player_close = false
 var is_dialogue_active = false
@@ -23,5 +24,8 @@ func on_dialogue_started(dialogue):
 	var is_dialogue_active = true
 	
 func on_dialogue_ended(dialogue):
+	# Se asegura que este nodo solo reaccione a su diálogo
+	if dialogue != PROFESOR_LVL_2:
+		return
 	await get_tree().create_timer(0.2).timeout
 	var is_dialogue_active = false

@@ -2,8 +2,10 @@ extends Control
 
 @export var menu_size = 0.45
 @export var lerp_speed = 0.2
+
 @onready var texture_button = $VBoxContainer/TextureButton
-@onready var description_label = $VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/MarginContainer/DescriptionLabel
+@onready var description_label = $"VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Descripción/MarginContainer/DescriptionLabel"
+@onready var rules_label = $VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Reglas/MarginContainer/RulesLabel
 
 var popped_up = true 
 var up_anchor = Vector2(1-menu_size,1)
@@ -18,7 +20,6 @@ func _process(delta):
 	anchor_bottom = lerp(anchor_bottom,target_anchor.y,lerp_speed)
 
 func _on_texture_button_pressed():
-	#texture_button.disabled = false
 	if !popped_up:
 		target_anchor = up_anchor
 	else:
@@ -27,9 +28,9 @@ func _on_texture_button_pressed():
 
 func _on_menu_pausa_pressed_menu_pausa():
 	target_anchor = down_anchor
-	
+
 func set_description(text: String):
 	description_label.text = text
-	
-	
-	
+
+func set_rules(text: String):
+	rules_label.text = text

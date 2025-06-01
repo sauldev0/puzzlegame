@@ -12,7 +12,7 @@ var intentos : int
 var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte mal hecho y otro con un corte muy bien hecho
 \n¿A cuál acudirías para que te cortara el cabello?",
 
-	2 : "Un profesor ha sido encontrado inconsciente en la biblioteca. Cuatro personas estaban cerca del lugar, y cada una tiene algo que decir. ¿Quién dice la verdad y quién oculta algo?
+	2 : "Un profesor fue encontrado inconsciente en la biblioteca de la universidad, y cuatro personas estaban cerca del lugar.
 \n- Acércate a los sospechosos e interrógalos
 \n- Acércate a los sospechosos e indica al culpable
 ",
@@ -20,6 +20,19 @@ var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte 
 9 : "Anda por ahí un comensal que no estaba invitado. Sin embargo, tienes información que permite identificarlo.
 \n\"Su mesa está junto a otra que tiene una flor roja. El mantel es de diferente color que el de cualquiera de las mesas que se encuentran junto a ella. Ah, y en la mesa del intruso no hay una flor amarilla. \"
 \n\"Junto a \" significa que dos mesas están conectadas por una línea de puntos.",
+
+3 : ""
+}
+
+var reglas = {1 : "",
+
+	2 : "Solo una persona es culpable.
+\nAl menos una persona miente, pero no necesariamente todos.
+
+	",
+
+9 : "
+",
 
 3 : ""
 }
@@ -34,6 +47,7 @@ func _ready():
 func mostrar_popup_descripcion():
 	var nivel = LEVELCORE.nivel_actual
 	popuptexto.set_description(descripciones.get(nivel, "Descripción no disponible."))
+	popuptexto.set_rules(reglas.get(nivel, "Reglas no disponible."))
 	
 func game_victory():
 	var estrellas = calcular_estrellas()
@@ -145,3 +159,4 @@ func sumar_puntos():
 	
 	print("Has conseguido " + str(puntos_nivel) + " puntos")
 	print("Total de puntos " + str(LEVELCORE.score_total))
+	

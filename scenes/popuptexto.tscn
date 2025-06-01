@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://drljs618y0uma"]
+[gd_scene load_steps=9 format=3 uid="uid://drljs618y0uma"]
 
 [ext_resource type="Script" uid="uid://dbq28tj4dig7" path="res://scripts/popuptexto.gd" id="1_i6acl"]
 [ext_resource type="Texture2D" uid="uid://rmwhves3uldi" path="res://sprites/TopToggleButton.png" id="1_lfir5"]
 [ext_resource type="Texture2D" uid="uid://dtejkaiknpant" path="res://sprites/MenuPullup.png" id="2_tct6o"]
 [ext_resource type="FontFile" uid="uid://yrwej381mh2e" path="res://fonts/nokiafc22.ttf" id="4_llidd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_roj18"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llidd"]
+
+[sub_resource type="Theme" id="Theme_roj18"]
+TabBar/styles/tab_selected = SubResource("StyleBoxTexture_roj18")
+TabContainer/styles/panel = SubResource("StyleBoxTexture_llidd")
 
 [sub_resource type="LabelSettings" id="LabelSettings_llidd"]
 font = ExtResource("4_llidd")
@@ -55,18 +63,43 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NinePatchRect/MarginContainer"]
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_roj18")
+current_tab = 0
+
+[node name="Descripción" type="VBoxContainer" parent="VBoxContainer/NinePatchRect/MarginContainer/TabContainer"]
 layout_mode = 2
 alignment = 1
+metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Descripción"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="DescriptionLabel" type="Label" parent="VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Descripción/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_llidd")
+autowrap_mode = 2
+
+[node name="Reglas" type="VBoxContainer" parent="VBoxContainer/NinePatchRect/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Reglas"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RulesLabel" type="Label" parent="VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Reglas/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 label_settings = SubResource("LabelSettings_llidd")

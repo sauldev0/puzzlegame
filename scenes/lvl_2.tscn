@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://07wahomh51wn"]
+[gd_scene load_steps=37 format=3 uid="uid://07wahomh51wn"]
 
 [ext_resource type="Script" uid="uid://di716dt73jfox" path="res://scripts/lvl_2.gd" id="1_7o323"]
 [ext_resource type="Texture2D" uid="uid://c8i464i1s2de3" path="res://sprites/personajes/bibliotecariopuzzle2.png" id="2_v64py"]
@@ -12,18 +12,22 @@
 [ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_obn6w"]
 [ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_lk6hv"]
 [ext_resource type="Texture2D" uid="uid://clna7npnm47hf" path="res://sprites/tilesets/tileset restaurante0.png" id="12_bv24h"]
+[ext_resource type="Texture2D" uid="uid://dcgcktirsga0k" path="res://sprites/puzzles/dialogonew.png" id="13_1osul"]
 [ext_resource type="Texture2D" uid="uid://cqwiloyvwdbyq" path="res://sprites/puzzles/boton_interrogar_bloqueado.png" id="13_5emcn"]
 [ext_resource type="Script" uid="uid://bevwvvt35cutf" path="res://scripts/npc_personaB_lvl2.gd" id="13_44hrr"]
 [ext_resource type="Texture2D" uid="uid://cfhp0ou8sw1uw" path="res://sprites/puzzles/spritesheetpersonajes_lvl2.png" id="13_lk6hv"]
 [ext_resource type="Texture2D" uid="uid://bawiilnqta5j8" path="res://sprites/puzzles/spritesheetmesas.png" id="13_obn6w"]
+[ext_resource type="FontFile" uid="uid://yrwej381mh2e" path="res://fonts/nokiafc22.ttf" id="14_8cjld"]
 [ext_resource type="Script" uid="uid://wltrcx27rhjj" path="res://scripts/npc_personaD_lvl2.gd" id="14_44hrr"]
 [ext_resource type="Script" uid="uid://2vp33wwiumjj" path="res://scripts/tile_map.gd" id="14_lk6hv"]
 [ext_resource type="PackedScene" uid="uid://dw5yyohy6pohe" path="res://scenes/player.tscn" id="15_pyd0f"]
 [ext_resource type="Script" uid="uid://cby0fti3qi6ow" path="res://scripts/npc_personaC_lvl2.gd" id="15_vhfxh"]
-[ext_resource type="Texture2D" uid="uid://6xfgvy6targn" path="res://sprites/profesor_puzzle2.png" id="16_5j4go"]
+[ext_resource type="Texture2D" uid="uid://6xfgvy6targn" path="res://sprites/personajes/profesor_puzzle2.png" id="16_5j4go"]
 [ext_resource type="Script" uid="uid://c2vk8kcd8yfr5" path="res://scripts/npc_profesor_lvl2.gd" id="16_bd3eg"]
 [ext_resource type="Script" uid="uid://chsq7rij0g66q" path="res://scripts/npc_personaA_lvl2.gd" id="17_lk6hv"]
 [ext_resource type="Script" uid="uid://4k1n15foaaxw" path="res://scripts/touch_screen_button.gd" id="19_5emcn"]
+[ext_resource type="Texture2D" uid="uid://ckrrbmrahdxtb" path="res://sprites/puzzles/boton_culpar_bloqueado.png" id="20_hajku"]
+[ext_resource type="Script" uid="uid://c6bdpvfj4dg37" path="res://scripts/culpar_touch_screen_button.gd" id="23_8cjld"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_422u3"]
 texture = ExtResource("12_bv24h")
@@ -98,10 +102,25 @@ sources/1 = SubResource("TileSetAtlasSource_pyd0f")
 [sub_resource type="CircleShape2D" id="CircleShape2D_obn6w"]
 radius = 22.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx4jj"]
+texture = ExtResource("13_1osul")
+texture_margin_left = 5.0
+texture_margin_top = 10.0
+texture_margin_right = 5.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_hmy1o"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_wx4jj")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l67fq"]
+font = ExtResource("14_8cjld")
+font_size = 8
+font_color = Color(0.180392, 0.14902, 0.133333, 1)
+
 [node name="lvl_2" type="Node2D"]
 script = ExtResource("1_7o323")
 
-[node name="sospechoso1" type="TextureButton" parent="." groups=["buttons"]]
+[node name="sospechoso1" type="TextureButton" parent="."]
 visible = false
 offset_left = 8.0
 offset_top = 152.0
@@ -112,7 +131,7 @@ texture_normal = ExtResource("2_v64py")
 stretch_mode = 0
 script = ExtResource("3_e3uxt")
 
-[node name="sospechoso2" type="TextureButton" parent="." groups=["buttons"]]
+[node name="sospechoso2" type="TextureButton" parent="."]
 visible = false
 offset_left = 251.0
 offset_top = 155.0
@@ -123,7 +142,7 @@ texture_normal = ExtResource("3_3ykuj")
 stretch_mode = 0
 script = ExtResource("3_e3uxt")
 
-[node name="sospechoso3" type="TextureButton" parent="." groups=["buttons"]]
+[node name="sospechoso3" type="TextureButton" parent="."]
 visible = false
 offset_left = 507.0
 offset_top = 147.0
@@ -134,7 +153,7 @@ texture_normal = ExtResource("4_e3uxt")
 stretch_mode = 0
 script = ExtResource("3_e3uxt")
 
-[node name="sospechoso4" type="TextureButton" parent="." groups=["buttons"]]
+[node name="sospechoso4" type="TextureButton" parent="."]
 visible = false
 offset_left = 769.0
 offset_top = 159.0
@@ -167,7 +186,7 @@ position = Vector2(386, 190)
 scale = Vector2(12.9747, 8.3746)
 zoom = Vector2(2.24, 2.24)
 
-[node name="NPCPersonaA" type="Area2D" parent="."]
+[node name="NPCPersonaA" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(-16, -24)
 script = ExtResource("17_lk6hv")
 metadata/_edit_group_ = true
@@ -180,7 +199,28 @@ texture = ExtResource("2_v64py")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
-[node name="NPCPersonaB" type="Area2D" parent="."]
+[node name="PanelDialogoA" type="PanelContainer" parent="NPCPersonaA"]
+visible = false
+offset_left = 170.0
+offset_top = 125.0
+offset_right = 282.0
+offset_bottom = 173.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCPersonaA/PanelDialogoA"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCPersonaA/PanelDialogoA/MarginContainer"]
+layout_mode = 2
+text = "Yo no fui, y la 
+Persona B miente. "
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCPersonaB" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(88, -72)
 script = ExtResource("13_44hrr")
 metadata/_edit_group_ = true
@@ -193,9 +233,31 @@ texture = ExtResource("3_3ykuj")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
-[node name="NPCPersonaC" type="Area2D" parent="."]
+[node name="PanelDialogoB" type="PanelContainer" parent="NPCPersonaB"]
+visible = false
+offset_left = 170.0
+offset_top = 125.0
+offset_right = 282.0
+offset_bottom = 173.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCPersonaB/PanelDialogoB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCPersonaB/PanelDialogoB/MarginContainer"]
+layout_mode = 2
+text = "La Persona C fue quien
+ atacó al profesor. "
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCPersonaC" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(216, -72)
 script = ExtResource("15_vhfxh")
+is_correct = true
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCPersonaC"]
@@ -206,7 +268,28 @@ texture = ExtResource("5_6y0h7")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
-[node name="NPCPersonaD" type="Area2D" parent="."]
+[node name="PanelDialogoC" type="PanelContainer" parent="NPCPersonaC"]
+visible = false
+offset_left = 193.0
+offset_top = 125.0
+offset_right = 257.0
+offset_bottom = 173.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCPersonaC/PanelDialogoC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCPersonaC/PanelDialogoC/MarginContainer"]
+layout_mode = 2
+text = "A y B están
+mintiendo."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCPersonaD" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(320, -24)
 script = ExtResource("14_44hrr")
 metadata/_edit_group_ = true
@@ -219,7 +302,28 @@ texture = ExtResource("4_e3uxt")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
-[node name="NPCProfesor" type="Area2D" parent="."]
+[node name="PanelDialogoD" type="PanelContainer" parent="NPCPersonaD"]
+visible = false
+offset_left = 170.0
+offset_top = 125.0
+offset_right = 282.0
+offset_bottom = 173.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCPersonaD/PanelDialogoD"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCPersonaD/PanelDialogoD/MarginContainer"]
+layout_mode = 2
+text = "Si C dice la verdad, 
+entonces A es culpable. "
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCProfesor" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(160, 8)
 script = ExtResource("16_bd3eg")
 metadata/_edit_group_ = true
@@ -240,11 +344,25 @@ offset_top = 217.0
 offset_right = 609.0
 offset_bottom = 281.0
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+[node name="InterrogarTouchScreenButton" type="TouchScreenButton" parent="Control"]
 scale = Vector2(2, 2)
 texture_normal = ExtResource("13_5emcn")
 action = "Interrogar"
 script = ExtResource("19_5emcn")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 464.0
+offset_top = 216.0
+offset_right = 528.0
+offset_bottom = 280.0
+
+[node name="CulparTouchScreenButton" type="TouchScreenButton" parent="Control2"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("20_hajku")
+action = "Culpar"
+script = ExtResource("23_8cjld")
 
 [node name="UID" type="CanvasLayer" parent="."]
 
@@ -268,26 +386,27 @@ process_mode = 3
 process_mode = 3
 
 [connection signal="area_entered" from="NPCPersonaA" to="NPCPersonaA" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCPersonaA" to="Control/TouchScreenButton" method="_on_npc_persona_a_area_entered"]
+[connection signal="area_entered" from="NPCPersonaA" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]
 [connection signal="area_exited" from="NPCPersonaA" to="NPCPersonaA" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCPersonaA" to="Control/TouchScreenButton" method="_on_npc_persona_a_area_exited"]
+[connection signal="area_exited" from="NPCPersonaA" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_exited"]
 [connection signal="area_entered" from="NPCPersonaB" to="NPCPersonaB" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCPersonaB" to="Control/TouchScreenButton" method="_on_npc_persona_b_area_entered"]
+[connection signal="area_entered" from="NPCPersonaB" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_entered"]
 [connection signal="area_exited" from="NPCPersonaB" to="NPCPersonaB" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCPersonaB" to="Control/TouchScreenButton" method="_on_npc_persona_b_area_exited"]
+[connection signal="area_exited" from="NPCPersonaB" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_exited"]
 [connection signal="area_entered" from="NPCPersonaC" to="NPCPersonaC" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCPersonaC" to="Control/TouchScreenButton" method="_on_npc_persona_c_area_entered"]
+[connection signal="area_entered" from="NPCPersonaC" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_entered"]
 [connection signal="area_exited" from="NPCPersonaC" to="NPCPersonaC" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCPersonaC" to="Control/TouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="area_exited" from="NPCPersonaC" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
 [connection signal="area_entered" from="NPCPersonaD" to="NPCPersonaD" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCPersonaD" to="Control/TouchScreenButton" method="_on_npc_persona_d_area_entered"]
+[connection signal="area_entered" from="NPCPersonaD" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_d_area_entered"]
 [connection signal="area_exited" from="NPCPersonaD" to="NPCPersonaD" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCPersonaD" to="Control/TouchScreenButton" method="_on_npc_persona_d_area_exited"]
+[connection signal="area_exited" from="NPCPersonaD" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_d_area_exited"]
 [connection signal="area_entered" from="NPCProfesor" to="NPCProfesor" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCProfesor" to="Control/TouchScreenButton" method="_on_npc_profesor_area_entered"]
+[connection signal="area_entered" from="NPCProfesor" to="Control/InterrogarTouchScreenButton" method="_on_npc_profesor_area_entered"]
 [connection signal="area_exited" from="NPCProfesor" to="NPCProfesor" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCProfesor" to="Control/TouchScreenButton" method="_on_npc_profesor_area_exited"]
-[connection signal="pressed" from="Control/TouchScreenButton" to="Control/TouchScreenButton" method="_on_pressed"]
+[connection signal="area_exited" from="NPCProfesor" to="Control/InterrogarTouchScreenButton" method="_on_npc_profesor_area_exited"]
+[connection signal="pressed" from="Control/InterrogarTouchScreenButton" to="Control/InterrogarTouchScreenButton" method="_on_pressed"]
+[connection signal="pressed" from="Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 
 [editable path="UID/popupcorrect"]
