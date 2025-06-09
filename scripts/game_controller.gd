@@ -23,7 +23,12 @@ var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte 
 \n\"Su mesa está junto a otra que tiene una flor roja. El mantel es de diferente color que el de cualquiera de las mesas que se encuentran junto a ella. Ah, y en la mesa del intruso no hay una flor amarilla. \"
 \n\"Junto a \" significa que dos mesas están conectadas por una línea de puntos.",
 
-3 : ""
+3 : "Debes encontrar una relojería, pero la única pista que tienes para encontrarla es la siguiente:\n" +
+			"12:00\n" +
+			"3:00\n" +
+			"12:00\n" +
+			"9:00\n" +
+			"6:00"
 }
 
 # Diccionario con reglas de los niveles
