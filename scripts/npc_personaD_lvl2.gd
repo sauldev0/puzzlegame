@@ -24,6 +24,7 @@ func _on_area_exited(area):
 	
 func on_dialogue_started(dialogue):
 	var is_dialogue_active = true
+	LEVELCORE.dialogo_activo = true
 	
 func on_dialogue_ended(dialogue):
 	# Se asegura que este nodo solo reaccione a su diálogo
@@ -32,3 +33,4 @@ func on_dialogue_ended(dialogue):
 	await get_tree().create_timer(0.2).timeout
 	panel_dialogo_d.visible = true
 	var is_dialogue_active = false
+	LEVELCORE.dialogo_activo = false

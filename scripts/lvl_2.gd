@@ -17,18 +17,30 @@ func _ready():
 	var opciones = get_tree().get_nodes_in_group("areas")
 	for area in opciones:
 		area.area_entered.connect(_on_area_entered.bind(area.is_correct))
+		area.area_exited.connect(_on_area_exited)
 
 func _on_area_entered(area, is_correct):
-	print("area detectada, esperando confirmación con botón")
+	print("Área detectada, esperando confirmación con botón")
 	area_detectada = area
 	is_correct_detectado = is_correct
 	hay_area_para_validar = true
 
+func _on_area_exited(area):
+	# Solo limpiar si es el área que estaba activa
+	if area == area_detectada:
+		print("Saliendo del área, cancelando validación")
+		area_detectada = null
+		is_correct_detectado = false
+		hay_area_para_validar = false
+
 func _on_culpar_touch_screen_button_pressed():
+	if LEVELCORE.dialogo_activo:
+		print("no se puede culpar mientras se interroga")
+		return
+	
 	if hay_area_para_validar:
-		print("presionando botón, validando área")
+		print("Presionando botón, validando área")
 		validar(area_detectada, is_correct_detectado)
-		# limpiar para evitar múltiples validaciones si se mantiene el botón presionado
 		hay_area_para_validar = false
 	else:
 		print("No hay área para validar.")

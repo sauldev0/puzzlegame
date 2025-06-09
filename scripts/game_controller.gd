@@ -4,9 +4,11 @@ extends Node2D
 @onready var popupincorrect = $"../popupincorrect"
 @onready var popuptexto = $"../popuptexto"
 @onready var score_label = $"../popupcorrect/WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer/score_label"
+@onready var pop_up_declaraciones = $"../PopUpDeclaraciones"
 
 var puntos_nivel = 0
 var intentos : int
+var niveles_con_declaraciones = [2, 9]
 
 # Diccionario con descripciones de los niveles
 var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte mal hecho y otro con un corte muy bien hecho
@@ -24,6 +26,7 @@ var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte 
 3 : ""
 }
 
+# Diccionario con reglas de los niveles
 var reglas = {1 : "",
 
 	2 : "Solo una persona es culpable.
@@ -37,18 +40,64 @@ var reglas = {1 : "",
 3 : ""
 }
 
+# Diccionario con declaraciones de los niveles que tienen
+
+var declaraciones = {
+	2 : "A: \"Yo no fui, y B miente.\"  ˃ A ˹ (ˉ A ˄ ˉ B )\n\n" +
+			"B: \"C fue el culpable.\" ˉ B ˹ C\n\n" +
+			"C: \"A y B mienten.\" ˃ C ˹ ( ˉ A ˄ ˉ B)\n\n" +
+			"D: \"Si C dice la verdad, entonces A es culpable,\" ˃ D ˹ (C ˃  A)\n\n",
+			
+	9 : "
+	",
+	
+	3 : "
+	"
+}
+
+
 func _ready():
 	get_tree().paused = false
 	popupcorrect.visible = false
 	popupincorrect.visible = false
+	#pop_up_declaraciones = false  
 	
 	print("game controller activo")
 	
+	
+func mostrar_popup_correcto_con_o_sin_declaracion():
+	var nivel = LEVELCORE.nivel_actual
+	if nivel in niveles_con_declaraciones:
+		mostrar_popup_declaraciones()
+	else:
+		mostrar_popup_correcto()
+
+func mostrar_popup_declaraciones():
+	var nivel = LEVELCORE.nivel_actual
+	pop_up_declaraciones.set_declarations(declaraciones.get(nivel, "Declaraciones no disponibles."))
+	pop_up_declaraciones.visible = true
+	get_tree().paused = true
+
+	var boton = pop_up_declaraciones.get_node("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next")
+	var callback = Callable(self, "_on_declaraciones_completadas")
+	if not boton.is_connected("pressed", callback):
+		boton.connect("pressed", callback)
+	
+func _on_declaraciones_completadas():
+	pop_up_declaraciones.visible = false
+	mostrar_popup_correcto()
+	
+func mostrar_popup_correcto():
+	popupcorrect.visible = true
+	score_label.text = "Has conseguido " + str(puntos_nivel) + " fragmentos de puzzle"
+	get_tree().paused = true
+
 func mostrar_popup_descripcion():
 	var nivel = LEVELCORE.nivel_actual
 	popuptexto.set_description(descripciones.get(nivel, "Descripción no disponible."))
 	popuptexto.set_rules(reglas.get(nivel, "Reglas no disponible."))
-	
+
+
 func game_victory():
 	var estrellas = calcular_estrellas()
 	puntos_nivel = estrellas * 50  
@@ -75,10 +124,10 @@ func game_victory():
 	if !ya_completado:
 		sumar_puntos()
 		guardar_estrellas_por_nivel(nivel, estrellas)
-		popupcorrect.visible = true 
+		mostrar_popup_correcto_con_o_sin_declaracion()
 		score_label.text = "Has conseguido " + str(puntos_nivel) + " fragmentos de puzzle"
 	else:
-		popupcorrect.visible = true 
+		mostrar_popup_correcto_con_o_sin_declaracion() 
 		score_label.text = "El nivel ya ha sido completado 0 fragmentos de puzzle"
 
 	

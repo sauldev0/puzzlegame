@@ -6,6 +6,8 @@ var nivel_actual = 0
 var score_total = 0
 var numero_de_intentos = 0
 var ui_was_touched := false
+var dialogo_activo 
+
 
 var lvl1_completed = false
 var lvl2_completed = false
