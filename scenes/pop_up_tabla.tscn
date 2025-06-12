@@ -1,0 +1,854 @@
+[gd_scene load_steps=7 format=3 uid="uid://byuk0kyp100rj"]
+
+[ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="1_wgwjl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgwjl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="Theme" id="Theme_y1pwt"]
+default_font = ExtResource("1_wgwjl")
+default_font_size = 16
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_wgwjl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwtd4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fax88"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qruwl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="PopUpTabla" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.0
+offset_top = -82.5
+offset_right = 443.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_y1pwt")
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwtd4")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Lucas (L)"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+text = "Marta (M)"
+horizontal_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer3/MarginContainer"]
+layout_mode = 2
+text = "Sofía (S)"
+horizontal_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer4"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer4/MarginContainer"]
+layout_mode = 2
+text = "Diego (D)"
+horizontal_alignment = 1
+
+[node name="PanelContainer5" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer5/MarginContainer"]
+layout_mode = 2
+text = "Carla (C)"
+horizontal_alignment = 1
+
+[node name="PanelContainer6" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer6"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer6/MarginContainer"]
+layout_mode = 2
+text = "Lucas
+(M ˃ S)"
+horizontal_alignment = 1
+
+[node name="PanelContainer7" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer7"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer7/MarginContainer"]
+layout_mode = 2
+text = "Marta
+(ˉ D)"
+horizontal_alignment = 1
+
+[node name="PanelContainer8" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer8"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer8/MarginContainer"]
+layout_mode = 2
+text = "Sofía
+(ˉ S ˄ ˉ D)"
+horizontal_alignment = 1
+
+[node name="PanelContainer9" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer9"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer9/MarginContainer"]
+layout_mode = 2
+text = "Diego
+(L ˅ ˉ S)"
+horizontal_alignment = 1
+
+[node name="PanelContainer10" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer10"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer10/MarginContainer"]
+layout_mode = 2
+text = "Carla
+(ˉ S ˃ M)"
+horizontal_alignment = 1
+
+[node name="PanelContainer11" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fax88")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer11"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer11/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer12" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer12"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer12/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer13" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer13"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer13/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer14" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer14"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer14/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer15" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer15"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer15/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer16" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer16"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer16/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer17" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer17"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer17/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer18" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer18"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer18/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer19" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer19"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer19/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer20" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer20"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer20/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer21" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fax88")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer21"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer21/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer22" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer22"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer22/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer23" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer23"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer23/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer24" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer24"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer24/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer25" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer25"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer25/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer26" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer26"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer26/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer27" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer27"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer27/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer28" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer28"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer28/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer29" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer29"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer29/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer30" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer30"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer30/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer31" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fax88")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer31"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer31/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer32" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer32"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer32/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer33" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer33"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer33/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer34" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer34"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer34/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer35" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer35"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer35/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer36" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer36"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer36/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer37" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer37"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer37/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer38" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer38"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer38/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer39" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer39"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer39/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer40" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer40"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer40/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer41" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fax88")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer41"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer41/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer42" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer42"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer42/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer43" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer43"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer43/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer44" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer44"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer44/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer45" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer45"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer45/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer46" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer46"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer46/MarginContainer"]
+layout_mode = 2
+text = "F"
+horizontal_alignment = 1
+
+[node name="PanelContainer47" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer47"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer47/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer48" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer48"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer48/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer49" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer49"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer49/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1
+
+[node name="PanelContainer50" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qruwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/PanelContainer50"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer50/MarginContainer"]
+layout_mode = 2
+text = "V"
+horizontal_alignment = 1

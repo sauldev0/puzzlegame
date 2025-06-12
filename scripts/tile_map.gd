@@ -17,9 +17,13 @@ func assigning_astar():
 	# Marca las celdas en las que el jugador NO puede caminar
 	for x in range(used_rect.size.x):
 		for y in range(used_rect.size.y):
-			var tile_position = Vector2i(x + used_rect.position .x , y + used_rect.position.y)
-			var tile_data = get_cell_tile_data(1,tile_position)
-			if tile_data == null:
-				pass
-			elif tile_data.get_custom_data("Walkable") == false:
+			var tile_position = Vector2i(x + used_rect.position.x, y + used_rect.position.y)
+			var is_solid = false
+			# Recorremos todas las capas relevantes
+			for layer in range(get_layers_count()):
+				var tile_data = get_cell_tile_data(layer, tile_position)
+				if tile_data and tile_data.get_custom_data("Walkable") == false:
+					is_solid = true
+					break
+			if is_solid:
 				AstarGrid.set_point_solid(tile_position)

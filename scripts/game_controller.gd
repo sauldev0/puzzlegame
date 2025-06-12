@@ -5,6 +5,8 @@ extends Node2D
 @onready var popuptexto = $"../popuptexto"
 @onready var score_label = $"../popupcorrect/WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer/score_label"
 @onready var pop_up_declaraciones = $"../PopUpDeclaraciones"
+@onready var view = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/View
+
 
 @export var touch_indicator_scene: PackedScene
 
