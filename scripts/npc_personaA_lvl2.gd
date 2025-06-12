@@ -6,6 +6,7 @@ const PERSONA_A_LVL_2 = preload("res://dialogues/PersonaA_lvl2.dialogue")
 var is_player_close = false
 var is_dialogue_active = false
 @onready var panel_dialogo_a = $PanelDialogoA
+@onready var label_name_a = $LabelNameA
 
 
 func _ready():
@@ -32,5 +33,6 @@ func on_dialogue_ended(dialogue):
 		return
 	await get_tree().create_timer(0.2).timeout
 	panel_dialogo_a.visible = true
+	label_name_a.visible = true
 	var is_dialogue_active = false
 	LEVELCORE.dialogo_activo = false

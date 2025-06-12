@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://6grrfel66xme"
+path="res://.godot/imported/Lucas_lvl4.dialogue-13a980f676629a43b95c2b2b830e130b.tres"
+
+[deps]
+
+source_file="res://dialogues/Lucas_lvl4.dialogue"
+dest_files=["res://.godot/imported/Lucas_lvl4.dialogue-13a980f676629a43b95c2b2b830e130b.tres"]
+
+[params]
+
+defaults=true

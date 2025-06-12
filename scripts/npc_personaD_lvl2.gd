@@ -2,6 +2,7 @@ extends Area2D
 
 @export var is_correct:bool
 @onready var panel_dialogo_d = $PanelDialogoD
+@onready var label_name_d = $LabelNameD
 
 const PERSONA_D_LVL_2 = preload("res://dialogues/PersonaD_lvl2.dialogue")
 var is_player_close = false
@@ -32,5 +33,6 @@ func on_dialogue_ended(dialogue):
 		return
 	await get_tree().create_timer(0.2).timeout
 	panel_dialogo_d.visible = true
+	label_name_d.visible = true
 	var is_dialogue_active = false
 	LEVELCORE.dialogo_activo = false

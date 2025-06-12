@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://07wahomh51wn"]
+[gd_scene load_steps=41 format=3 uid="uid://07wahomh51wn"]
 
 [ext_resource type="Script" uid="uid://di716dt73jfox" path="res://scripts/lvl_2.gd" id="1_7o323"]
 [ext_resource type="Texture2D" uid="uid://c8i464i1s2de3" path="res://sprites/personajes/bibliotecariopuzzle2.png" id="2_v64py"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://ckrrbmrahdxtb" path="res://sprites/puzzles/boton_culpar_bloqueado.png" id="20_hajku"]
 [ext_resource type="Script" uid="uid://c6bdpvfj4dg37" path="res://scripts/culpar_touch_screen_button.gd" id="23_8cjld"]
 [ext_resource type="PackedScene" uid="uid://hc3crpfjq0lq" path="res://scenes/popupdeclaraciones.tscn" id="29_dgtug"]
+[ext_resource type="PackedScene" uid="uid://cvaldummhvx40" path="res://scenes/cursor_effect.tscn" id="30_4q5qe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_422u3"]
 texture = ExtResource("7_8cjld")
@@ -114,6 +115,10 @@ sources/3 = SubResource("TileSetAtlasSource_4q5qe")
 [sub_resource type="CircleShape2D" id="CircleShape2D_obn6w"]
 radius = 22.0
 
+[sub_resource type="Theme" id="Theme_4q5qe"]
+default_font = ExtResource("14_8cjld")
+default_font_size = 8
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx4jj"]
 texture = ExtResource("13_1osul")
 texture_margin_left = 5.0
@@ -155,7 +160,6 @@ zoom = Vector2(2.24, 2.24)
 [node name="NPCPersonaA" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(16, -15)
 script = ExtResource("17_lk6hv")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCPersonaA"]
 position = Vector2(225, 187)
@@ -165,12 +169,23 @@ texture = ExtResource("2_v64py")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
+[node name="LabelNameA" type="Label" parent="NPCPersonaA"]
+visible = false
+offset_left = 201.0
+offset_top = 164.0
+offset_right = 303.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Persona A "
+
 [node name="PanelDialogoA" type="PanelContainer" parent="NPCPersonaA"]
 visible = false
 offset_left = 170.0
-offset_top = 125.0
+offset_top = 106.0
 offset_right = 282.0
-offset_bottom = 173.0
+offset_bottom = 162.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCPersonaA/PanelDialogoA"]
@@ -199,12 +214,23 @@ texture = ExtResource("3_3ykuj")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
+[node name="LabelNameB" type="Label" parent="NPCPersonaB"]
+visible = false
+offset_left = 201.0
+offset_top = 164.0
+offset_right = 303.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Persona B"
+
 [node name="PanelDialogoB" type="PanelContainer" parent="NPCPersonaB"]
 visible = false
-offset_left = 170.0
-offset_top = 125.0
-offset_right = 282.0
-offset_bottom = 173.0
+offset_left = 164.0
+offset_top = 115.0
+offset_right = 286.0
+offset_bottom = 163.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCPersonaB/PanelDialogoB"]
@@ -221,7 +247,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NPCPersonaC" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(158, -78)
+position = Vector2(158, -69)
 script = ExtResource("15_vhfxh")
 is_correct = true
 metadata/_edit_group_ = true
@@ -234,12 +260,23 @@ texture = ExtResource("5_6y0h7")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
+[node name="LabelNameC" type="Label" parent="NPCPersonaC"]
+visible = false
+offset_left = 201.0
+offset_top = 164.0
+offset_right = 303.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Persona C"
+
 [node name="PanelDialogoC" type="PanelContainer" parent="NPCPersonaC"]
 visible = false
 offset_left = 193.0
-offset_top = 125.0
+offset_top = 116.0
 offset_right = 257.0
-offset_bottom = 173.0
+offset_bottom = 164.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCPersonaC/PanelDialogoC"]
@@ -268,12 +305,23 @@ texture = ExtResource("4_e3uxt")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
+[node name="LabelNameD" type="Label" parent="NPCPersonaD"]
+visible = false
+offset_left = 201.0
+offset_top = 164.0
+offset_right = 303.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Persona D "
+
 [node name="PanelDialogoD" type="PanelContainer" parent="NPCPersonaD"]
 visible = false
-offset_left = 170.0
-offset_top = 125.0
-offset_right = 282.0
-offset_bottom = 173.0
+offset_left = 163.0
+offset_top = 115.0
+offset_right = 290.0
+offset_bottom = 163.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCPersonaD/PanelDialogoD"]
@@ -344,6 +392,7 @@ offset_bottom = -0.599976
 
 [node name="Game Controller" parent="UID" instance=ExtResource("7_bv24h")]
 process_mode = 3
+touch_indicator_scene = ExtResource("30_4q5qe")
 
 [node name="popupcorrect" parent="UID" instance=ExtResource("8_obn6w")]
 process_mode = 3
@@ -357,6 +406,8 @@ offset_left = 4.0
 offset_top = 1.0
 offset_right = 4.0
 offset_bottom = 1.0
+
+[node name="Cursor" parent="UID" instance=ExtResource("30_4q5qe")]
 
 [connection signal="area_entered" from="NPCPersonaA" to="NPCPersonaA" method="_on_area_entered"]
 [connection signal="area_entered" from="NPCPersonaA" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]

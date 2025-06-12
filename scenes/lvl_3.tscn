@@ -24,16 +24,32 @@
 script = ExtResource("1_tkm7p")
 
 [node name="BackgroundLvl3" type="Sprite2D" parent="."]
-position = Vector2(599, 319)
-scale = Vector2(1.59058, 1.34896)
+position = Vector2(687, 307)
+scale = Vector2(2.32263, 1.71753)
 texture = ExtResource("2_yxb5l")
 
-[node name="Lvl3" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = 10.0
+offset_right = 34.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Lvl3" type="Sprite2D" parent="Control"]
 position = Vector2(622, 327)
 scale = Vector2(6, 6)
 texture = ExtResource("8_th8jk")
 
-[node name="A" type="TextureButton" parent="." groups=["buttons"]]
+[node name="A" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 436.0
 offset_top = 69.0
 offset_right = 484.0
@@ -42,7 +58,8 @@ texture_normal = ExtResource("3_tkm7p")
 stretch_mode = 0
 script = ExtResource("3_gegca")
 
-[node name="B" type="TextureButton" parent="." groups=["buttons"]]
+[node name="B" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 622.0
 offset_top = 69.0
 offset_right = 670.0
@@ -51,7 +68,8 @@ texture_normal = ExtResource("6_vo4vj")
 stretch_mode = 0
 script = ExtResource("3_gegca")
 
-[node name="C" type="TextureButton" parent="." groups=["buttons"]]
+[node name="C" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 778.0
 offset_top = 99.0
 offset_right = 826.0
@@ -60,7 +78,8 @@ texture_normal = ExtResource("7_vbsd7")
 stretch_mode = 0
 script = ExtResource("3_gegca")
 
-[node name="D" type="TextureButton" parent="." groups=["buttons"]]
+[node name="D" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 706.0
 offset_top = 201.0
 offset_right = 754.0
@@ -69,7 +88,8 @@ texture_normal = ExtResource("8_ffys1")
 stretch_mode = 0
 script = ExtResource("3_gegca")
 
-[node name="E" type="TextureButton" parent="." groups=["buttons"]]
+[node name="E" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 790.0
 offset_top = 327.0
 offset_right = 838.0
@@ -78,7 +98,8 @@ texture_normal = ExtResource("9_rqi33")
 stretch_mode = 0
 script = ExtResource("3_gegca")
 
-[node name="F" type="TextureButton" parent="." groups=["buttons"]]
+[node name="F" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 550.0
 offset_top = 399.0
 offset_right = 598.0
@@ -87,7 +108,8 @@ texture_normal = ExtResource("10_dj1r7")
 stretch_mode = 0
 script = ExtResource("3_gegca")
 
-[node name="G" type="TextureButton" parent="." groups=["buttons"]]
+[node name="G" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 622.0
 offset_top = 285.0
 offset_right = 670.0
@@ -96,7 +118,8 @@ texture_normal = ExtResource("11_vbsd7")
 stretch_mode = 0
 script = ExtResource("3_gegca")
 
-[node name="H" type="TextureButton" parent="." groups=["buttons"]]
+[node name="H" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 592.0
 offset_top = 219.0
 offset_right = 640.0
@@ -106,7 +129,8 @@ stretch_mode = 0
 script = ExtResource("3_gegca")
 is_correct = true
 
-[node name="I" type="TextureButton" parent="." groups=["buttons"]]
+[node name="I" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 406.0
 offset_top = 249.0
 offset_right = 454.0
@@ -115,7 +139,8 @@ texture_normal = ExtResource("12_27c8d")
 stretch_mode = 0
 script = ExtResource("3_gegca")
 
-[node name="J" type="TextureButton" parent="." groups=["buttons"]]
+[node name="J" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
 offset_left = 370.0
 offset_top = 387.0
 offset_right = 418.0
@@ -145,16 +170,16 @@ process_mode = 3
 [node name="popupincorrect" parent="UID" instance=ExtResource("9_qgkrp")]
 process_mode = 3
 
-[connection signal="pressed" from="A" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="B" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
-[connection signal="pressed" from="C" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="D" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="E" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="F" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="G" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="H" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="I" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="J" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/A" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/B" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
+[connection signal="pressed" from="Control/C" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/D" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/E" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/F" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/G" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/H" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/I" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/J" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 
 [editable path="UID/popupcorrect"]

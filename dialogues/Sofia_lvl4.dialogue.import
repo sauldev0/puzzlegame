@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ct4rdwoqnlxx7"
+path="res://.godot/imported/Sofia_lvl4.dialogue-a861d574ea651e0124ec51aeedd64f28.tres"
+
+[deps]
+
+source_file="res://dialogues/Sofia_lvl4.dialogue"
+dest_files=["res://.godot/imported/Sofia_lvl4.dialogue-a861d574ea651e0124ec51aeedd64f28.tres"]
+
+[params]
+
+defaults=true

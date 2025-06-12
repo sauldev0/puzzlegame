@@ -14,9 +14,9 @@ font = ExtResource("1_o36bu")
 font_size = 48
 font_color = Color(0.894531, 0.74567, 0.429794, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_tpra7"]
-font = ExtResource("1_o36bu")
-font_size = 48
+[sub_resource type="Theme" id="Theme_tpra7"]
+default_font = ExtResource("1_o36bu")
+default_font_size = 48
 
 [node name="PopUpDeclaraciones" type="Control"]
 layout_mode = 3
@@ -67,9 +67,12 @@ label_settings = SubResource("LabelSettings_t1dvs")
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="DeclaracionesLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DeclaracionesLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-label_settings = SubResource("LabelSettings_tpra7")
+theme = SubResource("Theme_tpra7")
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv1dd1r8nj7xx"]
+[gd_scene load_steps=12 format=3 uid="uid://cv1dd1r8nj7xx"]
 
 [ext_resource type="Script" uid="uid://bi23hctiu7xwb" path="res://scenes/dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -64,6 +64,10 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 30
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
+[sub_resource type="Theme" id="Theme_onvhc"]
+default_font_size = 20
+Label/fonts/font = null
+
 [sub_resource type="Theme" id="Theme_t5syq"]
 default_font = ExtResource("3_ithk8")
 Label/fonts/font = ExtResource("3_ithk8")
@@ -120,9 +124,10 @@ size_flags_horizontal = 3
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_onvhc")
+theme_override_colors/default_color = Color(0.404663, 0.594106, 0.996094, 1)
 bbcode_enabled = true
 text = "Character"
 fit_content = true

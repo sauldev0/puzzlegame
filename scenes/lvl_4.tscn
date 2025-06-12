@@ -1,36 +1,413 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3p10ohio5q7h"]
+[gd_scene load_steps=41 format=3 uid="uid://bruvwbb326t1j"]
 
 [ext_resource type="Script" uid="uid://cyqgui5c3hbf" path="res://scripts/lvl_4.gd" id="1_3wjs2"]
-[ext_resource type="Texture2D" uid="uid://nqwyii8ynjgq" path="res://sprites/puzzles/personacortebueno.png" id="2_1kw1s"]
-[ext_resource type="Script" uid="uid://q2mrb3334ec0" path="res://scripts/verify_answer.gd" id="3_lemrm"]
-[ext_resource type="Texture2D" uid="uid://ruthhe7axx31" path="res://sprites/puzzles/personacortemalo.png" id="4_icged"]
+[ext_resource type="Texture2D" uid="uid://bkeospuh4q2ke" path="res://sprites/tilesets/tileset_biblioteca_lvl2.png" id="2_0803q"]
+[ext_resource type="Texture2D" uid="uid://cfhp0ou8sw1uw" path="res://sprites/puzzles/spritesheetpersonajes_lvl2.png" id="3_uyw46"]
+[ext_resource type="Texture2D" uid="uid://bhjik7nq5gxmq" path="res://sprites/puzzles/spritesheet_decoracion_lvl2.png" id="4_o7npk"]
 [ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="5_k8jwr"]
+[ext_resource type="Texture2D" uid="uid://bawiilnqta5j8" path="res://sprites/puzzles/spritesheetmesas.png" id="5_v6b4t"]
 [ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="6_n4qtl"]
+[ext_resource type="Script" uid="uid://2vp33wwiumjj" path="res://scripts/tile_map.gd" id="6_r748g"]
+[ext_resource type="PackedScene" uid="uid://dw5yyohy6pohe" path="res://scenes/player.tscn" id="7_iwoef"]
 [ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="7_t7gfr"]
+[ext_resource type="Script" uid="uid://8xjywqfqh5oc" path="res://scripts/npc_lucas.gd" id="8_324hj"]
 [ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_p63ig"]
 [ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_my5f2"]
+[ext_resource type="Texture2D" uid="uid://c8i464i1s2de3" path="res://sprites/personajes/bibliotecariopuzzle2.png" id="9_se0ly"]
+[ext_resource type="FontFile" uid="uid://yrwej381mh2e" path="res://fonts/nokiafc22.ttf" id="10_64xu1"]
+[ext_resource type="Texture2D" uid="uid://dcgcktirsga0k" path="res://sprites/puzzles/dialogonew.png" id="11_38a3y"]
+[ext_resource type="Script" uid="uid://de71hkgo3m0vg" path="res://scripts/npc_marta.gd" id="12_uhd25"]
+[ext_resource type="Texture2D" uid="uid://drtiqlcprrj56" path="res://sprites/personajes/conserjepuzzle2.png" id="13_3eheo"]
+[ext_resource type="Script" uid="uid://da8cnveq83u5b" path="res://scripts/npc_sofia.gd" id="14_rxblv"]
+[ext_resource type="Texture2D" uid="uid://rr7oihccm3r5" path="res://sprites/personajes/estudiante2puzzle2.png" id="15_ghfrp"]
+[ext_resource type="Script" uid="uid://b6pu2414nxi4b" path="res://scripts/npc_diego.gd" id="16_ngceu"]
+[ext_resource type="Texture2D" uid="uid://dcufulbxkns64" path="res://sprites/personajes/estudiante1puzzle2.png" id="17_x2ewe"]
+[ext_resource type="Script" uid="uid://cjjuukt8tapmu" path="res://scripts/npc_carla.gd" id="18_wlq57"]
+[ext_resource type="Texture2D" uid="uid://6xfgvy6targn" path="res://sprites/personajes/profesor_puzzle2.png" id="19_oglf6"]
+[ext_resource type="Texture2D" uid="uid://cqwiloyvwdbyq" path="res://sprites/puzzles/boton_interrogar_bloqueado.png" id="20_dwugj"]
+[ext_resource type="Script" uid="uid://4k1n15foaaxw" path="res://scripts/touch_screen_button.gd" id="21_2emj0"]
+[ext_resource type="Texture2D" uid="uid://ckrrbmrahdxtb" path="res://sprites/puzzles/boton_culpar_bloqueado.png" id="22_mpkxy"]
+[ext_resource type="Script" uid="uid://c6bdpvfj4dg37" path="res://scripts/culpar_touch_screen_button.gd" id="23_x3ord"]
+[ext_resource type="PackedScene" uid="uid://cvaldummhvx40" path="res://scenes/cursor_effect.tscn" id="27_anrix"]
+[ext_resource type="PackedScene" uid="uid://hc3crpfjq0lq" path="res://scenes/popupdeclaraciones.tscn" id="30_swldy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_422u3"]
+texture = ExtResource("2_0803q")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+2:1/0 = 0
+2:1/0/custom_data_0 = true
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyd0f"]
+texture = ExtResource("3_uyw46")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4q5qe"]
+texture = ExtResource("4_o7npk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5emcn"]
+texture = ExtResource("5_v6b4t")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+4:1/0/custom_data_0 = true
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/custom_data_0 = true
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+4:3/0/custom_data_0 = true
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_44hrr"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "Walkable"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_422u3")
+sources/4 = SubResource("TileSetAtlasSource_5emcn")
+sources/1 = SubResource("TileSetAtlasSource_pyd0f")
+sources/3 = SubResource("TileSetAtlasSource_4q5qe")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obn6w"]
+radius = 22.0
+
+[sub_resource type="Theme" id="Theme_4q5qe"]
+default_font = ExtResource("10_64xu1")
+default_font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx4jj"]
+texture = ExtResource("11_38a3y")
+texture_margin_left = 5.0
+texture_margin_top = 10.0
+texture_margin_right = 5.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_hmy1o"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_wx4jj")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l67fq"]
+font = ExtResource("10_64xu1")
+font_size = 8
+font_color = Color(0.180392, 0.14902, 0.133333, 1)
 
 [node name="lvl_4" type="Node2D"]
 script = ExtResource("1_3wjs2")
 
-[node name="persona_corte_bueno" type="TextureButton" parent="." groups=["buttons"]]
-offset_left = 120.0
-offset_top = 140.0
-offset_right = 570.0
-offset_bottom = 590.0
-texture_normal = ExtResource("2_1kw1s")
-stretch_mode = 0
-script = ExtResource("3_lemrm")
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(15, -18)
+tile_set = SubResource("TileSet_44hrr")
+format = 2
+layer_0/name = "floor"
+layer_0/tile_data = PackedInt32Array(196613, 65536, 1, 196614, 65536, 1, 196615, 65536, 1, 196616, 65536, 1, 196617, 65536, 1, 196618, 65536, 1, 196619, 65536, 1, 196620, 65536, 1, 196621, 65536, 1, 196622, 65536, 1, 196623, 65536, 1, 196624, 65536, 1, 262160, 65536, 1, 262159, 65536, 1, 262158, 65536, 1, 262157, 65536, 1, 262156, 65536, 1, 262155, 65536, 1, 262154, 65536, 1, 262153, 65536, 1, 262152, 65536, 1, 262151, 65536, 1, 262150, 65536, 1, 262149, 65536, 1, 327685, 65536, 1, 393221, 65536, 1, 458757, 65536, 1, 524293, 65536, 1, 589829, 65536, 1, 589830, 65536, 1, 589831, 65536, 1, 589832, 65536, 1, 589833, 65536, 1, 589834, 65536, 1, 589835, 65536, 1, 589836, 65536, 1, 589837, 65536, 1, 589838, 65536, 1, 589839, 65536, 1, 524303, 65536, 1, 524302, 65536, 1, 524301, 65536, 1, 524300, 65536, 1, 524299, 65536, 1, 524298, 65536, 1, 524297, 65536, 1, 524296, 65536, 1, 524295, 65536, 1, 524294, 65536, 1, 458758, 65536, 1, 393222, 65536, 1, 327686, 65536, 1, 327687, 65536, 1, 327688, 65536, 1, 327689, 65536, 1, 327690, 65536, 1, 327691, 65536, 1, 327692, 65536, 1, 327693, 65536, 1, 327694, 65536, 1, 327695, 65536, 1, 327696, 65536, 1, 327697, 65536, 1, 393232, 65536, 1, 393231, 65536, 1, 393230, 65536, 1, 393229, 65536, 1, 393228, 65536, 1, 393227, 65536, 1, 393226, 65536, 1, 393225, 65536, 1, 393224, 65536, 1, 393223, 65536, 1, 458759, 65536, 1, 458760, 65536, 1, 458761, 65536, 1, 458762, 65536, 1, 458763, 65536, 1, 458764, 65536, 1, 458765, 65536, 1, 458766, 65536, 1, 458767, 65536, 1, 458768, 65536, 1, 524304, 65536, 1, 589840, 65536, 1, 589841, 65536, 1, 524305, 65536, 1, 458769, 65536, 1, 393233, 65536, 1, 262161, 65536, 1, 196625, 65536, 1, 131089, 65536, 1, 131088, 65536, 1, 131087, 65536, 1, 131086, 65536, 1, 131085, 65536, 1, 131084, 65536, 1, 131083, 65536, 1, 131082, 65536, 1, 131081, 65536, 1, 131080, 65536, 1, 131079, 65536, 1, 131078, 65536, 1, 131077, 65536, 1, 655365, 65536, 1, 655366, 65536, 1, 655367, 65536, 1, 655368, 65536, 1, 655369, 65536, 1, 655370, 65536, 1, 655371, 65536, 1, 655372, 65536, 1, 655373, 65536, 1, 655374, 65536, 1, 655375, 65536, 1, 655376, 65536, 1, 655377, 65536, 1, 131076, 65536, 1, 196612, 65536, 1, 262148, 65536, 1, 327684, 65536, 1, 393220, 65536, 1, 458756, 65536, 1, 524292, 65536, 1, 589828, 65536, 1, 655364, 65536, 1, 131090, 65536, 1, 196626, 65536, 1, 262162, 65536, 1, 327698, 65536, 1, 393234, 65536, 1, 458770, 65536, 1, 524306, 65536, 1, 589842, 65536, 1, 655378, 65536, 1)
+layer_1/name = "walls"
+layer_1/tile_data = PackedInt32Array(131078, 65536, 0, 131079, 65536, 0, 131080, 65536, 0, 131081, 65536, 0, 131082, 65536, 0, 131083, 65536, 0, 131084, 65536, 0, 131085, 65536, 0, 131086, 65536, 0, 131087, 65536, 0, 131088, 65536, 0, 655366, 65536, 2, 655367, 65536, 2, 655368, 65536, 2, 655369, 65536, 2, 655370, 65536, 2, 655371, 65536, 2, 655372, 65536, 2, 655373, 65536, 2, 655374, 65536, 2, 655375, 65536, 2, 655376, 65536, 2, 655365, 65536, 2, 655364, 0, 2, 655377, 65536, 2, 655378, 131072, 2, 131089, 65536, 2, 131090, 131072, 0, 131077, 65536, 2, 131076, 0, 0, 196626, 131072, 1, 327698, 131072, 1, 393234, 131072, 1, 458770, 131072, 1, 524306, 131072, 1, 589842, 131072, 1, 196612, 0, 1, 327684, 0, 1, 393220, 0, 1, 458756, 0, 1, 524292, 0, 1, 589828, 0, 1, 262148, 0, 1, 262162, 131072, 1)
+layer_2/name = "decoration"
+layer_2/tile_data = PackedInt32Array(131077, 196611, 0, 131079, 3, 0, 131080, 3, 0, 131086, 65539, 0, 131087, 65539, 0, 196615, 3, 1, 196616, 3, 1, 196622, 65539, 1, 196623, 65539, 1, 262151, 3, 0, 262152, 3, 0, 262150, 3, 0, 262149, 3, 0, 262153, 3, 0, 131088, 65539, 0, 196624, 65539, 1, 131082, 131075, 0, 131089, 131075, 0, 131084, 196611, 0, 327685, 3, 1, 327687, 3, 1, 327686, 3, 1, 327688, 3, 1, 327689, 3, 1, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 327693, 3, 1, 327694, 3, 1, 327695, 3, 1, 327696, 3, 1, 327697, 3, 1, 524305, 3, 1342177281, 196619, 196612, 0, 196618, 4, 0, 196620, 4, 1, 458770, 3, 1342177280, 524306, 3, 1342177280, 589842, 3, 1342177280, 393234, 3, 1342177280, 393233, 3, 1342177281, 458769, 3, 1342177281, 589841, 3, 1342177281, 589839, 196612, 0, 589838, 4, 0, 589840, 4, 1)
+script = ExtResource("6_r748g")
 
-[node name="persona_corte_malo" type="TextureButton" parent="." groups=["buttons"]]
-offset_left = 555.0
-offset_top = 146.0
-offset_right = 1005.0
-offset_bottom = 596.0
-texture_normal = ExtResource("4_icged")
-stretch_mode = 0
-script = ExtResource("3_lemrm")
+[node name="Player" parent="." instance=ExtResource("7_iwoef")]
+position = Vector2(184, 232)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(386, 190)
+scale = Vector2(12.9747, 8.3746)
+zoom = Vector2(2.24, 2.24)
+
+[node name="NPCLucas" type="Area2D" parent="." groups=["areas"]]
+position = Vector2(16, -15)
+script = ExtResource("8_324hj")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCLucas"]
+position = Vector2(225, 187)
+texture = ExtResource("9_se0ly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCLucas"]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")
+
+[node name="LabelNameLucas" type="Label" parent="NPCLucas"]
+visible = false
+offset_left = 210.0
+offset_top = 164.0
+offset_right = 239.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Lucas"
+
+[node name="PanelDialogoLucas" type="PanelContainer" parent="NPCLucas"]
+visible = false
+offset_left = 148.0
+offset_top = 107.0
+offset_right = 301.0
+offset_bottom = 163.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCLucas/PanelDialogoLucas"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCLucas/PanelDialogoLucas/MarginContainer"]
+layout_mode = 2
+text = "Si Marta es culpable, 
+entonces Sofía también lo es."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCMarta" type="Area2D" parent="." groups=["areas"]]
+position = Vector2(287, -27)
+script = ExtResource("12_uhd25")
 is_correct = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCMarta"]
+position = Vector2(225, 187)
+texture = ExtResource("13_3eheo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCMarta"]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")
+
+[node name="LabelNameMarta" type="Label" parent="NPCMarta"]
+visible = false
+offset_left = 211.0
+offset_top = 164.0
+offset_right = 243.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Marta "
+
+[node name="PanelDialogoMarta" type="PanelContainer" parent="NPCMarta"]
+visible = false
+offset_left = 176.0
+offset_top = 133.0
+offset_right = 275.0
+offset_bottom = 163.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCMarta/PanelDialogoMarta"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCMarta/PanelDialogoMarta/MarginContainer"]
+layout_mode = 2
+text = "Diego es inocente."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCSofia" type="Area2D" parent="." groups=["areas"]]
+position = Vector2(158, -69)
+script = ExtResource("14_rxblv")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCSofia"]
+position = Vector2(225, 187)
+texture = ExtResource("15_ghfrp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCSofia"]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")
+
+[node name="LabelNameSofia" type="Label" parent="NPCSofia"]
+visible = false
+offset_left = 211.0
+offset_top = 164.0
+offset_right = 235.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Sofía"
+
+[node name="PanelDialogoSofia" type="PanelContainer" parent="NPCSofia"]
+visible = false
+offset_left = 165.0
+offset_top = 115.0
+offset_right = 282.0
+offset_bottom = 163.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCSofia/PanelDialogoSofia"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCSofia/PanelDialogoSofia/MarginContainer"]
+layout_mode = 2
+text = "Yo no soy culpable, y 
+Diego miente."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCDiego" type="Area2D" parent="." groups=["areas"]]
+position = Vector2(78, 93)
+script = ExtResource("16_ngceu")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCDiego"]
+position = Vector2(225, 187)
+texture = ExtResource("17_x2ewe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCDiego"]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")
+
+[node name="LabelNameDiego" type="Label" parent="NPCDiego"]
+visible = false
+offset_left = 212.0
+offset_top = 164.0
+offset_right = 242.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Diego "
+
+[node name="PanelDialogoDiego" type="PanelContainer" parent="NPCDiego"]
+visible = false
+offset_left = 163.0
+offset_top = 115.0
+offset_right = 290.0
+offset_bottom = 163.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCDiego/PanelDialogoDiego"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCDiego/PanelDialogoDiego/MarginContainer"]
+layout_mode = 2
+text = "Lucas es culpable o
+ Sofía está mintiendo."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCCarla" type="Area2D" parent="." groups=["areas"]]
+position = Vector2(165, 10)
+script = ExtResource("18_wlq57")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCCarla"]
+position = Vector2(225, 187)
+texture = ExtResource("19_oglf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCCarla"]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")
+
+[node name="LabelNameCarla" type="Label" parent="NPCCarla"]
+visible = false
+offset_left = 213.0
+offset_top = 164.0
+offset_right = 240.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Carla"
+
+[node name="PanelDialogoCarla" type="PanelContainer" parent="NPCCarla"]
+visible = false
+offset_left = 154.0
+offset_top = 115.0
+offset_right = 301.0
+offset_bottom = 163.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCCarla/PanelDialogoCarla"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCCarla/PanelDialogoCarla/MarginContainer"]
+layout_mode = 2
+text = "Si Sofía es inocente, 
+entonces Marta es culpable."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 545.0
+offset_top = 217.0
+offset_right = 609.0
+offset_bottom = 281.0
+
+[node name="InterrogarTouchScreenButton" type="TouchScreenButton" parent="Control"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("20_dwugj")
+action = "Interrogar"
+script = ExtResource("21_2emj0")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 464.0
+offset_top = 216.0
+offset_right = 528.0
+offset_bottom = 280.0
+
+[node name="CulparTouchScreenButton" type="TouchScreenButton" parent="Control2"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("22_mpkxy")
+action = "Culpar"
+script = ExtResource("23_x3ord")
 
 [node name="UID" type="CanvasLayer" parent="."]
 
@@ -46,6 +423,7 @@ offset_bottom = -0.599976
 
 [node name="Game Controller" parent="UID" instance=ExtResource("7_t7gfr")]
 process_mode = 3
+touch_indicator_scene = ExtResource("27_anrix")
 
 [node name="popupcorrect" parent="UID" instance=ExtResource("8_p63ig")]
 process_mode = 3
@@ -53,8 +431,47 @@ process_mode = 3
 [node name="popupincorrect" parent="UID" instance=ExtResource("9_my5f2")]
 process_mode = 3
 
-[connection signal="pressed" from="persona_corte_bueno" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="persona_corte_malo" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
+[node name="PopUpDeclaraciones" parent="UID" instance=ExtResource("30_swldy")]
+visible = false
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = 1.0
+
+[node name="Cursor" parent="UID" instance=ExtResource("27_anrix")]
+
+[connection signal="area_entered" from="NPCLucas" to="NPCLucas" method="_on_area_entered"]
+[connection signal="area_entered" from="NPCLucas" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]
+[connection signal="area_entered" from="NPCLucas" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_a_area_entered"]
+[connection signal="area_exited" from="NPCLucas" to="NPCLucas" method="_on_area_exited"]
+[connection signal="area_exited" from="NPCLucas" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_exited"]
+[connection signal="area_exited" from="NPCLucas" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_a_area_exited"]
+[connection signal="area_entered" from="NPCMarta" to="NPCMarta" method="_on_area_entered"]
+[connection signal="area_entered" from="NPCMarta" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_entered"]
+[connection signal="area_entered" from="NPCMarta" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_b_area_entered"]
+[connection signal="area_exited" from="NPCMarta" to="NPCMarta" method="_on_area_exited"]
+[connection signal="area_exited" from="NPCMarta" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_exited"]
+[connection signal="area_exited" from="NPCMarta" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_b_area_exited"]
+[connection signal="area_entered" from="NPCSofia" to="NPCSofia" method="_on_area_entered"]
+[connection signal="area_entered" from="NPCSofia" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_entered"]
+[connection signal="area_entered" from="NPCSofia" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_c_area_entered"]
+[connection signal="area_exited" from="NPCSofia" to="NPCSofia" method="_on_area_exited"]
+[connection signal="area_exited" from="NPCSofia" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="area_exited" from="NPCSofia" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="area_entered" from="NPCDiego" to="NPCDiego" method="_on_area_entered"]
+[connection signal="area_entered" from="NPCDiego" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_d_area_entered"]
+[connection signal="area_entered" from="NPCDiego" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_d_area_entered"]
+[connection signal="area_exited" from="NPCDiego" to="NPCDiego" method="_on_area_exited"]
+[connection signal="area_exited" from="NPCDiego" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_d_area_exited"]
+[connection signal="area_exited" from="NPCDiego" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_d_area_exited"]
+[connection signal="area_entered" from="NPCCarla" to="NPCCarla" method="_on_area_entered"]
+[connection signal="area_entered" from="NPCCarla" to="Control/InterrogarTouchScreenButton" method="_on_npc_profesor_area_entered"]
+[connection signal="area_entered" from="NPCCarla" to="Control2/CulparTouchScreenButton" method="_on_npc_profesor_area_entered"]
+[connection signal="area_exited" from="NPCCarla" to="NPCCarla" method="_on_area_exited"]
+[connection signal="area_exited" from="NPCCarla" to="Control/InterrogarTouchScreenButton" method="_on_npc_profesor_area_exited"]
+[connection signal="area_exited" from="NPCCarla" to="Control2/CulparTouchScreenButton" method="_on_npc_profesor_area_exited"]
+[connection signal="pressed" from="Control/InterrogarTouchScreenButton" to="Control/InterrogarTouchScreenButton" method="_on_pressed"]
+[connection signal="pressed" from="Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 
 [editable path="UID/popupcorrect"]

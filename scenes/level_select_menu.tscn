@@ -26,8 +26,8 @@ bg_color = Color(1, 1, 1, 1)
 script = ExtResource("1_wyt36")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(571, 333)
-scale = Vector2(1.21111, 1.21111)
+position = Vector2(572, 392)
+scale = Vector2(1.86719, 1.48889)
 texture = ExtResource("2_or5k1")
 
 [node name="Camera2D" type="Camera2D" parent="."]

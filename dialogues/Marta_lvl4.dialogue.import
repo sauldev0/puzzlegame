@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dwafp3rrh2vyf"
+path="res://.godot/imported/Marta_lvl4.dialogue-4627e19eb1309b36fbc72b3ff81cca2c.tres"
+
+[deps]
+
+source_file="res://dialogues/Marta_lvl4.dialogue"
+dest_files=["res://.godot/imported/Marta_lvl4.dialogue-4627e19eb1309b36fbc72b3ff81cca2c.tres"]
+
+[params]
+
+defaults=true

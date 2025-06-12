@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dr5a4apkdr4j4"
+path="res://.godot/imported/Carla_lvl4.dialogue-f2f58590a4d1fbf409ea70e1609f4520.tres"
+
+[deps]
+
+source_file="res://dialogues/Carla_lvl4.dialogue"
+dest_files=["res://.godot/imported/Carla_lvl4.dialogue-f2f58590a4d1fbf409ea70e1609f4520.tres"]
+
+[params]
+
+defaults=true

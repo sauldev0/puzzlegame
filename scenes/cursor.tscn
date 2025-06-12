@@ -1,32 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvaldummhvx40"]
+[gd_scene load_steps=6 format=3 uid="uid://dgjw0qgicwixh"]
 
 [ext_resource type="Script" uid="uid://bq67ybtjmfju4" path="res://scripts/cursor.gd" id="1_3ngcq"]
-[ext_resource type="Texture2D" uid="uid://b7fjnvjf4riq3" path="res://sprites/Objects/Egg_item.png" id="1_bm2fa"]
+[ext_resource type="Texture2D" uid="uid://dg31foqjkgdo7" path="res://sprites/cursor.png" id="2_s0nli"]
+
+[sub_resource type="Animation" id="Animation_ndevg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s0nli"]
+resource_name = "pop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-2, -2), Vector2(0, -6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5qf0"]
+_data = {
+&"RESET": SubResource("Animation_ndevg"),
+&"pop": SubResource("Animation_s0nli")
+}
 
 [node name="Cursor" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_3ngcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-8, -8)
-rotation = 2.36863
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_bm2fa")
+texture = ExtResource("2_s0nli")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(8, -8)
-rotation = -2.48458
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_bm2fa")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(-8, 6)
-rotation = 0.539023
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_bm2fa")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(8, 6)
-rotation = -0.742907
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_bm2fa")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n5qf0")
+}

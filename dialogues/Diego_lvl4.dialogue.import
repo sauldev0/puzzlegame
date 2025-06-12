@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cgf3sodsx0xf2"
+path="res://.godot/imported/Diego_lvl4.dialogue-4eb47606e7580a45c433ec2b0d0e1355.tres"
+
+[deps]
+
+source_file="res://dialogues/Diego_lvl4.dialogue"
+dest_files=["res://.godot/imported/Diego_lvl4.dialogue-4eb47606e7580a45c433ec2b0d0e1355.tres"]
+
+[params]
+
+defaults=true

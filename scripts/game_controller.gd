@@ -6,9 +6,11 @@ extends Node2D
 @onready var score_label = $"../popupcorrect/WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer/score_label"
 @onready var pop_up_declaraciones = $"../PopUpDeclaraciones"
 
+@export var touch_indicator_scene: PackedScene
+
 var puntos_nivel = 0
 var intentos : int
-var niveles_con_declaraciones = [2, 9]
+var niveles_con_declaraciones = [2, 4]
 
 # Diccionario con descripciones de los niveles
 var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte mal hecho y otro con un corte muy bien hecho
@@ -21,14 +23,19 @@ var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte 
 
 9 : "Anda por ahí un comensal que no estaba invitado. Sin embargo, tienes información que permite identificarlo.
 \n\"Su mesa está junto a otra que tiene una flor roja. El mantel es de diferente color que el de cualquiera de las mesas que se encuentran junto a ella. Ah, y en la mesa del intruso no hay una flor amarilla. \"
-\n\"Junto a \" significa que dos mesas están conectadas por una línea de puntos.",
+",
 
 3 : "Debes encontrar una relojería, pero la única pista que tienes para encontrarla es la siguiente:\n" +
 			"12:00\n" +
 			"3:00\n" +
 			"12:00\n" +
 			"9:00\n" +
-			"6:00"
+			"6:00",
+4 : "Se ha robado un dispositivo valioso en el laboratorio, y ahora hay cinco sospechosos: Lucas, Marta, Sofía, Diego y Carla.\n" +
+			"Cada uno hace una declaración, pero sabemos que solo uno dice la verdad.\n" +
+			"El jugador deberá construir la tabla de verdad y aplicar conectores lógicos para descubrir quién miente y quién es el verdadero culpable.",
+			
+			
 }
 
 # Diccionario con reglas de los niveles
@@ -39,7 +46,7 @@ var reglas = {1 : "",
 
 	",
 
-9 : "
+9 : " \"Junto a \" significa que dos mesas están conectadas por una línea de puntos.
 ",
 
 3 : ""
@@ -48,18 +55,26 @@ var reglas = {1 : "",
 # Diccionario con declaraciones de los niveles que tienen
 
 var declaraciones = {
-	2 : "A: \"Yo no fui, y B miente.\"  ˃ A ˹ (ˉ A ˄ ˉ B )\n\n" +
-			"B: \"C fue el culpable.\" ˉ B ˹ C\n\n" +
-			"C: \"A y B mienten.\" ˃ C ˹ ( ˉ A ˄ ˉ B)\n\n" +
-			"D: \"Si C dice la verdad, entonces A es culpable,\" ˃ D ˹ (C ˃  A)\n\n",
+	2 : "A: \"Yo no fui, y B miente.\"  [color=#e4be6e] ˃ A ˹ (ˉ A ˄ ˉ B ) [/color]\n\n" +
+		"B: \"C fue el culpable.\" [color=#e4be6e] ˉ B ˹ C [/color]\n\n" +
+		"C: \"A y B mienten.\" [color=#e4be6e] ˃ C ˹ ( ˉ A ˄ ˉ B) [/color]\n\n" +
+		"D: \"Si C dice la verdad, entonces A es culpable,\" [color=#e4be6e] ˃ D ˹ (C ˃  A) [/color]\n\n",
 			
-	9 : "
-	",
-	
-	3 : "
-	"
+	4 : "Lucas: \"Si Marta es culpable, entonces Sofía también lo es\" [color=#e4be6e] L ˹ (M ˃ S) [/color]\n\n" +
+		"Marta: \"Diego es inocente.\" [color=#e4be6e] M ˹ ˉ D [/color]\n\n" +
+		"Sofía: \"Yo no soy culpable, y Diego miente.\" [color=#e4be6e] S ˹ (ˉ S ˄ ˉ D) [/color]\n\n" +
+		"Diego: \"Lucas es culpable o Sofía está mintiendo.\" [color=#e4be6e] D ˹ (L ˅ ˉ S) [/color]\n\n" +
+		"Carla: \"Si Sofía es inocente, entonces Marta es culpable.\" [color=#e4be6e] C ˹ (ˉ S ˃ M) [/color]\n\n",
+
+	3 : "Declaraciones no disponibles por ahora.\n\n"
 }
 
+func _unhandled_input(event):
+	if event is InputEventScreenTouch and event.pressed:
+		if touch_indicator_scene:  # Solo si la escena está asignada
+			var indicator = touch_indicator_scene.instantiate()
+			indicator.position = event.position
+			add_child(indicator)
 
 func _ready():
 	get_tree().paused = false
@@ -92,9 +107,10 @@ func _on_declaraciones_completadas():
 	pop_up_declaraciones.visible = false
 	mostrar_popup_correcto()
 	
+	
 func mostrar_popup_correcto():
 	popupcorrect.visible = true
-	score_label.text = "Has conseguido " + str(puntos_nivel) + " fragmentos de puzzle"
+	# score_label.text = "Has conseguido " + str(puntos_nivel) + " fragmentos de puzzle"
 	get_tree().paused = true
 
 func mostrar_popup_descripcion():
