@@ -1,5 +1,4 @@
 extends Area2D
-
 @export var is_correct:bool
 
 const LUCAS_LVL_4 = preload("res://dialogues/Lucas_lvl4.dialogue")
@@ -7,8 +6,6 @@ var is_player_close = false
 var is_dialogue_active = false
 @onready var label_name_lucas = $LabelNameLucas
 @onready var panel_dialogo_lucas = $PanelDialogoLucas
-
-
 
 func _ready():
 	DialogueManager.dialogue_started.connect(on_dialogue_started)

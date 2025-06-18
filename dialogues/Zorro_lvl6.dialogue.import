@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://o1yj1m8b3p82"
+path="res://.godot/imported/Zorro_lvl6.dialogue-97e8b237d5b7b84e577c9110f63adb59.tres"
+
+[deps]
+
+source_file="res://dialogues/Zorro_lvl6.dialogue"
+dest_files=["res://.godot/imported/Zorro_lvl6.dialogue-97e8b237d5b7b84e577c9110f63adb59.tres"]
+
+[params]
+
+defaults=true

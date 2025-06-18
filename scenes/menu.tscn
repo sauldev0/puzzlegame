@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bs08ehdf2j42p"]
+[gd_scene load_steps=15 format=3 uid="uid://bs08ehdf2j42p"]
 
 [ext_resource type="Script" uid="uid://bio2eol80ixpd" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://dlxkh5ebpjl3k" path="res://sprites/Clouds/Clouds 1/1.png" id="2_v86rl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c2i1hyhi5liw8" path="res://sprites/Clouds/Clouds 5/3.png" id="4_i6lef"]
 [ext_resource type="Script" uid="uid://b10o44n47hjl1" path="res://scripts/texture_rect_3.gd" id="5_13sgg"]
 [ext_resource type="Texture2D" uid="uid://bxsqprtr8f0pf" path="res://sprites/Clouds/Clouds 1/2.png" id="5_70i5f"]
+[ext_resource type="FontFile" uid="uid://cxh76u0rvd4ac" path="res://fonts/MotionControl-Bold.otf" id="9_i6lef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4h3mk"]
 content_margin_left = 5.0
@@ -34,6 +35,10 @@ content_margin_top = 10.0
 content_margin_right = 5.0
 content_margin_bottom = 10.0
 bg_color = Color(0.533333, 0.564706, 0.905882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_70i5f"]
+font = ExtResource("9_i6lef")
+font_size = 60
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -149,19 +154,15 @@ text = "Salir"
 
 [node name="score_screen" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 723.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.697282, 0.714844, 0.393723, 1)
 theme_override_fonts/font = ExtResource("2_vjb58")
 theme_override_font_sizes/font_size = 32
-text = "ssss"
+text = "Fragmentos de puzzle obtenidos:"
+label_settings = SubResource("LabelSettings_70i5f")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

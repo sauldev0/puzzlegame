@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cj53wrqtfyxho"
+path="res://.godot/imported/Conejo_lvl6.dialogue-c5df1b37ce6499f4e6ee4dbfa7766389.tres"
+
+[deps]
+
+source_file="res://dialogues/Conejo_lvl6.dialogue"
+dest_files=["res://.godot/imported/Conejo_lvl6.dialogue-c5df1b37ce6499f4e6ee4dbfa7766389.tres"]
+
+[params]
+
+defaults=true

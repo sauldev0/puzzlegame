@@ -38,6 +38,10 @@ var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte 
 			"El jugador deberá construir la tabla de verdad y aplicar conectores lógicos para descubrir quién miente y quién es el verdadero culpable.",
 			
 			
+5 : "Tienes que cruzar este lago congelado. El hielo es suficientemente grueso como para andar por encima, " +
+	"pero tan resbaladizo que cualquier movimiento te hará resbalar en la dirección escogida hasta que llegues a un muro.\n" +
+	"Cuando estás parado, puedes cambiar la dirección en la que te moverá tocando las flechas que aparecen a tu alrededor.",
+
 }
 
 # Diccionario con reglas de los niveles
@@ -166,12 +170,21 @@ func game_end():
 	get_tree().paused = popupincorrect.visible
 
 func calcular_estrellas() -> int:
-	if LEVELCORE.numero_de_intentos <= 3:
-		return 3
-	elif LEVELCORE.numero_de_intentos <= 6:
-		return 2
+	if LEVELCORE.puntuar_por_tiempo and LEVELCORE.nivel_actual == 5:
+		var tiempo = LEVELCORE.tiempo_final
+		if tiempo >= 80:
+			return 3
+		elif tiempo >= 40:
+			return 2
+		else:
+			return 1
 	else:
-		return 1
+		if LEVELCORE.numero_de_intentos <= 3:
+			return 3
+		elif LEVELCORE.numero_de_intentos <= 6:
+			return 2
+		else:
+			return 1
 		
 # Asigna la cantidad de estrellas si el nivel no ha sido completado antes
 func guardar_estrellas_por_nivel(nivel: int, estrellas: int):

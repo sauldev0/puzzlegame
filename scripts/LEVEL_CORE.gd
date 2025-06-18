@@ -5,6 +5,8 @@ const SAVE_FILE = "user://savefile.dat"
 var nivel_actual = 0
 var score_total = 0
 var numero_de_intentos = 0
+var puntuar_por_tiempo = false
+var tiempo_final = 0.0
 var ui_was_touched := false
 var dialogo_activo 
 

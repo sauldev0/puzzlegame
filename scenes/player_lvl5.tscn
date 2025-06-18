@@ -1,0 +1,170 @@
+[gd_scene load_steps=13 format=3 uid="uid://v2nupdonr0a4"]
+
+[ext_resource type="Script" uid="uid://bmnu2gfke6pqu" path="res://scripts/player_lvl_5.gd" id="1_ff7ij"]
+[ext_resource type="Texture2D" uid="uid://d2t0yds4rvaq7" path="res://sprites/personajes/spritesheetpersonajeprota.png" id="3_8nkyw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("3_8nkyw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63k7l"]
+atlas = ExtResource("3_8nkyw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaskm"]
+atlas = ExtResource("3_8nkyw")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
+atlas = ExtResource("3_8nkyw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nkyw"]
+atlas = ExtResource("3_8nkyw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff7ij"]
+atlas = ExtResource("3_8nkyw")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4mx7"]
+atlas = ExtResource("3_8nkyw")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvssi"]
+atlas = ExtResource("3_8nkyw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1mae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63k7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaskm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nkyw")
+}],
+"loop": true,
+"name": &"down_walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff7ij")
+}],
+"loop": true,
+"name": &"left_paused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nkyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63k7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaskm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}],
+"loop": true,
+"name": &"left_walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4mx7")
+}],
+"loop": true,
+"name": &"right_paused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaskm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nkyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63k7l")
+}],
+"loop": true,
+"name": &"right_walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvssi")
+}],
+"loop": true,
+"name": &"up_paused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nkyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63k7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaskm")
+}],
+"loop": true,
+"name": &"up_walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6j78"]
+size = Vector2(40, 40)
+
+[node name="PlayerLvl5" type="CharacterBody2D"]
+script = ExtResource("1_ff7ij")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.9, 1.9)
+sprite_frames = SubResource("SpriteFrames_p1mae")
+autoplay = "default"
+frame_progress = 0.042657
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k6j78")
+
+[node name="up" type="RayCast2D" parent="."]
+target_position = Vector2(0, -64)
+hit_from_inside = true
+
+[node name="down" type="RayCast2D" parent="."]
+target_position = Vector2(0, 64)
+hit_from_inside = true
+
+[node name="left" type="RayCast2D" parent="."]
+target_position = Vector2(-64, 0)
+hit_from_inside = true
+
+[node name="right" type="RayCast2D" parent="."]
+target_position = Vector2(64, 0)
+hit_from_inside = true
