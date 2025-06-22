@@ -1,3 +1,7 @@
 ~ start
-Buho: Conejo está mintiendo.
+if LEVELCORE.quiz_ya_resuelto("buho")
+	Buho: Ya me has interrogado.
+else
+	Buho: Conejo está mintiendo.
+	Buho: La lógica guía la noche... completa esta proposición y demuestra tu sabiduría.
 => END

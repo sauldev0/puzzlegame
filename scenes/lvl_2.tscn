@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://07wahomh51wn"]
+[gd_scene load_steps=44 format=3 uid="uid://07wahomh51wn"]
 
 [ext_resource type="Script" uid="uid://di716dt73jfox" path="res://scripts/lvl_2.gd" id="1_7o323"]
 [ext_resource type="Texture2D" uid="uid://c8i464i1s2de3" path="res://sprites/personajes/bibliotecariopuzzle2.png" id="2_v64py"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_obn6w"]
 [ext_resource type="Texture2D" uid="uid://bhjik7nq5gxmq" path="res://sprites/puzzles/spritesheet_decoracion_lvl2.png" id="9_dgtug"]
 [ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_lk6hv"]
+[ext_resource type="Script" uid="uid://bsffm3o1cm2ay" path="res://scripts/camera_lvl2.gd" id="9_wx4jj"]
 [ext_resource type="Texture2D" uid="uid://dcgcktirsga0k" path="res://sprites/puzzles/dialogonew.png" id="13_1osul"]
 [ext_resource type="Texture2D" uid="uid://cqwiloyvwdbyq" path="res://sprites/puzzles/boton_interrogar_bloqueado.png" id="13_5emcn"]
 [ext_resource type="Script" uid="uid://bevwvvt35cutf" path="res://scripts/npc_personaB_lvl2.gd" id="13_44hrr"]
@@ -179,6 +180,7 @@ position = Vector2(184, 232)
 position = Vector2(386, 190)
 scale = Vector2(12.9747, 8.3746)
 zoom = Vector2(2.24, 2.24)
+script = ExtResource("9_wx4jj")
 
 [node name="NPCPersonaA" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(16, -15)
@@ -434,9 +436,11 @@ offset_bottom = 34.0
 
 [node name="Cursor" parent="UID" instance=ExtResource("30_4q5qe")]
 
+[connection signal="area_entered" from="NPCPersonaA" to="Camera2D" method="_on_npc_persona_a_area_entered"]
 [connection signal="area_entered" from="NPCPersonaA" to="NPCPersonaA" method="_on_area_entered"]
 [connection signal="area_entered" from="NPCPersonaA" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]
 [connection signal="area_entered" from="NPCPersonaA" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_a_area_entered"]
+[connection signal="area_exited" from="NPCPersonaA" to="Camera2D" method="_on_npc_persona_a_area_exited"]
 [connection signal="area_exited" from="NPCPersonaA" to="NPCPersonaA" method="_on_area_exited"]
 [connection signal="area_exited" from="NPCPersonaA" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_exited"]
 [connection signal="area_exited" from="NPCPersonaA" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_a_area_exited"]

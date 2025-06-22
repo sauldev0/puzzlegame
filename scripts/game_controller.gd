@@ -42,6 +42,10 @@ var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte 
 	"pero tan resbaladizo que cualquier movimiento te hará resbalar en la dirección escogida hasta que llegues a un muro.\n" +
 	"Cuando estás parado, puedes cambiar la dirección en la que te moverá tocando las flechas que aparecen a tu alrededor.",
 
+6 : "En el bosque, desaparecieron las semillas que florecen en primavera. Solo tres animales estaban cerca: Zorro, Conejo y Búho.\n\n" +
+	"Cada uno hizo una declaración, pero solo uno dice la verdad.\n\n" +
+	"¿Puedes encontrar al ladrón de semillas?",
+
 }
 
 # Diccionario con reglas de los niveles

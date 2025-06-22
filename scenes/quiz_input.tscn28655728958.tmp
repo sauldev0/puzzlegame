@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctq3atrxyokha"]
+
+[ext_resource type="Script" uid="uid://csu86fy8v6wfk" path="res://scripts/quiz_input.gd" id="1_mey5l"]
+
+[node name="QuizInput" type="Node2D"]
+script = ExtResource("1_mey5l")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_right = 68.5625
+offset_bottom = 31.0

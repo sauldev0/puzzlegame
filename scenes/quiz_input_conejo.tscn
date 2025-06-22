@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcw2iu5disj4e"]
+
+[ext_resource type="Script" uid="uid://sjloqtgl5h44" path="res://scripts/quiz_input_conejo.gd" id="1_6cec6"]
+[ext_resource type="FontFile" uid="uid://cxh76u0rvd4ac" path="res://fonts/MotionControl-Bold.otf" id="2_affc0"]
+[ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="3_j4lf3"]
+[ext_resource type="Texture2D" uid="uid://benv48piv60bw" path="res://icon.svg" id="4_1r1qq"]
+
+[sub_resource type="Theme" id="Theme_yj8t6"]
+default_font = ExtResource("2_affc0")
+default_font_size = 64
+
+[sub_resource type="Theme" id="Theme_1wapd"]
+default_font = ExtResource("3_j4lf3")
+default_font_size = 64
+
+[sub_resource type="Theme" id="Theme_xe683"]
+default_font = ExtResource("3_j4lf3")
+default_font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_3e2km"]
+font = ExtResource("2_affc0")
+font_size = 64
+font_color = Color(0.828125, 0.210266, 0.210266, 1)
+
+[node name="QuizInputConejo" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6cec6")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_yj8t6")
+text = "Escoje el simbolo lógico correcto: "
+
+[node name="Espacio" type="Control" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1wapd")
+alignment = 1
+
+[node name="OptionButton2" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_xe683")
+alignment = 1
+item_count = 6
+popup/item_0/text = " ˄"
+popup/item_0/id = 0
+popup/item_1/text = " ˅"
+popup/item_1/id = 1
+popup/item_2/text = " ˉ"
+popup/item_2/id = 2
+popup/item_3/text = " ˃"
+popup/item_3/id = 3
+popup/item_4/text = " ˹"
+popup/item_4/id = 4
+popup/item_5/text = "s"
+popup/item_5/id = 5
+
+[node name="Espacio2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_yj8t6")
+text = "C"
+
+[node name="ResultadoLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_3e2km")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 282.0
+offset_right = 489.0
+offset_bottom = 418.0
+text = "Enviar "
+icon = ExtResource("4_1r1qq")

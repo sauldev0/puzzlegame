@@ -1,3 +1,7 @@
 ~ start
-Zorro: Si Conejo es culpable, entonces Búho también lo es.
+if LEVELCORE.quiz_ya_resuelto("zorro")
+	Zorro: Ya me has interrogado.
+else
+	Zorro: Si Conejo es culpable, entonces Búho también lo es.
+	Zorro: Veamos si tu lógica está tan afilada como mis colmillos... completa esta proposición lógica.
 => END

@@ -1,7 +1,19 @@
 extends Node
 
 const SAVE_FILE = "user://savefile.dat"
+var quiz_resueltos = {}
+var puede_usarse_boton_culpar := false
+signal quiz_resuelto(npc_id)
 
+
+
+func marcar_quiz_como_resuelto(npc_id: String) -> void:
+	quiz_resueltos[npc_id] = true
+	emit_signal("quiz_resuelto", npc_id)  # Notifica a los botones u otros nodos
+
+func quiz_ya_resuelto(npc_id: String) -> bool:
+	return quiz_resueltos.get(npc_id, false)
+	
 var nivel_actual = 0
 var score_total = 0
 var numero_de_intentos = 0

@@ -13,15 +13,19 @@ script = ExtResource("1_nswd7")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = 53.0
+offset_right = -68.0
+offset_bottom = 53.0
 grow_vertical = 0
 
 [node name="left" type="TouchScreenButton" parent="HBoxContainer"]
-position = Vector2(83, -238)
+position = Vector2(106, -238)
 texture_normal = ExtResource("1_tygoo")
 action = "ui_left"
 
 [node name="right" type="TouchScreenButton" parent="HBoxContainer"]
-position = Vector2(264, -238)
+position = Vector2(239, -238)
 texture_normal = ExtResource("2_tyk2f")
 action = "ui_right"
 
@@ -29,15 +33,19 @@ action = "ui_right"
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = 53.0
+offset_right = -68.0
+offset_bottom = 53.0
 grow_vertical = 0
 
 [node name="up" type="TouchScreenButton" parent="HBoxContainer2"]
-position = Vector2(172, -320)
+position = Vector2(173, -305)
 texture_normal = ExtResource("3_sfbyw")
 action = "ui_up"
 
 [node name="down" type="TouchScreenButton" parent="HBoxContainer2"]
-position = Vector2(173, -152)
+position = Vector2(173, -166)
 texture_normal = ExtResource("5_jlst0")
 action = "ui_down"
 

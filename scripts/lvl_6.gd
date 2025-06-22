@@ -10,6 +10,8 @@ var is_correct_detectado = false
 var hay_area_para_validar = false
 
 func _ready():
+	LEVELCORE.quiz_resueltos.clear()
+	LEVELCORE.puede_usarse_boton_culpar = false
 	LEVELCORE.nivel_actual = numero_nivel
 	print("Nivel actual:", LEVELCORE.nivel_actual)
 	game_controller.mostrar_popup_descripcion()
@@ -34,16 +36,20 @@ func _on_area_exited(area):
 		hay_area_para_validar = false
 
 func _on_culpar_touch_screen_button_pressed():
-	if LEVELCORE.dialogo_activo:
-		print("no se puede culpar mientras se interroga")
-		return
+	if LEVELCORE.puede_usarse_boton_culpar:
+		if LEVELCORE.dialogo_activo:
+			print("no se puede culpar mientras se interroga")
+			return
 	
-	if hay_area_para_validar:
-		print("Presionando botón, validando área")
-		validar(area_detectada, is_correct_detectado)
-		hay_area_para_validar = false
+		if hay_area_para_validar:
+			print("Presionando botón, validando área")
+			validar(area_detectada, is_correct_detectado)
+			hay_area_para_validar = false
+		else:
+			print("No hay área para validar.")
 	else:
-		print("No hay área para validar.")
+		print("Botón bloqueado")
+	
 
 func validar(area, is_correct):
 	if is_correct:

@@ -1,0 +1,405 @@
+[gd_scene load_steps=40 format=3 uid="uid://dxyyevchrl7cl"]
+
+[ext_resource type="Script" uid="uid://d36laju2fgxdh" path="res://scripts/lvl_6.gd" id="1_ggdx0"]
+[ext_resource type="Texture2D" uid="uid://bkeospuh4q2ke" path="res://sprites/tilesets/tileset_biblioteca_lvl2.png" id="2_2hfhv"]
+[ext_resource type="Texture2D" uid="uid://cfhp0ou8sw1uw" path="res://sprites/puzzles/spritesheetpersonajes_lvl2.png" id="3_qipdm"]
+[ext_resource type="Texture2D" uid="uid://bhjik7nq5gxmq" path="res://sprites/puzzles/spritesheet_decoracion_lvl2.png" id="4_804mp"]
+[ext_resource type="Texture2D" uid="uid://ds5yutgpayetr" path="res://sprites/tilesets/tileset_suelo.png" id="4_wewky"]
+[ext_resource type="Texture2D" uid="uid://bawiilnqta5j8" path="res://sprites/puzzles/spritesheetmesas.png" id="5_jl0dn"]
+[ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="5_lcgj0"]
+[ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="6_lwe7a"]
+[ext_resource type="Script" uid="uid://2vp33wwiumjj" path="res://scripts/tile_map.gd" id="6_tp00o"]
+[ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="7_o85mm"]
+[ext_resource type="PackedScene" uid="uid://dw5yyohy6pohe" path="res://scenes/player.tscn" id="7_tketm"]
+[ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_rc4ko"]
+[ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_e7rfs"]
+[ext_resource type="Script" uid="uid://bomb6gcn3nl4k" path="res://scripts/npc_zorro.gd" id="9_f7qe8"]
+[ext_resource type="FontFile" uid="uid://yrwej381mh2e" path="res://fonts/nokiafc22.ttf" id="10_a3wmu"]
+[ext_resource type="Texture2D" uid="uid://cf4ncpgw26qse" path="res://sprites/personajes/lobo_puzzle6.png" id="10_wewky"]
+[ext_resource type="Texture2D" uid="uid://dcgcktirsga0k" path="res://sprites/puzzles/dialogonew.png" id="11_p1iii"]
+[ext_resource type="Texture2D" uid="uid://drtiqlcprrj56" path="res://sprites/personajes/conserjepuzzle2.png" id="13_6x7sv"]
+[ext_resource type="Script" uid="uid://cf3s4kymwoo1f" path="res://scripts/npc_buho.gd" id="13_wewky"]
+[ext_resource type="Script" uid="uid://bcrixpmr578w" path="res://scripts/npc_conejo.gd" id="14_uynhk"]
+[ext_resource type="Texture2D" uid="uid://rr7oihccm3r5" path="res://sprites/personajes/estudiante2puzzle2.png" id="15_kn356"]
+[ext_resource type="Texture2D" uid="uid://cqwiloyvwdbyq" path="res://sprites/puzzles/boton_interrogar_bloqueado.png" id="20_s4g2c"]
+[ext_resource type="Script" uid="uid://4k1n15foaaxw" path="res://scripts/touch_screen_button.gd" id="21_2s3p1"]
+[ext_resource type="PackedScene" uid="uid://ctq3atrxyokha" path="res://scenes/quiz_input.tscn" id="21_8ohgd"]
+[ext_resource type="Texture2D" uid="uid://ckrrbmrahdxtb" path="res://sprites/puzzles/boton_culpar_bloqueado.png" id="22_5yul3"]
+[ext_resource type="Script" uid="uid://c6bdpvfj4dg37" path="res://scripts/culpar_touch_screen_button.gd" id="23_bnfrr"]
+[ext_resource type="PackedScene" uid="uid://cvaldummhvx40" path="res://scenes/cursor_effect.tscn" id="27_lv81u"]
+[ext_resource type="PackedScene" uid="uid://hc3crpfjq0lq" path="res://scenes/popupdeclaraciones.tscn" id="30_23n5e"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_422u3"]
+texture = ExtResource("2_2hfhv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+2:1/0 = 0
+2:1/0/custom_data_0 = true
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyd0f"]
+texture = ExtResource("3_qipdm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ohgd"]
+texture = ExtResource("4_wewky")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+2:1/0 = 0
+2:1/0/custom_data_0 = true
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/custom_data_0 = true
+1:2/0 = 0
+1:2/0/custom_data_0 = true
+2:2/0 = 0
+2:2/0/custom_data_0 = true
+3:2/0 = 0
+3:2/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4q5qe"]
+texture = ExtResource("4_804mp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5emcn"]
+texture = ExtResource("5_jl0dn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+4:1/0/custom_data_0 = true
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/custom_data_0 = true
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+4:3/0/custom_data_0 = true
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_44hrr"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "Walkable"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_422u3")
+sources/4 = SubResource("TileSetAtlasSource_5emcn")
+sources/1 = SubResource("TileSetAtlasSource_pyd0f")
+sources/3 = SubResource("TileSetAtlasSource_4q5qe")
+sources/2 = SubResource("TileSetAtlasSource_8ohgd")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obn6w"]
+radius = 22.0
+
+[sub_resource type="Theme" id="Theme_4q5qe"]
+default_font = ExtResource("10_a3wmu")
+default_font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx4jj"]
+texture = ExtResource("11_p1iii")
+texture_margin_left = 5.0
+texture_margin_top = 10.0
+texture_margin_right = 5.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_hmy1o"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_wx4jj")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l67fq"]
+font = ExtResource("10_a3wmu")
+font_size = 8
+font_color = Color(0.180392, 0.14902, 0.133333, 1)
+
+[node name="lvl_6" type="Node2D"]
+script = ExtResource("1_ggdx0")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(15, -18)
+tile_set = SubResource("TileSet_44hrr")
+format = 2
+layer_0/name = "floor"
+layer_0/tile_data = PackedInt32Array(196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 2, 0, 262160, 2, 0, 262159, 2, 0, 262158, 2, 0, 262157, 2, 0, 262156, 2, 0, 262155, 2, 0, 262154, 2, 0, 262153, 2, 0, 262152, 2, 0, 262151, 2, 0, 262150, 2, 0, 262149, 2, 0, 327685, 2, 0, 393221, 2, 0, 458757, 2, 0, 524293, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 524303, 2, 0, 524302, 2, 0, 524301, 2, 0, 524300, 2, 0, 524299, 2, 0, 524298, 2, 0, 524297, 2, 0, 524296, 2, 0, 524295, 2, 0, 524294, 2, 0, 458758, 2, 0, 393222, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 393232, 2, 0, 393231, 2, 0, 393230, 2, 0, 393229, 2, 0, 393228, 2, 0, 393227, 2, 0, 393226, 2, 0, 393225, 2, 0, 393224, 2, 0, 393223, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 524304, 2, 0, 589840, 2, 0, 589841, 2, 0, 524305, 2, 0, 458769, 2, 0, 393233, 2, 0, 262161, 2, 0, 196625, 2, 0, 131089, 2, 0, 131088, 2, 0, 131087, 2, 0, 131086, 2, 0, 131085, 2, 0, 131084, 2, 0, 131083, 2, 0, 131082, 2, 0, 131081, 2, 0, 131080, 2, 0, 131079, 2, 0, 131078, 2, 0, 131077, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 131076, 2, 0, 196612, 2, 0, 262148, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 524292, 2, 0, 589828, 2, 0, 655364, 2, 0, 131090, 2, 0, 196626, 2, 0, 262162, 2, 0, 327698, 2, 0, 393234, 2, 0, 458770, 2, 0, 524306, 2, 0, 589842, 2, 0, 655378, 2, 0)
+layer_1/name = "walls"
+layer_2/name = "decoration"
+layer_2/tile_data = PackedInt32Array(262150, 65538, 1, 458762, 65538, 1, 262161, 196610, 1, 589837, 2, 1, 196624, 65538, 0, 327685, 131074, 0, 393226, 196610, 0, 458768, 2, 2, 524294, 65538, 2, 262153, 131074, 2, 393229, 196610, 2)
+script = ExtResource("6_tp00o")
+
+[node name="Player" parent="." instance=ExtResource("7_tketm")]
+position = Vector2(184, 232)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(386, 190)
+scale = Vector2(12.9747, 8.3746)
+zoom = Vector2(2.24, 2.24)
+
+[node name="NPCZorro" type="Area2D" parent="." groups=["areas"]]
+position = Vector2(16, -15)
+script = ExtResource("9_f7qe8")
+is_correct = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCZorro"]
+position = Vector2(225, 187)
+scale = Vector2(2, 2)
+texture = ExtResource("10_wewky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCZorro"]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")
+
+[node name="LabelNameZorro" type="Label" parent="NPCZorro"]
+visible = false
+offset_left = 210.0
+offset_top = 164.0
+offset_right = 239.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Zorro"
+
+[node name="PanelDialogoZorro" type="PanelContainer" parent="NPCZorro"]
+visible = false
+offset_left = 148.0
+offset_top = 120.0
+offset_right = 304.0
+offset_bottom = 163.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCZorro/PanelDialogoZorro"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCZorro/PanelDialogoZorro/MarginContainer"]
+layout_mode = 2
+text = "Si Conejo es culpable,
+ entonces Búho también lo es."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCBuho" type="Area2D" parent="." groups=["areas"]]
+position = Vector2(-31, 41)
+script = ExtResource("13_wewky")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCBuho"]
+position = Vector2(225, 187)
+texture = ExtResource("13_6x7sv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCBuho"]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")
+
+[node name="LabelNameBuho" type="Label" parent="NPCBuho"]
+visible = false
+offset_left = 213.0
+offset_top = 164.0
+offset_right = 247.0
+offset_bottom = 174.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Buho"
+
+[node name="PanelDialogoBuho" type="PanelContainer" parent="NPCBuho"]
+visible = false
+offset_left = 164.0
+offset_top = 134.0
+offset_right = 287.0
+offset_bottom = 164.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCBuho/PanelDialogoBuho"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCBuho/PanelDialogoBuho/MarginContainer"]
+layout_mode = 2
+text = "Conejo está mintiendo."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCConejo" type="Area2D" parent="." groups=["areas"]]
+position = Vector2(158, -69)
+script = ExtResource("14_uynhk")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCConejo"]
+position = Vector2(225, 187)
+texture = ExtResource("15_kn356")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCConejo"]
+position = Vector2(225, 189)
+shape = SubResource("CircleShape2D_obn6w")
+
+[node name="LabelNameConejo" type="Label" parent="NPCConejo"]
+visible = false
+offset_left = 208.0
+offset_top = 163.0
+offset_right = 242.0
+offset_bottom = 173.0
+theme = SubResource("Theme_4q5qe")
+theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
+text = "Conejo"
+
+[node name="PanelDialogoConejo" type="PanelContainer" parent="NPCConejo"]
+visible = false
+offset_left = 175.0
+offset_top = 133.0
+offset_right = 275.0
+offset_bottom = 163.0
+theme = SubResource("Theme_hmy1o")
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCConejo/PanelDialogoConejo"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NPCConejo/PanelDialogoConejo/MarginContainer"]
+layout_mode = 2
+text = "Zorro es inocente."
+label_settings = SubResource("LabelSettings_l67fq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 545.0
+offset_top = 217.0
+offset_right = 609.0
+offset_bottom = 281.0
+
+[node name="InterrogarTouchScreenButton" type="TouchScreenButton" parent="Control"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("20_s4g2c")
+action = "Interrogar"
+script = ExtResource("21_2s3p1")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 464.0
+offset_top = 216.0
+offset_right = 528.0
+offset_bottom = 280.0
+
+[node name="CulparTouchScreenButton" type="TouchScreenButton" parent="Control2"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("22_5yul3")
+script = ExtResource("23_bnfrr")
+
+[node name="UID" type="CanvasLayer" parent="."]
+
+[node name="QuizInput" parent="UID" instance=ExtResource("21_8ohgd")]
+visible = false
+offset_left = 161.0
+offset_top = 121.0
+offset_right = 161.0
+offset_bottom = 121.0
+
+[node name="menu_pausa" parent="UID" instance=ExtResource("5_lcgj0")]
+process_mode = 3
+
+[node name="popuptexto" parent="UID" instance=ExtResource("6_lwe7a")]
+process_mode = 3
+offset_left = 1.0
+offset_top = -0.600006
+offset_right = 1.0
+offset_bottom = -0.599976
+
+[node name="Game Controller" parent="UID" instance=ExtResource("7_o85mm")]
+process_mode = 3
+touch_indicator_scene = ExtResource("27_lv81u")
+
+[node name="popupcorrect" parent="UID" instance=ExtResource("8_rc4ko")]
+process_mode = 3
+
+[node name="popupincorrect" parent="UID" instance=ExtResource("9_e7rfs")]
+process_mode = 3
+
+[node name="PopUpDeclaraciones" parent="UID" instance=ExtResource("30_23n5e")]
+visible = false
+offset_left = 3.0
+offset_top = 92.0
+offset_right = 3.0
+offset_bottom = 92.0
+
+[node name="Cursor" parent="UID" instance=ExtResource("27_lv81u")]
+
+[connection signal="area_entered" from="NPCZorro" to="NPCZorro" method="_on_area_entered"]
+[connection signal="area_entered" from="NPCZorro" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]
+[connection signal="area_entered" from="NPCZorro" to="Control2/CulparTouchScreenButton" method="_on_npc_zorro_area_entered"]
+[connection signal="area_exited" from="NPCZorro" to="NPCZorro" method="_on_area_exited"]
+[connection signal="area_exited" from="NPCZorro" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_exited"]
+[connection signal="area_exited" from="NPCZorro" to="Control2/CulparTouchScreenButton" method="_on_npc_zorro_area_exited"]
+[connection signal="area_entered" from="NPCBuho" to="NPCBuho" method="_on_area_entered"]
+[connection signal="area_entered" from="NPCBuho" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_entered"]
+[connection signal="area_entered" from="NPCBuho" to="Control2/CulparTouchScreenButton" method="_on_npc_buho_area_entered"]
+[connection signal="area_exited" from="NPCBuho" to="NPCBuho" method="_on_area_exited"]
+[connection signal="area_exited" from="NPCBuho" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_exited"]
+[connection signal="area_exited" from="NPCBuho" to="Control2/CulparTouchScreenButton" method="_on_npc_buho_area_exited"]
+[connection signal="area_entered" from="NPCConejo" to="NPCConejo" method="_on_area_entered"]
+[connection signal="area_entered" from="NPCConejo" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_entered"]
+[connection signal="area_entered" from="NPCConejo" to="Control2/CulparTouchScreenButton" method="_on_npc_conejo_area_entered"]
+[connection signal="area_exited" from="NPCConejo" to="NPCConejo" method="_on_area_exited"]
+[connection signal="area_exited" from="NPCConejo" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="pressed" from="Control/InterrogarTouchScreenButton" to="Control/InterrogarTouchScreenButton" method="_on_pressed"]
+[connection signal="pressed" from="Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
+[connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
+
+[editable path="UID/popupcorrect"]
