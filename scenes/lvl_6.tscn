@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dxyyevchrl7cl"]
+[gd_scene load_steps=44 format=3 uid="uid://dxyyevchrl7cl"]
 
 [ext_resource type="Script" uid="uid://d36laju2fgxdh" path="res://scripts/lvl_6.gd" id="1_ggdx0"]
 [ext_resource type="Texture2D" uid="uid://bkeospuh4q2ke" path="res://sprites/tilesets/tileset_biblioteca_lvl2.png" id="2_2hfhv"]
@@ -14,13 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_rc4ko"]
 [ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_e7rfs"]
 [ext_resource type="Script" uid="uid://bomb6gcn3nl4k" path="res://scripts/npc_zorro.gd" id="9_f7qe8"]
+[ext_resource type="Texture2D" uid="uid://c00j5gvr0e37u" path="res://sprites/personajes/zorro.png" id="10_7wjyk"]
 [ext_resource type="FontFile" uid="uid://yrwej381mh2e" path="res://fonts/nokiafc22.ttf" id="10_a3wmu"]
-[ext_resource type="Texture2D" uid="uid://cf4ncpgw26qse" path="res://sprites/personajes/lobo_puzzle6.png" id="10_wewky"]
 [ext_resource type="Texture2D" uid="uid://dcgcktirsga0k" path="res://sprites/puzzles/dialogonew.png" id="11_p1iii"]
 [ext_resource type="Script" uid="uid://cf3s4kymwoo1f" path="res://scripts/npc_buho.gd" id="13_wewky"]
 [ext_resource type="Texture2D" uid="uid://dtqhbpbeova0w" path="res://sprites/personajes/buhoconarbol.png" id="14_7wjyk"]
 [ext_resource type="Script" uid="uid://bcrixpmr578w" path="res://scripts/npc_conejo.gd" id="14_uynhk"]
-[ext_resource type="Texture2D" uid="uid://rr7oihccm3r5" path="res://sprites/personajes/estudiante2puzzle2.png" id="15_kn356"]
+[ext_resource type="Texture2D" uid="uid://dokthrbw8qwa4" path="res://sprites/personajes/conejo.png" id="16_7wjyk"]
 [ext_resource type="Texture2D" uid="uid://cqwiloyvwdbyq" path="res://sprites/puzzles/boton_interrogar_bloqueado.png" id="20_s4g2c"]
 [ext_resource type="Script" uid="uid://4k1n15foaaxw" path="res://scripts/touch_screen_button.gd" id="21_2s3p1"]
 [ext_resource type="PackedScene" uid="uid://ctq3atrxyokha" path="res://scenes/quiz_input_zorro.tscn" id="21_8ohgd"]
@@ -141,7 +141,7 @@ sources/3 = SubResource("TileSetAtlasSource_4q5qe")
 sources/2 = SubResource("TileSetAtlasSource_8ohgd")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_obn6w"]
-radius = 22.0
+radius = 41.0122
 
 [sub_resource type="Theme" id="Theme_4q5qe"]
 default_font = ExtResource("10_a3wmu")
@@ -163,7 +163,10 @@ font_size = 8
 font_color = Color(0.180392, 0.14902, 0.133333, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wjyk"]
-size = Vector2(60, 73)
+size = Vector2(65, 81.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wjyk"]
+radius = 27.0
 
 [node name="lvl_6" type="Node2D"]
 script = ExtResource("1_ggdx0")
@@ -173,10 +176,10 @@ position = Vector2(15, -18)
 tile_set = SubResource("TileSet_44hrr")
 format = 2
 layer_0/name = "floor"
-layer_0/tile_data = PackedInt32Array(196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 2, 0, 262160, 2, 0, 262159, 2, 0, 262158, 2, 0, 262157, 2, 0, 262156, 2, 0, 262155, 2, 0, 262154, 2, 0, 262153, 2, 0, 262152, 2, 0, 262151, 2, 0, 262150, 2, 0, 262149, 2, 0, 327685, 2, 0, 393221, 2, 0, 458757, 2, 0, 524293, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 524303, 2, 0, 524302, 2, 0, 524301, 2, 0, 524300, 2, 0, 524299, 2, 0, 524298, 2, 0, 524297, 2, 0, 524296, 2, 0, 524295, 2, 0, 524294, 2, 0, 458758, 2, 0, 393222, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 393232, 2, 0, 393231, 2, 0, 393230, 2, 0, 393229, 2, 0, 393228, 2, 0, 393227, 2, 0, 393226, 2, 0, 393225, 2, 0, 393224, 2, 0, 393223, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 524304, 2, 0, 589840, 2, 0, 589841, 2, 0, 524305, 2, 0, 458769, 2, 0, 393233, 2, 0, 262161, 2, 0, 196625, 2, 0, 131089, 2, 0, 131088, 2, 0, 131087, 2, 0, 131086, 2, 0, 131085, 2, 0, 131084, 2, 0, 131083, 2, 0, 131082, 2, 0, 131081, 2, 0, 131080, 2, 0, 131079, 2, 0, 131078, 2, 0, 131077, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 131076, 2, 0, 196612, 2, 0, 262148, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 524292, 2, 0, 589828, 2, 0, 655364, 2, 0, 131090, 2, 0, 196626, 2, 0, 262162, 2, 0, 327698, 2, 0, 393234, 2, 0, 458770, 2, 0, 524306, 2, 0, 589842, 2, 0, 655378, 2, 0)
+layer_0/tile_data = PackedInt32Array(196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 2, 0, 262160, 2, 0, 262159, 2, 0, 262158, 2, 0, 262157, 2, 0, 262156, 2, 0, 262155, 2, 0, 262154, 2, 0, 262153, 2, 0, 262152, 2, 0, 262151, 2, 0, 262150, 2, 0, 262149, 2, 0, 327685, 2, 0, 393221, 2, 0, 458757, 2, 0, 524293, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 524303, 2, 0, 524302, 2, 0, 524301, 2, 0, 524300, 2, 0, 524299, 2, 0, 524298, 2, 0, 524297, 2, 0, 524296, 2, 0, 524295, 2, 0, 524294, 2, 0, 458758, 2, 0, 393222, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 393232, 2, 0, 393231, 2, 0, 393230, 2, 0, 393229, 2, 0, 393228, 2, 0, 393227, 2, 0, 393226, 2, 0, 393225, 2, 0, 393224, 2, 0, 393223, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 524304, 2, 0, 589840, 2, 0, 589841, 2, 0, 524305, 2, 0, 458769, 2, 0, 393233, 2, 0, 262161, 2, 0, 196625, 2, 0, 131089, 2, 0, 131088, 2, 0, 131087, 2, 0, 131086, 2, 0, 131085, 2, 0, 131084, 2, 0, 131083, 2, 0, 131082, 2, 0, 131081, 2, 0, 131080, 2, 0, 131079, 2, 0, 131078, 2, 0, 131077, 2, 0, 655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 131076, 2, 0, 196612, 2, 0, 262148, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 524292, 2, 0, 589828, 2, 0, 655364, 2, 0, 131090, 2, 0, 196626, 2, 0, 262162, 2, 0, 327698, 2, 0, 393234, 2, 0, 458770, 2, 0, 524306, 2, 0, 589842, 2, 0, 655378, 2, 0, 131074, 2, 0, 131075, 2, 0, 196611, 2, 0, 196610, 2, 0, 262146, 2, 0, 262147, 2, 0, 327683, 2, 0, 393219, 2, 0, 458755, 2, 0, 524291, 2, 0, 131072, 2, 0, 196608, 2, 0, 262144, 2, 0, 327680, 2, 0, 393216, 2, 0, 458752, 2, 0, 524288, 2, 0, 589824, 2, 0, 655360, 2, 0, 131073, 2, 0, 196609, 2, 0, 262145, 2, 0, 327681, 2, 0, 393217, 2, 0, 458753, 2, 0, 524289, 2, 0, 589825, 2, 0, 655361, 2, 0, 327682, 2, 0, 393218, 2, 0, 458754, 2, 0, 524290, 2, 0, 589826, 2, 0, 655362, 2, 0, 589827, 2, 0, 655363, 2, 0, 131091, 2, 0, 196627, 2, 0, 262163, 2, 0, 327699, 2, 0, 393235, 2, 0, 458771, 2, 0, 524307, 2, 0, 589843, 2, 0, 655379, 2, 0, 131092, 2, 0, 196628, 2, 0, 262164, 2, 0, 327700, 2, 0, 393236, 2, 0, 458772, 2, 0, 524308, 2, 0, 589844, 2, 0, 655380, 2, 0, 131093, 2, 0, 196629, 2, 0, 262165, 2, 0, 327701, 2, 0, 393237, 2, 0, 458773, 2, 0, 524309, 2, 0, 589845, 2, 0, 655381, 2, 0, 131094, 2, 0, 196630, 2, 0, 262166, 2, 0, 327702, 2, 0, 393238, 2, 0, 458774, 2, 0, 524310, 2, 0, 589846, 2, 0, 655382, 2, 0, 131095, 2, 0, 196631, 2, 0, 262167, 2, 0, 327703, 2, 0, 393239, 2, 0, 458775, 2, 0, 524311, 2, 0, 589847, 2, 0, 655383, 2, 0)
 layer_1/name = "walls"
 layer_2/name = "decoration"
-layer_2/tile_data = PackedInt32Array(262150, 65538, 1, 458762, 65538, 1, 262161, 196610, 1, 589837, 2, 1, 196624, 65538, 0, 327685, 131074, 0, 393226, 196610, 0, 458768, 2, 2, 524294, 65538, 2, 262153, 131074, 2, 393229, 196610, 2)
+layer_2/tile_data = PackedInt32Array(458758, 2, 2, 458759, 2, 2, 458760, 2, 2, 524296, 2, 2, 524295, 2, 2, 524294, 2, 2, 524304, 2, 1, 393234, 65538, 0, 327697, 196610, 0, 655364, 131074, 1, 196613, 131074, 2, 393229, 131074, 2, 131087, 131074, 2, 262152, 131074, 2, 589835, 131074, 0, 196619, 196610, 2, 327684, 65538, 2, 262159, 131074, 2, 327690, 196610, 2, 655368, 65538, 1, 655372, 65538, 1, 655377, 65538, 1, 655366, 65538, 1, 655370, 196610, 1, 655374, 2, 1, 196612, 131074, 0, 196618, 65538, 0, 131086, 196610, 0, 655365, 65538, 2, 655367, 196610, 2, 655369, 65538, 2, 655371, 196610, 2, 655375, 131074, 2, 655373, 196610, 1, 655378, 2, 2, 655376, 2, 1)
 script = ExtResource("6_tp00o")
 
 [node name="Player" parent="." instance=ExtResource("7_tketm")]
@@ -188,25 +191,24 @@ scale = Vector2(12.9747, 8.3746)
 zoom = Vector2(2.24, 2.24)
 
 [node name="NPCZorro" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(16, -15)
+position = Vector2(170, -49)
 script = ExtResource("9_f7qe8")
 is_correct = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCZorro"]
 position = Vector2(225, 187)
-scale = Vector2(2, 2)
-texture = ExtResource("10_wewky")
+texture = ExtResource("10_7wjyk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCZorro"]
-position = Vector2(225, 189)
+position = Vector2(223, 185)
 shape = SubResource("CircleShape2D_obn6w")
 
 [node name="LabelNameZorro" type="Label" parent="NPCZorro"]
 visible = false
-offset_left = 210.0
-offset_top = 164.0
-offset_right = 239.0
-offset_bottom = 174.0
+offset_left = 209.0
+offset_top = 157.0
+offset_right = 238.0
+offset_bottom = 167.0
 theme = SubResource("Theme_4q5qe")
 theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
 theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
@@ -214,10 +216,10 @@ text = "Zorro"
 
 [node name="PanelDialogoZorro" type="PanelContainer" parent="NPCZorro"]
 visible = false
-offset_left = 148.0
-offset_top = 120.0
-offset_right = 304.0
-offset_bottom = 163.0
+offset_left = 145.0
+offset_top = 113.0
+offset_right = 301.0
+offset_bottom = 156.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCZorro/PanelDialogoZorro"]
@@ -234,7 +236,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NPCBuho" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(267, -47)
+position = Vector2(364, -78)
 script = ExtResource("13_wewky")
 metadata/_edit_group_ = true
 
@@ -243,15 +245,15 @@ position = Vector2(225, 187)
 texture = ExtResource("14_7wjyk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCBuho"]
-position = Vector2(219, 215.5)
+position = Vector2(202, 218)
 shape = SubResource("RectangleShape2D_7wjyk")
 
 [node name="LabelNameBuho" type="Label" parent="NPCBuho"]
 visible = false
-offset_left = 213.0
-offset_top = 164.0
-offset_right = 247.0
-offset_bottom = 174.0
+offset_left = 208.0
+offset_top = 174.0
+offset_right = 242.0
+offset_bottom = 184.0
 theme = SubResource("Theme_4q5qe")
 theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
 theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
@@ -259,10 +261,10 @@ text = "Buho"
 
 [node name="PanelDialogoBuho" type="PanelContainer" parent="NPCBuho"]
 visible = false
-offset_left = 164.0
-offset_top = 134.0
-offset_right = 287.0
-offset_bottom = 164.0
+offset_left = 158.0
+offset_top = 142.0
+offset_right = 281.0
+offset_bottom = 172.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCBuho/PanelDialogoBuho"]
@@ -278,24 +280,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NPCConejo" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(158, -69)
+position = Vector2(37, 44)
 script = ExtResource("14_uynhk")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCConejo"]
 position = Vector2(225, 187)
-texture = ExtResource("15_kn356")
+texture = ExtResource("16_7wjyk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCConejo"]
-position = Vector2(225, 189)
-shape = SubResource("CircleShape2D_obn6w")
+position = Vector2(221, 188)
+shape = SubResource("CircleShape2D_7wjyk")
 
 [node name="LabelNameConejo" type="Label" parent="NPCConejo"]
 visible = false
-offset_left = 208.0
-offset_top = 163.0
-offset_right = 242.0
-offset_bottom = 173.0
+offset_left = 203.0
+offset_top = 162.0
+offset_right = 237.0
+offset_bottom = 172.0
 theme = SubResource("Theme_4q5qe")
 theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
 theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
@@ -303,10 +304,10 @@ text = "Conejo"
 
 [node name="PanelDialogoConejo" type="PanelContainer" parent="NPCConejo"]
 visible = false
-offset_left = 175.0
-offset_top = 133.0
-offset_right = 275.0
-offset_bottom = 163.0
+offset_left = 171.0
+offset_top = 131.0
+offset_right = 271.0
+offset_bottom = 161.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCConejo/PanelDialogoConejo"]

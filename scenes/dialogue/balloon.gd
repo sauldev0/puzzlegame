@@ -112,7 +112,9 @@ func apply_dialogue_line() -> void:
 	"marta":preload("res://sprites/personajes/Marta.png"),
 	"carla":preload("res://sprites/personajes/Carla.png"),
 	"diego":preload("res://sprites/personajes/Diego.png"),
-	"lobo":preload("res://sprites/personajes/Lobo.png")
+	"zorro":preload("res://sprites/personajes/Zorro_retrato.png"),
+	"buho":preload("res://sprites/personajes/Buho_retrato.png"),
+	"conejo":preload("res://sprites/personajes/Conejo_retrato.png"),
 	
 	}
 	portrait.texture = portraits.get(dialogue_line.character.to_lower(), null)
