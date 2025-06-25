@@ -29,7 +29,7 @@
 [ext_resource type="Script" uid="uid://chsq7rij0g66q" path="res://scripts/npc_personaA_lvl2.gd" id="17_lk6hv"]
 [ext_resource type="Script" uid="uid://4k1n15foaaxw" path="res://scripts/touch_screen_button.gd" id="19_5emcn"]
 [ext_resource type="Texture2D" uid="uid://ckrrbmrahdxtb" path="res://sprites/puzzles/boton_culpar_bloqueado.png" id="20_hajku"]
-[ext_resource type="Script" uid="uid://c6bdpvfj4dg37" path="res://scripts/culpar_touch_screen_button.gd" id="23_8cjld"]
+[ext_resource type="Script" uid="uid://c6s7ye14insrm" path="res://scripts/culpar_touch_screen_button_lvl2.gd" id="25_wx4jj"]
 [ext_resource type="PackedScene" uid="uid://hc3crpfjq0lq" path="res://scenes/popupdeclaraciones.tscn" id="29_dgtug"]
 [ext_resource type="PackedScene" uid="uid://cvaldummhvx40" path="res://scenes/cursor_effect.tscn" id="30_4q5qe"]
 
@@ -318,7 +318,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NPCPersonaD" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(78, 93)
+position = Vector2(344, 64)
 script = ExtResource("14_44hrr")
 metadata/_edit_group_ = true
 
@@ -375,37 +375,39 @@ texture = ExtResource("16_5j4go")
 position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
-[node name="Control" type="Control" parent="."]
+[node name="UID" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UID"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 144.0
-offset_top = 256.0
-offset_right = 208.0
-offset_bottom = 320.0
+offset_left = 16.0
+offset_top = 424.0
+offset_right = 80.0
+offset_bottom = 488.0
+scale = Vector2(3, 3)
 metadata/_edit_group_ = true
 
-[node name="InterrogarTouchScreenButton" type="TouchScreenButton" parent="Control"]
+[node name="InterrogarTouchScreenButton" type="TouchScreenButton" parent="UID/Control"]
 scale = Vector2(2, 2)
 texture_normal = ExtResource("13_5emcn")
 action = "Interrogar"
 script = ExtResource("19_5emcn")
 
-[node name="Control2" type="Control" parent="."]
+[node name="Control2" type="Control" parent="UID"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 224.0
-offset_top = 256.0
-offset_right = 288.0
-offset_bottom = 320.0
+offset_left = 232.0
+offset_top = 424.0
+offset_right = 296.0
+offset_bottom = 488.0
+scale = Vector2(3, 3)
 metadata/_edit_group_ = true
 
-[node name="CulparTouchScreenButton" type="TouchScreenButton" parent="Control2"]
+[node name="CulparTouchScreenButton" type="TouchScreenButton" parent="UID/Control2"]
 scale = Vector2(2, 2)
 texture_normal = ExtResource("20_hajku")
 action = "Culpar"
-script = ExtResource("23_8cjld")
-
-[node name="UID" type="CanvasLayer" parent="."]
+script = ExtResource("25_wx4jj")
 
 [node name="menu_pausa" parent="UID" instance=ExtResource("5_ghoj8")]
 process_mode = 3
@@ -438,38 +440,46 @@ offset_bottom = 34.0
 
 [connection signal="area_entered" from="NPCPersonaA" to="Camera2D" method="_on_npc_persona_a_area_entered"]
 [connection signal="area_entered" from="NPCPersonaA" to="NPCPersonaA" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCPersonaA" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]
-[connection signal="area_entered" from="NPCPersonaA" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_a_area_entered"]
+[connection signal="area_entered" from="NPCPersonaA" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]
+[connection signal="area_entered" from="NPCPersonaA" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_persona_a_area_entered"]
 [connection signal="area_exited" from="NPCPersonaA" to="Camera2D" method="_on_npc_persona_a_area_exited"]
 [connection signal="area_exited" from="NPCPersonaA" to="NPCPersonaA" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCPersonaA" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_exited"]
-[connection signal="area_exited" from="NPCPersonaA" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_a_area_exited"]
+[connection signal="area_exited" from="NPCPersonaA" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_exited"]
+[connection signal="area_exited" from="NPCPersonaA" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_persona_a_area_exited"]
+[connection signal="area_entered" from="NPCPersonaB" to="Camera2D" method="_on_npc_persona_b_area_entered"]
 [connection signal="area_entered" from="NPCPersonaB" to="NPCPersonaB" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCPersonaB" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_entered"]
-[connection signal="area_entered" from="NPCPersonaB" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_b_area_entered"]
+[connection signal="area_entered" from="NPCPersonaB" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_entered"]
+[connection signal="area_entered" from="NPCPersonaB" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_persona_b_area_entered"]
+[connection signal="area_exited" from="NPCPersonaB" to="Camera2D" method="_on_npc_persona_b_area_exited"]
 [connection signal="area_exited" from="NPCPersonaB" to="NPCPersonaB" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCPersonaB" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_exited"]
-[connection signal="area_exited" from="NPCPersonaB" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_b_area_exited"]
+[connection signal="area_exited" from="NPCPersonaB" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_exited"]
+[connection signal="area_exited" from="NPCPersonaB" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_persona_b_area_exited"]
+[connection signal="area_entered" from="NPCPersonaC" to="Camera2D" method="_on_npc_persona_c_area_entered"]
 [connection signal="area_entered" from="NPCPersonaC" to="NPCPersonaC" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCPersonaC" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_entered"]
-[connection signal="area_entered" from="NPCPersonaC" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_c_area_entered"]
+[connection signal="area_entered" from="NPCPersonaC" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_entered"]
+[connection signal="area_entered" from="NPCPersonaC" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_persona_c_area_entered"]
+[connection signal="area_exited" from="NPCPersonaC" to="Camera2D" method="_on_npc_persona_c_area_exited"]
 [connection signal="area_exited" from="NPCPersonaC" to="NPCPersonaC" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCPersonaC" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
-[connection signal="area_exited" from="NPCPersonaC" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="area_exited" from="NPCPersonaC" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="area_exited" from="NPCPersonaC" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="area_entered" from="NPCPersonaD" to="Camera2D" method="_on_npc_persona_d_area_entered"]
 [connection signal="area_entered" from="NPCPersonaD" to="NPCPersonaD" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCPersonaD" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_d_area_entered"]
-[connection signal="area_entered" from="NPCPersonaD" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_d_area_entered"]
+[connection signal="area_entered" from="NPCPersonaD" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_d_area_entered"]
+[connection signal="area_entered" from="NPCPersonaD" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_persona_d_area_entered"]
+[connection signal="area_exited" from="NPCPersonaD" to="Camera2D" method="_on_npc_persona_d_area_exited"]
 [connection signal="area_exited" from="NPCPersonaD" to="NPCPersonaD" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCPersonaD" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_d_area_exited"]
-[connection signal="area_exited" from="NPCPersonaD" to="Control2/CulparTouchScreenButton" method="_on_npc_persona_d_area_exited"]
+[connection signal="area_exited" from="NPCPersonaD" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_d_area_exited"]
+[connection signal="area_exited" from="NPCPersonaD" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_persona_d_area_exited"]
+[connection signal="area_entered" from="NPCProfesor" to="Camera2D" method="_on_npc_profesor_area_entered"]
 [connection signal="area_entered" from="NPCProfesor" to="NPCProfesor" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCProfesor" to="Control/InterrogarTouchScreenButton" method="_on_npc_profesor_area_entered"]
-[connection signal="area_entered" from="NPCProfesor" to="Control2/CulparTouchScreenButton" method="_on_npc_profesor_area_entered"]
+[connection signal="area_entered" from="NPCProfesor" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_profesor_area_entered"]
+[connection signal="area_entered" from="NPCProfesor" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_profesor_area_entered"]
+[connection signal="area_exited" from="NPCProfesor" to="Camera2D" method="_on_npc_profesor_area_exited"]
 [connection signal="area_exited" from="NPCProfesor" to="NPCProfesor" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCProfesor" to="Control/InterrogarTouchScreenButton" method="_on_npc_profesor_area_exited"]
-[connection signal="area_exited" from="NPCProfesor" to="Control2/CulparTouchScreenButton" method="_on_npc_profesor_area_exited"]
-[connection signal="pressed" from="Control/InterrogarTouchScreenButton" to="Control/InterrogarTouchScreenButton" method="_on_pressed"]
-[connection signal="pressed" from="Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
+[connection signal="area_exited" from="NPCProfesor" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_profesor_area_exited"]
+[connection signal="area_exited" from="NPCProfesor" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_profesor_area_exited"]
+[connection signal="pressed" from="UID/Control/InterrogarTouchScreenButton" to="UID/Control/InterrogarTouchScreenButton" method="_on_pressed"]
+[connection signal="pressed" from="UID/Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 
 [editable path="UID/popupcorrect"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b0e4fm53nw0v4"
+path="res://.godot/imported/SospechosoA_lvl8.dialogue-1827c88c12dd131d51cfcb24df54ace5.tres"
+
+[deps]
+
+source_file="res://dialogues/SospechosoA_lvl8.dialogue"
+dest_files=["res://.godot/imported/SospechosoA_lvl8.dialogue-1827c88c12dd131d51cfcb24df54ace5.tres"]
+
+[params]
+
+defaults=true

@@ -38,3 +38,53 @@ func _on_npc_persona_a_area_exited(area):
 	seguir_jugador = false
 	zoom_objetivo = zoom_original
 	posicion_objetivo = posicion_guardada  # Volver a la posición previa al seguimiento
+	
+
+
+
+func _on_npc_persona_b_area_entered(area):
+	posicion_guardada = position  # Guardamos antes de empezar a seguir
+	seguir_jugador = true
+	zoom_objetivo = mas_zoom
+
+
+func _on_npc_persona_b_area_exited(area):
+	seguir_jugador = false
+	zoom_objetivo = zoom_original
+	posicion_objetivo = posicion_guardada  # Volver a la posición previa al seguimiento
+
+
+func _on_npc_persona_c_area_entered(area):
+	posicion_guardada = position  # Guardamos antes de empezar a seguir
+	seguir_jugador = true
+	zoom_objetivo = mas_zoom
+
+
+func _on_npc_persona_c_area_exited(area):
+	seguir_jugador = false
+	zoom_objetivo = zoom_original
+	posicion_objetivo = posicion_guardada  # Volver a la posición previa al seguimiento
+
+
+func _on_npc_persona_d_area_entered(area):
+	posicion_guardada = position  # Guardamos antes de empezar a seguir
+	seguir_jugador = true
+	zoom_objetivo = mas_zoom
+
+
+func _on_npc_persona_d_area_exited(area):
+	seguir_jugador = false
+	zoom_objetivo = zoom_original
+	posicion_objetivo = posicion_guardada  # Volver a la posición previa al seguimiento
+
+
+func _on_npc_profesor_area_entered(area):
+	posicion_guardada = position  # Guardamos antes de empezar a seguir
+	seguir_jugador = true
+	zoom_objetivo = mas_zoom
+
+
+func _on_npc_profesor_area_exited(area):
+	seguir_jugador = false
+	zoom_objetivo = zoom_original
+	posicion_objetivo = posicion_guardada  # Volver a la posición previa al seguimiento

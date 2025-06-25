@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cqwiloyvwdbyq" path="res://sprites/puzzles/boton_interrogar_bloqueado.png" id="20_dwugj"]
 [ext_resource type="Script" uid="uid://4k1n15foaaxw" path="res://scripts/touch_screen_button.gd" id="21_2emj0"]
 [ext_resource type="Texture2D" uid="uid://ckrrbmrahdxtb" path="res://sprites/puzzles/boton_culpar_bloqueado.png" id="22_mpkxy"]
-[ext_resource type="Script" uid="uid://c6bdpvfj4dg37" path="res://scripts/culpar_touch_screen_button.gd" id="23_x3ord"]
+[ext_resource type="Script" uid="uid://dq80cuhohugf3" path="res://scripts/culpar_touch_screen_button_lvl4.gd" id="23_wlq57"]
 [ext_resource type="PackedScene" uid="uid://cvaldummhvx40" path="res://scenes/cursor_effect.tscn" id="27_anrix"]
 [ext_resource type="PackedScene" uid="uid://hc3crpfjq0lq" path="res://scenes/popupdeclaraciones.tscn" id="30_swldy"]
 
@@ -412,7 +412,7 @@ offset_bottom = 280.0
 scale = Vector2(2, 2)
 texture_normal = ExtResource("22_mpkxy")
 action = "Culpar"
-script = ExtResource("23_x3ord")
+script = ExtResource("23_wlq57")
 
 [node name="UID" type="CanvasLayer" parent="."]
 

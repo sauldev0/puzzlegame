@@ -46,6 +46,13 @@ var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte 
 	"Cada uno hizo una declaración, pero solo uno dice la verdad.\n\n" +
 	"¿Puedes encontrar al ladrón de semillas?",
 
+7 : "Si siete días después de hace 70 dias era domingo, siete días antes de 70 dias a partir de hoy ¿Qué dia de la semana es?\n\n",
+
+8 : "Durante una exposición nocturna en el Museo Nacional de Arte Clásico, la valiosa pintura La dama del espejo fue hallada rota en el suelo poco antes del cierre.\n\n" +
+	"Solo tres pasantes estuvieron cerca en ese momento.\n\n" +
+	"¿Quién dice la verdad?",
+
+
 }
 
 # Diccionario con reglas de los niveles
@@ -59,7 +66,8 @@ var reglas = {1 : "",
 9 : " \"Junto a \" significa que dos mesas están conectadas por una línea de puntos.
 ",
 
-3 : ""
+8 : "Se sabe que uno dice la verdad y los otros dos mienten."
+	,
 }
 
 # Diccionario con declaraciones de los niveles que tienen

@@ -1,35 +1,203 @@
-[gd_scene load_steps=10 format=3 uid="uid://cen7d1wgoh50t"]
+[gd_scene load_steps=39 format=3 uid="uid://cen7d1wgoh50t"]
 
 [ext_resource type="Script" uid="uid://cki4vjb4r878w" path="res://scripts/lvl_7.gd" id="1_mib78"]
-[ext_resource type="Texture2D" uid="uid://nqwyii8ynjgq" path="res://sprites/puzzles/personacortebueno.png" id="2_yq6jv"]
-[ext_resource type="Script" uid="uid://q2mrb3334ec0" path="res://scripts/verify_answer.gd" id="3_25bns"]
-[ext_resource type="Texture2D" uid="uid://ruthhe7axx31" path="res://sprites/puzzles/personacortemalo.png" id="4_go8os"]
+[ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="2_brbt2"]
+[ext_resource type="Script" uid="uid://drcelett4r8bg" path="res://scripts/verify_answer_button.gd" id="3_yj1v4"]
 [ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="5_y7lo0"]
 [ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="6_ad0c2"]
 [ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="7_48roe"]
 [ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_larn0"]
 [ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_w6i4u"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brbt2"]
+
+[sub_resource type="Theme" id="Theme_yj1v4"]
+default_font = ExtResource("2_brbt2")
+default_font_size = 48
+Panel/styles/panel = null
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_brbt2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brbt2"]
+bg_color = Color(0.980469, 0.379502, 0.321716, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mib78"]
+bg_color = Color(0.909804, 0.298039, 0.239216, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go8os"]
+bg_color = Color(0.753906, 0.256882, 0.209091, 1)
+
+[sub_resource type="Theme" id="Theme_y7lo0"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_brbt2")
+Button/styles/normal = SubResource("StyleBoxFlat_mib78")
+Button/styles/pressed = SubResource("StyleBoxFlat_go8os")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yq6jv"]
+bg_color = Color(0.379761, 0.456479, 0.953125, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj1v4"]
+bg_color = Color(0.313049, 0.387165, 0.871094, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25bns"]
+bg_color = Color(0.217529, 0.291911, 0.773438, 1)
+
+[sub_resource type="Theme" id="Theme_mib78"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_yq6jv")
+Button/styles/normal = SubResource("StyleBoxFlat_yj1v4")
+Button/styles/pressed = SubResource("StyleBoxFlat_25bns")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7lo0"]
+bg_color = Color(0.277771, 0.686054, 0.960938, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad0c2"]
+bg_color = Color(0.196078, 0.592157, 0.858824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48roe"]
+bg_color = Color(0.162643, 0.501995, 0.730469, 1)
+
+[sub_resource type="Theme" id="Theme_larn0"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_y7lo0")
+Button/styles/normal = SubResource("StyleBoxFlat_ad0c2")
+Button/styles/pressed = SubResource("StyleBoxFlat_48roe")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_larn0"]
+bg_color = Color(0.2276, 0.882813, 0.501296, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6i4u"]
+bg_color = Color(0.172549, 0.792157, 0.431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfyko"]
+bg_color = Color(0.130096, 0.679688, 0.359672, 1)
+
+[sub_resource type="Theme" id="Theme_y0epa"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_larn0")
+Button/styles/normal = SubResource("StyleBoxFlat_w6i4u")
+Button/styles/pressed = SubResource("StyleBoxFlat_mfyko")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0epa"]
+bg_color = Color(0.139755, 0.832031, 0.700371, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wna6o"]
+bg_color = Color(0.0980392, 0.737255, 0.615686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt1hv"]
+bg_color = Color(0.0709229, 0.648438, 0.538603, 1)
+
+[sub_resource type="Theme" id="Theme_jwgse"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_y0epa")
+Button/styles/normal = SubResource("StyleBoxFlat_wna6o")
+Button/styles/pressed = SubResource("StyleBoxFlat_bt1hv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwgse"]
+bg_color = Color(0.996094, 0.844499, 0.214005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcqs6"]
+bg_color = Color(0.94902, 0.776471, 0.0588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7opr"]
+bg_color = Color(0.84375, 0.695536, 0.0791016, 1)
+
+[sub_resource type="Theme" id="Theme_xq1jp"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_jwgse")
+Button/styles/normal = SubResource("StyleBoxFlat_jcqs6")
+Button/styles/pressed = SubResource("StyleBoxFlat_u7opr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq1jp"]
+bg_color = Color(0.984375, 0.584726, 0.234558, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xmeh"]
+bg_color = Color(0.905882, 0.494118, 0.133333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuer5"]
+bg_color = Color(0.765625, 0.459569, 0.191406, 1)
+
+[sub_resource type="Theme" id="Theme_t6twb"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_xq1jp")
+Button/styles/normal = SubResource("StyleBoxFlat_6xmeh")
+Button/styles/pressed = SubResource("StyleBoxFlat_xuer5")
+
 [node name="lvl_7" type="Node2D"]
 script = ExtResource("1_mib78")
 
-[node name="persona_corte_bueno" type="TextureButton" parent="." groups=["buttons"]]
-offset_left = 120.0
-offset_top = 140.0
-offset_right = 570.0
-offset_bottom = 590.0
-texture_normal = ExtResource("2_yq6jv")
-stretch_mode = 0
-script = ExtResource("3_25bns")
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 434.0
+offset_top = 47.0
+offset_right = 724.0
+offset_bottom = 597.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_yj1v4")
 
-[node name="persona_corte_malo" type="TextureButton" parent="." groups=["buttons"]]
-offset_left = 555.0
-offset_top = 146.0
-offset_right = 1005.0
-offset_bottom = 596.0
-texture_normal = ExtResource("4_go8os")
-stretch_mode = 0
-script = ExtResource("3_25bns")
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ButtonLunes" type="Button" parent="PanelContainer/VBoxContainer" groups=["buttons"]]
+layout_mode = 2
+theme = SubResource("Theme_y7lo0")
+text = "Lunes"
+script = ExtResource("3_yj1v4")
+
+[node name="ButtonMartes" type="Button" parent="PanelContainer/VBoxContainer" groups=["buttons"]]
+layout_mode = 2
+theme = SubResource("Theme_mib78")
+text = "Martes"
+script = ExtResource("3_yj1v4")
+
+[node name="ButtonMiercoles" type="Button" parent="PanelContainer/VBoxContainer" groups=["buttons"]]
+layout_mode = 2
+theme = SubResource("Theme_larn0")
+text = "Miercoles"
+script = ExtResource("3_yj1v4")
+
+[node name="ButtonJueves" type="Button" parent="PanelContainer/VBoxContainer" groups=["buttons"]]
+layout_mode = 2
+theme = SubResource("Theme_y0epa")
+text = "Jueves"
+script = ExtResource("3_yj1v4")
+
+[node name="ButtonViernes" type="Button" parent="PanelContainer/VBoxContainer" groups=["buttons"]]
+layout_mode = 2
+theme = SubResource("Theme_jwgse")
+text = "Viernes"
+script = ExtResource("3_yj1v4")
+
+[node name="ButtonSabado" type="Button" parent="PanelContainer/VBoxContainer" groups=["buttons"]]
+layout_mode = 2
+theme = SubResource("Theme_xq1jp")
+text = "Sábado"
+script = ExtResource("3_yj1v4")
+
+[node name="ButtonDomingo" type="Button" parent="PanelContainer/VBoxContainer" groups=["buttons"]]
+layout_mode = 2
+theme = SubResource("Theme_t6twb")
+text = "Domingo"
+script = ExtResource("3_yj1v4")
 is_correct = true
 
 [node name="UID" type="CanvasLayer" parent="."]
@@ -53,8 +221,6 @@ process_mode = 3
 [node name="popupincorrect" parent="UID" instance=ExtResource("9_w6i4u")]
 process_mode = 3
 
-[connection signal="pressed" from="persona_corte_bueno" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
-[connection signal="pressed" from="persona_corte_malo" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 
 [editable path="UID/popupcorrect"]

@@ -9,10 +9,12 @@ var correcta1 = "ˉ"
 
 func _ready():
 	
-	var opciones := ["", "˄", "˅", "ˉ", "˃", "˹"]
+	var opciones := ["˄", "˅", "ˉ", "˃", "˹"]
 	for texto in opciones:
 		opcion1.add_item(texto)
-
+		
+	opcion1.select(-1)
+	
 	$Button.pressed.connect(verificar_respuesta)
 
 func verificar_respuesta():
@@ -20,9 +22,11 @@ func verificar_respuesta():
 
 	if seleccion1 == correcta1:
 		resultado.text = "¡Correcto!"
+		resultado.label_settings.font_color = Color.GREEN
 
 		emit_signal("quiz_resuelto", npc_id)  #notifica que se resolvió
 		await get_tree().create_timer(1.5).timeout
 		visible = false
 	else:
 		resultado.text = "Incorrecto. Intenta de nuevo."
+		resultado.label_settings.font_color = Color.RED

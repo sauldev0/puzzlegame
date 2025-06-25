@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dxyyevchrl7cl"]
+[gd_scene load_steps=45 format=3 uid="uid://dxyyevchrl7cl"]
 
 [ext_resource type="Script" uid="uid://d36laju2fgxdh" path="res://scripts/lvl_6.gd" id="1_ggdx0"]
 [ext_resource type="Texture2D" uid="uid://bkeospuh4q2ke" path="res://sprites/tilesets/tileset_biblioteca_lvl2.png" id="2_2hfhv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="7_o85mm"]
 [ext_resource type="PackedScene" uid="uid://dw5yyohy6pohe" path="res://scenes/player.tscn" id="7_tketm"]
 [ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_rc4ko"]
+[ext_resource type="Script" uid="uid://c4fexsuvsgvjx" path="res://scripts/camera_lvl6.gd" id="9_2hfhv"]
 [ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_e7rfs"]
 [ext_resource type="Script" uid="uid://bomb6gcn3nl4k" path="res://scripts/npc_zorro.gd" id="9_f7qe8"]
 [ext_resource type="Texture2D" uid="uid://c00j5gvr0e37u" path="res://sprites/personajes/zorro.png" id="10_7wjyk"]
@@ -189,6 +190,7 @@ position = Vector2(184, 232)
 position = Vector2(386, 190)
 scale = Vector2(12.9747, 8.3746)
 zoom = Vector2(2.24, 2.24)
+script = ExtResource("9_2hfhv")
 
 [node name="NPCZorro" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(170, -49)
@@ -322,34 +324,36 @@ label_settings = SubResource("LabelSettings_l67fq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="UID" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UID"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 545.0
-offset_top = 217.0
-offset_right = 609.0
-offset_bottom = 281.0
+offset_left = 16.0
+offset_top = 424.0
+offset_right = 80.0
+offset_bottom = 488.0
+scale = Vector2(3, 3)
 
-[node name="InterrogarTouchScreenButton" type="TouchScreenButton" parent="Control"]
+[node name="InterrogarTouchScreenButton" type="TouchScreenButton" parent="UID/Control"]
 scale = Vector2(2, 2)
 texture_normal = ExtResource("20_s4g2c")
 action = "Interrogar"
 script = ExtResource("21_2s3p1")
 
-[node name="Control2" type="Control" parent="."]
+[node name="Control2" type="Control" parent="UID"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 464.0
-offset_top = 216.0
-offset_right = 528.0
-offset_bottom = 280.0
+offset_left = 232.0
+offset_top = 424.0
+offset_right = 296.0
+offset_bottom = 488.0
+scale = Vector2(3, 3)
 
-[node name="CulparTouchScreenButton" type="TouchScreenButton" parent="Control2"]
+[node name="CulparTouchScreenButton" type="TouchScreenButton" parent="UID/Control2"]
 scale = Vector2(2, 2)
 texture_normal = ExtResource("22_5yul3")
 script = ExtResource("23_bnfrr")
-
-[node name="UID" type="CanvasLayer" parent="."]
 
 [node name="QuizInputZorro" parent="UID" instance=ExtResource("21_8ohgd")]
 visible = false
@@ -401,25 +405,31 @@ offset_bottom = 92.0
 
 [node name="Cursor" parent="UID" instance=ExtResource("27_lv81u")]
 
+[connection signal="area_entered" from="NPCZorro" to="Camera2D" method="_on_npc_zorro_area_entered"]
 [connection signal="area_entered" from="NPCZorro" to="NPCZorro" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCZorro" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]
-[connection signal="area_entered" from="NPCZorro" to="Control2/CulparTouchScreenButton" method="_on_npc_zorro_area_entered"]
+[connection signal="area_entered" from="NPCZorro" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_entered"]
+[connection signal="area_entered" from="NPCZorro" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_zorro_area_entered"]
+[connection signal="area_exited" from="NPCZorro" to="Camera2D" method="_on_npc_zorro_area_exited"]
 [connection signal="area_exited" from="NPCZorro" to="NPCZorro" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCZorro" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_exited"]
-[connection signal="area_exited" from="NPCZorro" to="Control2/CulparTouchScreenButton" method="_on_npc_zorro_area_exited"]
+[connection signal="area_exited" from="NPCZorro" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_a_area_exited"]
+[connection signal="area_exited" from="NPCZorro" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_zorro_area_exited"]
+[connection signal="area_entered" from="NPCBuho" to="Camera2D" method="_on_npc_buho_area_entered"]
 [connection signal="area_entered" from="NPCBuho" to="NPCBuho" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCBuho" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_entered"]
-[connection signal="area_entered" from="NPCBuho" to="Control2/CulparTouchScreenButton" method="_on_npc_buho_area_entered"]
+[connection signal="area_entered" from="NPCBuho" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_entered"]
+[connection signal="area_entered" from="NPCBuho" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_buho_area_entered"]
+[connection signal="area_exited" from="NPCBuho" to="Camera2D" method="_on_npc_buho_area_exited"]
 [connection signal="area_exited" from="NPCBuho" to="NPCBuho" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCBuho" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_exited"]
-[connection signal="area_exited" from="NPCBuho" to="Control2/CulparTouchScreenButton" method="_on_npc_buho_area_exited"]
+[connection signal="area_exited" from="NPCBuho" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_b_area_exited"]
+[connection signal="area_exited" from="NPCBuho" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_buho_area_exited"]
+[connection signal="area_entered" from="NPCConejo" to="Camera2D" method="_on_npc_conejo_area_entered"]
 [connection signal="area_entered" from="NPCConejo" to="NPCConejo" method="_on_area_entered"]
-[connection signal="area_entered" from="NPCConejo" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_entered"]
-[connection signal="area_entered" from="NPCConejo" to="Control2/CulparTouchScreenButton" method="_on_npc_conejo_area_entered"]
+[connection signal="area_entered" from="NPCConejo" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_entered"]
+[connection signal="area_entered" from="NPCConejo" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_conejo_area_entered"]
+[connection signal="area_exited" from="NPCConejo" to="Camera2D" method="_on_npc_conejo_area_exited"]
 [connection signal="area_exited" from="NPCConejo" to="NPCConejo" method="_on_area_exited"]
-[connection signal="area_exited" from="NPCConejo" to="Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
-[connection signal="pressed" from="Control/InterrogarTouchScreenButton" to="Control/InterrogarTouchScreenButton" method="_on_pressed"]
-[connection signal="pressed" from="Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
+[connection signal="area_exited" from="NPCConejo" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="pressed" from="UID/Control/InterrogarTouchScreenButton" to="UID/Control/InterrogarTouchScreenButton" method="_on_pressed"]
+[connection signal="pressed" from="UID/Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 
 [editable path="UID/popupcorrect"]

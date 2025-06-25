@@ -4,7 +4,7 @@ var Tile_map: TileMap
 var Astar = AStarGrid2D
 @onready var collision_shape_2d = $Areaplayer/CollisionShape2D
 var current_id_path:Array[Vector2i] # lista que guarda los puntos (celdas) del camino que debe seguir el personaje
-var speed := 60
+var speed := 70
 @onready var animated_sprite = $AnimatedSprite2D2
 
 func _ready():
