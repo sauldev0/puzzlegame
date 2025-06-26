@@ -1,9 +1,11 @@
 extends Control
 @onready var score_screen = $score_screen
+@onready var player_screen = $player_screen
 
 func _ready():
 	get_tree().paused = false
 	score_screen.text = "Fragmentos de puzzle reunidos: " + str(LEVELCORE.score_total)
+	player_screen.text = "Jugador: " + str(LEVELCORE.player_name)
 
 func _on_play_pressed():
 	#if LEVELCORE.lvl1_completed == false:

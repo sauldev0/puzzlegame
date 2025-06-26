@@ -371,10 +371,10 @@ offset_bottom = 121.0
 
 [node name="QuizInputConejo" parent="UID" instance=ExtResource("23_7wjyk")]
 visible = false
-offset_left = 177.0
-offset_top = 115.0
-offset_right = 177.0
-offset_bottom = 115.0
+offset_left = -2.0
+offset_top = 397.0
+offset_right = -2.0
+offset_bottom = 397.0
 
 [node name="menu_pausa" parent="UID" instance=ExtResource("5_lcgj0")]
 process_mode = 3
@@ -429,7 +429,6 @@ offset_bottom = 92.0
 [connection signal="area_exited" from="NPCConejo" to="NPCConejo" method="_on_area_exited"]
 [connection signal="area_exited" from="NPCConejo" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
 [connection signal="area_exited" from="NPCConejo" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_conejo_area_exited"]
-[connection signal="pressed" from="UID/Control/InterrogarTouchScreenButton" to="UID/Control/InterrogarTouchScreenButton" method="_on_pressed"]
 [connection signal="pressed" from="UID/Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 

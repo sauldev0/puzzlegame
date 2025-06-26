@@ -164,6 +164,17 @@ theme_override_font_sizes/font_size = 32
 text = "Fragmentos de puzzle obtenidos:"
 label_settings = SubResource("LabelSettings_70i5f")
 
+[node name="player_screen" type="Label" parent="."]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 82.0
+offset_right = 725.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.697282, 0.714844, 0.393723, 1)
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 32
+label_settings = SubResource("LabelSettings_70i5f")
+
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -48,6 +48,7 @@ stretch_mode = 0
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 0
 texture = ExtResource("2_tct6o")
 region_rect = Rect2(8, 8, 48, 48)
 

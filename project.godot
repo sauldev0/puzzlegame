@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="questlogica"
-run/main_scene="uid://bs08ehdf2j42p"
+run/main_scene="uid://beniqh2swe4lt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://benv48piv60bw"
 
 [autoload]
 
-GLOBAL="*res://scripts/GLOBAL.gd"
 LEVELCORE="*res://scripts/LEVEL_CORE.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 

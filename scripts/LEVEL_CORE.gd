@@ -6,7 +6,6 @@ var puede_usarse_boton_culpar := false
 signal quiz_resuelto(npc_id)
 
 
-
 func marcar_quiz_como_resuelto(npc_id: String) -> void:
 	quiz_resueltos[npc_id] = true
 	emit_signal("quiz_resuelto", npc_id)  # Notifica a los botones u otros nodos
@@ -14,6 +13,7 @@ func marcar_quiz_como_resuelto(npc_id: String) -> void:
 func quiz_ya_resuelto(npc_id: String) -> bool:
 	return quiz_resueltos.get(npc_id, false)
 	
+var player_name = ""
 var nivel_actual = 0
 var score_total = 0
 var numero_de_intentos = 0
@@ -84,6 +84,7 @@ func save_data():
 		"lvl12_stars" = lvl12_stars,
 		
 		"score_total" = score_total,
+		"player_name" = player_name,
 		
 	}
 	file.store_var(data)
@@ -119,6 +120,7 @@ func load_data():
 			"lvl12_stars" = 0,
 			
 			"score_total" = 0,
+			"player_name" = "",
 		
 			
 			}
@@ -153,6 +155,7 @@ func load_data():
 	lvl12_stars = data.lvl12_stars
 	
 	score_total = data.score_total
+	player_name = data.player_name
 	
 	file = null
 	
