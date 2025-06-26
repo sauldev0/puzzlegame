@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cvstjmaou0jkx"
+path="res://.godot/imported/NiñoA_lvl10.dialogue-4f3861c945a2ed4548ece7f6ed22475a.tres"
+
+[deps]
+
+source_file="res://dialogues/NiñoA_lvl10.dialogue"
+dest_files=["res://.godot/imported/NiñoA_lvl10.dialogue-4f3861c945a2ed4548ece7f6ed22475a.tres"]
+
+[params]
+
+defaults=true

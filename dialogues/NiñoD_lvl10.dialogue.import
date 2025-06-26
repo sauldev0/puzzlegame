@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dbgr325drkjai"
+path="res://.godot/imported/NiñoD_lvl10.dialogue-8373fbb807566a970ab4b1b08853840f.tres"
+
+[deps]
+
+source_file="res://dialogues/NiñoD_lvl10.dialogue"
+dest_files=["res://.godot/imported/NiñoD_lvl10.dialogue-8373fbb807566a970ab4b1b08853840f.tres"]
+
+[params]
+
+defaults=true

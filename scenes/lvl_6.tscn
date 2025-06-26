@@ -207,10 +207,10 @@ shape = SubResource("CircleShape2D_obn6w")
 
 [node name="LabelNameZorro" type="Label" parent="NPCZorro"]
 visible = false
-offset_left = 209.0
-offset_top = 157.0
-offset_right = 238.0
-offset_bottom = 167.0
+offset_left = 210.0
+offset_top = 166.0
+offset_right = 239.0
+offset_bottom = 176.0
 theme = SubResource("Theme_4q5qe")
 theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
 theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
@@ -218,10 +218,10 @@ text = "Zorro"
 
 [node name="PanelDialogoZorro" type="PanelContainer" parent="NPCZorro"]
 visible = false
-offset_left = 145.0
-offset_top = 113.0
-offset_right = 301.0
-offset_bottom = 156.0
+offset_left = 146.0
+offset_top = 124.0
+offset_right = 302.0
+offset_bottom = 167.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCZorro/PanelDialogoZorro"]
@@ -252,10 +252,10 @@ shape = SubResource("RectangleShape2D_7wjyk")
 
 [node name="LabelNameBuho" type="Label" parent="NPCBuho"]
 visible = false
-offset_left = 208.0
-offset_top = 174.0
-offset_right = 242.0
-offset_bottom = 184.0
+offset_left = 190.0
+offset_top = 176.0
+offset_right = 224.0
+offset_bottom = 186.0
 theme = SubResource("Theme_4q5qe")
 theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
 theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
@@ -263,10 +263,10 @@ text = "Buho"
 
 [node name="PanelDialogoBuho" type="PanelContainer" parent="NPCBuho"]
 visible = false
-offset_left = 158.0
-offset_top = 142.0
-offset_right = 281.0
-offset_bottom = 172.0
+offset_left = 141.0
+offset_top = 145.0
+offset_right = 264.0
+offset_bottom = 175.0
 theme = SubResource("Theme_hmy1o")
 
 [node name="MarginContainer" type="MarginContainer" parent="NPCBuho/PanelDialogoBuho"]
@@ -282,7 +282,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NPCConejo" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(37, 44)
+position = Vector2(-6, -18)
 script = ExtResource("14_uynhk")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCConejo"]
@@ -428,6 +428,7 @@ offset_bottom = 92.0
 [connection signal="area_exited" from="NPCConejo" to="Camera2D" method="_on_npc_conejo_area_exited"]
 [connection signal="area_exited" from="NPCConejo" to="NPCConejo" method="_on_area_exited"]
 [connection signal="area_exited" from="NPCConejo" to="UID/Control/InterrogarTouchScreenButton" method="_on_npc_persona_c_area_exited"]
+[connection signal="area_exited" from="NPCConejo" to="UID/Control2/CulparTouchScreenButton" method="_on_npc_conejo_area_exited"]
 [connection signal="pressed" from="UID/Control/InterrogarTouchScreenButton" to="UID/Control/InterrogarTouchScreenButton" method="_on_pressed"]
 [connection signal="pressed" from="UID/Control2/CulparTouchScreenButton" to="." method="_on_culpar_touch_screen_button_pressed"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]

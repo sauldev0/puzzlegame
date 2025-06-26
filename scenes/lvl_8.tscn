@@ -271,14 +271,14 @@ shape = SubResource("CircleShape2D_obn6w")
 
 [node name="LabelNameB" type="Label" parent="NPCSospechosoB"]
 visible = false
-offset_left = 201.0
-offset_top = 164.0
-offset_right = 303.0
-offset_bottom = 174.0
+offset_left = 194.0
+offset_top = 163.0
+offset_right = 296.0
+offset_bottom = 173.0
 theme = SubResource("Theme_4q5qe")
 theme_override_colors/font_color = Color(0.180392, 0.14902, 0.133333, 1)
 theme_override_colors/font_shadow_color = Color(0.8, 0.807843, 0.780392, 1)
-text = "Persona B"
+text = "Sospechoso B"
 
 [node name="PanelDialogoB" type="PanelContainer" parent="NPCSospechosoB"]
 visible = false
@@ -295,8 +295,8 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="NPCSospechosoB/PanelDialogoB/MarginContainer"]
 layout_mode = 2
-text = "B miente. ¡Quien dice
- la verdad soy yo!"
+text = "A miente. ¡Soy yo
+quien dice la verdad!"
 label_settings = SubResource("LabelSettings_l67fq")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -339,8 +339,8 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="NPCSospechosoC/PanelDialogoC/MarginContainer"]
 layout_mode = 2
-text = "A miente. ¡Soy yo 
-quien dice la verdad!"
+text = "B miente. ¡Quien
+dice la verdad soy yo!"
 label_settings = SubResource("LabelSettings_l67fq")
 horizontal_alignment = 1
 vertical_alignment = 1
