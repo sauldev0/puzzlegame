@@ -1,44 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://bs08ehdf2j42p"]
+[gd_scene load_steps=10 format=3 uid="uid://bs08ehdf2j42p"]
 
 [ext_resource type="Script" uid="uid://bio2eol80ixpd" path="res://scripts/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://dlxkh5ebpjl3k" path="res://sprites/Clouds/Clouds 1/1.png" id="2_v86rl"]
+[ext_resource type="Texture2D" uid="uid://cdmknvx4mcg7x" path="res://sprites/UID/logikazo.png" id="2_mhnvy"]
 [ext_resource type="FontFile" uid="uid://da4gcssh8onri" path="res://fonts/PixelOperator8-Bold.ttf" id="2_vjb58"]
-[ext_resource type="Texture2D" uid="uid://of5mlkgoxk1h" path="res://sprites/Clouds/Clouds 5/5.png" id="3_13sgg"]
-[ext_resource type="FontFile" uid="uid://boi7xjw4orujj" path="res://fonts/PixelOperator8.ttf" id="3_con2f"]
-[ext_resource type="Texture2D" uid="uid://c2i1hyhi5liw8" path="res://sprites/Clouds/Clouds 5/3.png" id="4_i6lef"]
-[ext_resource type="Script" uid="uid://b10o44n47hjl1" path="res://scripts/texture_rect_3.gd" id="5_13sgg"]
-[ext_resource type="Texture2D" uid="uid://bxsqprtr8f0pf" path="res://sprites/Clouds/Clouds 1/2.png" id="5_70i5f"]
-[ext_resource type="FontFile" uid="uid://cxh76u0rvd4ac" path="res://fonts/MotionControl-Bold.otf" id="9_i6lef"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="3_4ytvr"]
+[ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="4_mhnvy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4h3mk"]
-content_margin_left = 5.0
-content_margin_top = 10.0
-content_margin_right = 5.0
-content_margin_bottom = 10.0
-bg_color = Color(0.262664, 0.632097, 0.999322, 1)
-border_color = Color(0.807477, 0.872842, 0.990723, 1)
-border_blend = true
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.298039, 0.376471, 0.666667, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
-content_margin_left = 5.0
-content_margin_top = 10.0
-content_margin_right = 5.0
-content_margin_bottom = 10.0
-bg_color = Color(0.533333, 0.564706, 0.905882, 1)
+[sub_resource type="Theme" id="Theme_v86rl"]
+Button/styles/normal = SubResource("StyleBoxFlat_g3eks")
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_yqeox"]
-color = Color(0.67451, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
-content_margin_left = 5.0
-content_margin_top = 10.0
-content_margin_right = 5.0
-content_margin_bottom = 10.0
-bg_color = Color(0.533333, 0.564706, 0.905882, 1)
+[sub_resource type="Theme" id="Theme_4ytvr"]
+default_font = ExtResource("3_4ytvr")
+default_font_size = 75
 
 [sub_resource type="LabelSettings" id="LabelSettings_70i5f"]
-font = ExtResource("9_i6lef")
-font_size = 60
+font = ExtResource("4_mhnvy")
+font_size = 24
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -47,73 +27,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_v86rl")
 script = ExtResource("1_yqeox")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.85293, 0.906017, 0.951717, 1)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_v86rl")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_13sgg")
-expand_mode = 1
-
-[node name="TextureRect3" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_i6lef")
-expand_mode = 1
-script = ExtResource("5_13sgg")
-
-[node name="TextureRect5" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1151.0
-offset_top = 56.0
-offset_right = -1151.0
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_i6lef")
-expand_mode = 1
-script = ExtResource("5_13sgg")
-
-[node name="TextureRect4" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_70i5f")
-expand_mode = 1
+texture = ExtResource("2_mhnvy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -122,57 +46,49 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -130.0
-offset_top = -102.5
-offset_right = 130.0
-offset_bottom = 102.5
+offset_left = -350.0
+offset_top = -75.0
+offset_right = 350.0
+offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_4ytvr")
 theme_override_constants/separation = 20
 
 [node name="Play" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vjb58")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_4h3mk")
 text = "Jugar"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_con2f")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
 text = "Opciones"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_con2f")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxLine_yqeox")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vjb58")
 text = "Salir"
 
 [node name="score_screen" type="Label" parent="."]
 layout_mode = 1
-offset_left = 17.0
-offset_top = 8.0
-offset_right = 723.0
-offset_bottom = 69.0
+offset_left = 142.0
+offset_top = 66.0
+offset_right = 157.0
+offset_bottom = 96.0
 theme_override_colors/font_color = Color(0.697282, 0.714844, 0.393723, 1)
 theme_override_fonts/font = ExtResource("2_vjb58")
 theme_override_font_sizes/font_size = 32
-text = "Fragmentos de puzzle obtenidos:"
+text = "S"
 label_settings = SubResource("LabelSettings_70i5f")
 
 [node name="player_screen" type="Label" parent="."]
 layout_mode = 1
-offset_left = 19.0
-offset_top = 82.0
-offset_right = 725.0
-offset_bottom = 143.0
-theme_override_colors/font_color = Color(0.697282, 0.714844, 0.393723, 1)
-theme_override_fonts/font = ExtResource("2_vjb58")
+offset_left = 114.0
+offset_top = 21.0
+offset_right = 129.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("4_mhnvy")
 theme_override_font_sizes/font_size = 32
+text = "S"
 label_settings = SubResource("LabelSettings_70i5f")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]

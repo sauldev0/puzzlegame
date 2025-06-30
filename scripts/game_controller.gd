@@ -5,6 +5,7 @@ extends Node2D
 @onready var popuptexto = $"../popuptexto"
 @onready var score_label = $"../popupcorrect/WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer/score_label"
 @onready var pop_up_declaraciones = $"../PopUpDeclaraciones"
+#@onready var animation_player = $"../../AnimationPlayer"
 @onready var view = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/View
 
 
@@ -113,7 +114,9 @@ func mostrar_popup_correcto_con_o_sin_declaracion():
 func mostrar_popup_declaraciones():
 	var nivel = LEVELCORE.nivel_actual
 	pop_up_declaraciones.set_declarations(declaraciones.get(nivel, "Declaraciones no disponibles."))
+	#animation_player.play("show_pop_up_declaraciones")
 	pop_up_declaraciones.visible = true
+	print("Anchors:", pop_up_declaraciones.anchor_left, pop_up_declaraciones.anchor_top, pop_up_declaraciones.anchor_right, pop_up_declaraciones.anchor_bottom)
 	get_tree().paused = true
 
 	var boton = pop_up_declaraciones.get_node("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next")

@@ -11,11 +11,14 @@ var niveles_con_declaraciones_y_tabla = [4]
 
 func set_declarations(text: String):
 	declaraciones_label.bbcode_text = text
+
+
 	
 func _ready():
 	await get_tree().create_timer(0.1).timeout
 	actualizar_visibilidad_tabla()
 	print("Nivel actual para declaraciones:", LEVELCORE.nivel_actual)
+	print("Anchors:", anchor_left, anchor_top, anchor_right, anchor_bottom)
 	
 
 func actualizar_visibilidad_tabla():
