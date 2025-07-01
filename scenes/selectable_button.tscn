@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2bjqep1jf8q7"]
+
+[ext_resource type="Theme" uid="uid://d236ytgqs6qo" path="res://themes/menu.tres" id="1_8pimr"]
+[ext_resource type="Texture2D" uid="uid://bqu13af6blxft" path="res://sprites/UID/left_arrow.png" id="1_cja5k"]
+[ext_resource type="Script" uid="uid://c802bkxoywuhs" path="res://scripts/selectable_button.gd" id="1_cm5mg"]
+[ext_resource type="Theme" uid="uid://e4r1n0s3yv5s" path="res://themes/menu_vbox.tres" id="2_8pimr"]
+[ext_resource type="Texture2D" uid="uid://coqu2qkwrsgri" path="res://sprites/UID/right_arrow.png" id="2_cm5mg"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="4_vbqjr"]
+
+[node name="SelectableButton" type="Control"]
+custom_minimum_size = Vector2(233, 77)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8pimr")
+script = ExtResource("1_cm5mg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8pimr")
+
+[node name="LabelLeft" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_cja5k")
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vbqjr")
+theme_override_font_sizes/font_size = 75
+text = "Jugar"
+
+[node name="LabelRight" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_cm5mg")
+
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_mouse_exited"]

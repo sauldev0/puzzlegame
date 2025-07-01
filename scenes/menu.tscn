@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs08ehdf2j42p"]
+[gd_scene load_steps=9 format=3 uid="uid://bs08ehdf2j42p"]
 
 [ext_resource type="Script" uid="uid://bio2eol80ixpd" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://cdmknvx4mcg7x" path="res://sprites/UID/logikazo.png" id="2_mhnvy"]
 [ext_resource type="FontFile" uid="uid://da4gcssh8onri" path="res://fonts/PixelOperator8-Bold.ttf" id="2_vjb58"]
-[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="3_4ytvr"]
+[ext_resource type="Theme" uid="uid://e4r1n0s3yv5s" path="res://themes/menu_vbox.tres" id="3_4ytvr"]
 [ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="4_mhnvy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
@@ -11,10 +11,6 @@ bg_color = Color(0.298039, 0.376471, 0.666667, 1)
 
 [sub_resource type="Theme" id="Theme_v86rl"]
 Button/styles/normal = SubResource("StyleBoxFlat_g3eks")
-
-[sub_resource type="Theme" id="Theme_4ytvr"]
-default_font = ExtResource("3_4ytvr")
-default_font_size = 75
 
 [sub_resource type="LabelSettings" id="LabelSettings_70i5f"]
 font = ExtResource("4_mhnvy")
@@ -52,7 +48,7 @@ offset_right = 350.0
 offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_4ytvr")
+theme = ExtResource("3_4ytvr")
 theme_override_constants/separation = 20
 
 [node name="Play" type="Button" parent="VBoxContainer"]
