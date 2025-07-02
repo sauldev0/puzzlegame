@@ -33,7 +33,7 @@ func verificar_respuesta():
 			settings = LabelSettings.new()
 		else:
 			settings = settings.duplicate()
-		settings.font_color = Color.GREEN
+		settings.font_color = Color.GREEN_YELLOW
 		resultado.label_settings = settings
 		
 		emit_signal("quiz_tabla_resuelto")
@@ -48,6 +48,6 @@ func verificar_respuesta():
 			settings = LabelSettings.new()
 		else:
 			settings = settings.duplicate()
-		settings.font_color = Color.RED
+		settings.font_color = Color.CRIMSON
 		resultado.label_settings = settings
 		

@@ -420,13 +420,6 @@ vertical_alignment = 1
 
 [node name="UID" type="CanvasLayer" parent="."]
 
-[node name="QuizInputLlv10" parent="UID" instance=ExtResource("22_6iut7")]
-visible = false
-offset_left = 31.0
-offset_top = 139.0
-offset_right = 31.0
-offset_bottom = 139.0
-
 [node name="Control" type="Control" parent="UID"]
 layout_mode = 3
 anchors_preset = 0
@@ -468,6 +461,11 @@ offset_left = 1.0
 offset_top = -0.600006
 offset_right = 1.0
 offset_bottom = -0.599976
+
+[node name="QuizInputLlv10" parent="UID" instance=ExtResource("22_6iut7")]
+visible = false
+offset_top = 318.0
+offset_bottom = 318.0
 
 [node name="Game Controller" parent="UID" instance=ExtResource("9_i4b08")]
 process_mode = 3

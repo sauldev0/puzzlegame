@@ -1,6 +1,6 @@
 extends Control
 
-@onready var resultado = $PanelContainer/VBoxContainer/ResultadoLabel
+@onready var resultado = $PanelContainer/VBoxContainer/Label2
 @onready var opcion1 = $PanelContainer/VBoxContainer/HBoxContainer/OptionButton
 @onready var opcion2 = $PanelContainer/VBoxContainer/HBoxContainer/OptionButton2
 
@@ -32,7 +32,7 @@ func verificar_respuesta():
 			settings = LabelSettings.new()
 		else:
 			settings = settings.duplicate()
-		settings.font_color = Color.GREEN
+		settings.font_color = Color.GREEN_YELLOW
 		resultado.label_settings = settings
 		
 		await get_tree().create_timer(1.5).timeout
@@ -46,6 +46,6 @@ func verificar_respuesta():
 			settings = LabelSettings.new()
 		else:
 			settings = settings.duplicate()
-		settings.font_color = Color.RED
+		settings.font_color = Color.CRIMSON
 		resultado.label_settings = settings
 		
