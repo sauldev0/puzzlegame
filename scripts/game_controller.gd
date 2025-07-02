@@ -3,10 +3,11 @@ extends Node2D
 @onready var popupcorrect = $"../popupcorrect"
 @onready var popupincorrect = $"../popupincorrect"
 @onready var popuptexto = $"../popuptexto"
-@onready var score_label = $"../popupcorrect/WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer/score_label"
+@onready var score_label = $"../popupcorrect/WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer/MarginContainer2/score_label"
 @onready var pop_up_declaraciones = $"../PopUpDeclaraciones"
 #@onready var animation_player = $"../../AnimationPlayer"
 @onready var view = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/View
+@onready var piezas_label = $"../popupcorrect/WinPanelContainer/VBoxContainer/PiezasLabel"
 
 
 @export var touch_indicator_scene: PackedScene
@@ -74,16 +75,16 @@ var reglas = {1 : "",
 # Diccionario con declaraciones de los niveles que tienen
 
 var declaraciones = {
-	2 : "A: \"Yo no fui, y B miente.\"  [color=#e4be6e] ˃ A ˹ (ˉ A ˄ ˉ B ) [/color]\n\n" +
-		"B: \"C fue el culpable.\" [color=#e4be6e] ˉ B ˹ C [/color]\n\n" +
-		"C: \"A y B mienten.\" [color=#e4be6e] ˃ C ˹ ( ˉ A ˄ ˉ B) [/color]\n\n" +
-		"D: \"Si C dice la verdad, entonces A es culpable,\" [color=#e4be6e] ˃ D ˹ (C ˃  A) [/color]\n\n",
+	2 : "A: \"Yo no fui, y B miente.\"  [color=#feae34] ˃ A ˹ (ˉ A ˄ ˉ B ) [/color]\n\n" +
+		"B: \"C fue el culpable.\" [color=#feae34] ˉ B ˹ C [/color]\n\n" +
+		"C: \"A y B mienten.\" [color=#feae34] ˃ C ˹ ( ˉ A ˄ ˉ B) [/color]\n\n" +
+		"D: \"Si C dice la verdad, entonces A es culpable,\" [color=#feae34] ˃ D ˹ (C ˃  A) [/color]\n\n",
 			
-	4 : "Lucas: \"Si Marta es culpable, entonces Sofía también lo es\" [color=#e4be6e] L ˹ (M ˃ S) [/color]\n\n" +
-		"Marta: \"Diego es inocente.\" [color=#e4be6e] M ˹ ˉ D [/color]\n\n" +
-		"Sofía: \"Yo no soy culpable, y Diego miente.\" [color=#e4be6e] S ˹ (ˉ S ˄ ˉ D) [/color]\n\n" +
-		"Diego: \"Lucas es culpable o Sofía está mintiendo.\" [color=#e4be6e] D ˹ (L ˅ ˉ S) [/color]\n\n" +
-		"Carla: \"Si Sofía es inocente, entonces Marta es culpable.\" [color=#e4be6e] C ˹ (ˉ S ˃ M) [/color]\n\n",
+	4 : "Lucas: \"Si Marta es culpable, entonces Sofía también lo es\" [color=#feae34] L ˹ (M ˃ S) [/color]\n\n" +
+		"Marta: \"Diego es inocente.\" [color=#feae34] M ˹ ˉ D [/color]\n\n" +
+		"Sofía: \"Yo no soy culpable, y Diego miente.\" [color=#feae34] S ˹ (ˉ S ˄ ˉ D) [/color]\n\n" +
+		"Diego: \"Lucas es culpable o Sofía está mintiendo.\" [color=#feae34] D ˹ (L ˅ ˉ S) [/color]\n\n" +
+		"Carla: \"Si Sofía es inocente, entonces Marta es culpable.\" [color=#feae34] C ˹ (ˉ S ˃ M) [/color]\n\n",
 
 	3 : "Declaraciones no disponibles por ahora.\n\n"
 }
@@ -168,11 +169,12 @@ func game_victory():
 		sumar_puntos()
 		guardar_estrellas_por_nivel(nivel, estrellas)
 		mostrar_popup_correcto_con_o_sin_declaracion()
-		score_label.text = "Has conseguido " + str(puntos_nivel) + " fragmentos de puzzle"
+		score_label.text = str(puntos_nivel)
 	else:
 		mostrar_popup_correcto_con_o_sin_declaracion() 
-		score_label.text = "El nivel ya ha sido completado 0 fragmentos de puzzle"
-
+		score_label.text = "0"
+		piezas_label.text = "El nivel ya ha sido completado antes"
+		
 	
 	LEVELCORE.numero_de_intentos = 0
 	get_tree().paused = popupcorrect.visible

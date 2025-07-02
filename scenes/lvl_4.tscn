@@ -438,10 +438,6 @@ process_mode = 3
 
 [node name="PopUpDeclaraciones" parent="UID" instance=ExtResource("30_swldy")]
 visible = false
-offset_left = 3.0
-offset_top = 92.0
-offset_right = 3.0
-offset_bottom = 92.0
 
 [node name="Cursor" parent="UID" instance=ExtResource("27_anrix")]
 

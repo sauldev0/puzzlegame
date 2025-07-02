@@ -1,7 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp3riqumoahq3"]
+[gd_scene load_steps=13 format=3 uid="uid://dp3riqumoahq3"]
 
+[ext_resource type="StyleBox" uid="uid://cb74i50f66ori" path="res://themes/hover_button.tres" id="1_ildu5"]
 [ext_resource type="Script" uid="uid://b2nqkxq7mne6l" path="res://scripts/pop_up_correct.gd" id="1_qv0hs"]
-[ext_resource type="Texture2D" uid="uid://dpftqqsr0fwrd" path="res://sprites/puzzles/estrella_llena.png" id="2_lrmt3"]
+[ext_resource type="StyleBox" uid="uid://4s3xu8rqpl6o" path="res://themes/normal_button.tres" id="2_qpwgl"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="3_8y6wc"]
+[ext_resource type="Texture2D" uid="uid://tv0s1ihkb7me" path="res://sprites/UID/fragmentopuzzle.png" id="3_sbnbt"]
+[ext_resource type="Texture2D" uid="uid://blqx4ltqml8f2" path="res://sprites/UID/panel_pausa.png" id="3_v00lf"]
+[ext_resource type="StyleBox" uid="uid://dsdk1c3dviw6b" path="res://themes/hover_button_correcto.tres" id="7_e5e6u"]
+[ext_resource type="StyleBox" uid="uid://b3l0iet6fntmy" path="res://themes/normal_button_correcto.tres" id="8_ysq85"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8y6wc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8y6wc"]
+bg_color = Color(0.232379, 0.221741, 0.328125, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_13rwd"]
+default_font = ExtResource("3_8y6wc")
+Button/styles/focus = SubResource("StyleBoxEmpty_8y6wc")
+Button/styles/hover = ExtResource("1_ildu5")
+Button/styles/normal = ExtResource("2_qpwgl")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_8y6wc")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3a2l"]
 
 [node name="popupcorrect" type="Control"]
 layout_mode = 3
@@ -12,37 +36,64 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_13rwd")
 script = ExtResource("1_qv0hs")
 
-[node name="WinPanelContainer" type="PanelContainer" parent="."]
+[node name="WinPanelContainer" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.5
-offset_top = -128.0
-offset_right = 125.5
-offset_bottom = 128.0
+offset_left = -385.5
+offset_top = -254.5
+offset_right = 385.5
+offset_bottom = 254.5
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_v00lf")
+region_rect = Rect2(0, 0, 128, 127)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 11
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WinPanelContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -149.0
+offset_right = 157.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 20
 
 [node name="WinLabel" type="Label" parent="WinPanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.175354, 0.863281, 0.445107, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.421326, 0.921875, 0.523, 1)
+theme_override_colors/font_outline_color = Color(0.2845, 0.411986, 0.441406, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 80
 text = "¡Correcto!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FragmentosLabel" type="Label" parent="WinPanelContainer/VBoxContainer"]
+[node name="PiezasLabel" type="Label" parent="WinPanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(588, 36)
 layout_mode = 2
-text = "Fragmentos de puzzles obtenidos"
+theme_override_colors/font_color = Color(0.996078, 0.682353, 0.203922, 1)
+theme_override_font_sizes/font_size = 40
+text = "Piezas de puzzle obtenidas"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="IconPanelContainer" type="PanelContainer" parent="WinPanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -51,16 +102,30 @@ size_flags_horizontal = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="WinPanelContainer/VBoxContainer/IconPanelContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="TextureRect" type="TextureRect" parent="WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_lrmt3")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_sbnbt")
+stretch_mode = 2
 
-[node name="score_label" type="Label" parent="WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
+[node name="MarginContainer2" type="MarginContainer" parent="WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.840316, 0.921875, 0.118835, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="score_label" type="Label" parent="WinPanelContainer/VBoxContainer/IconPanelContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.682353, 0.203922, 1)
+theme_override_font_sizes/font_size = 40
+text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -70,12 +135,21 @@ layout_mode = 2
 
 [node name="menu" type="Button" parent="WinPanelContainer/VBoxContainer/ButtonHBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Menu"
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Menú"
 
 [node name="nextlevel" type="Button" parent="WinPanelContainer/VBoxContainer/ButtonHBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g3a2l")
+theme_override_styles/hover = ExtResource("7_e5e6u")
+theme_override_styles/normal = ExtResource("8_ysq85")
 text = "Siguiente nivel"
 
 [connection signal="pressed" from="WinPanelContainer/VBoxContainer/ButtonHBoxContainer/menu" to="." method="_on_menu_pressed"]

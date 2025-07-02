@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0c551xym5rou"]
+[gd_scene load_steps=11 format=3 uid="uid://c0c551xym5rou"]
 
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_4kovu"]
+[ext_resource type="Texture2D" uid="uid://blqx4ltqml8f2" path="res://sprites/UID/panel_pausa.png" id="2_c6gmq"]
 [ext_resource type="Script" uid="uid://b6wnb0fo22f2j" path="res://scripts/pop_up_incorrect.gd" id="2_ttisu"]
+[ext_resource type="StyleBox" uid="uid://kicre36nblc3" path="res://themes/hover_button_incorrecto.tres" id="4_d5seg"]
+[ext_resource type="StyleBox" uid="uid://cb74i50f66ori" path="res://themes/hover_button.tres" id="4_p4rvu"]
+[ext_resource type="StyleBox" uid="uid://4s3xu8rqpl6o" path="res://themes/normal_button.tres" id="5_d5seg"]
+[ext_resource type="StyleBox" uid="uid://btgnphgks2t4h" path="res://themes/normal_button_incorrecto.tres" id="5_xa0nk"]
+
+[sub_resource type="Theme" id="Theme_xa0nk"]
+default_font = ExtResource("1_4kovu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2n1f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1kei"]
 
 [node name="popupincorrect" type="Control"]
 layout_mode = 3
@@ -11,54 +24,81 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_xa0nk")
 script = ExtResource("2_ttisu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.5
-offset_top = -114.0
-offset_right = 256.5
-offset_bottom = 114.0
+offset_left = -329.5
+offset_top = -156.0
+offset_right = 329.5
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.666667, 0.831373, 0.917647, 1)
+texture = ExtResource("2_c6gmq")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.5
-offset_top = -99.5
-offset_right = 125.5
-offset_bottom = 99.5
+offset_left = -315.0
+offset_top = -116.0
+offset_right = 315.0
+offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960938, 0.285278, 0.285278, 1)
+theme_override_colors/font_outline_color = Color(0.414063, 0.158508, 0.158508, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
 text = "Incorrecto"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="retry" type="Button" parent="VBoxContainer"]
+[node name="retry" type="Button" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d2n1f")
+theme_override_styles/hover = ExtResource("4_d5seg")
+theme_override_styles/normal = ExtResource("5_xa0nk")
 text = "Intentar de nuevo"
 
-[node name="menu" type="Button" parent="VBoxContainer"]
+[node name="menu" type="Button" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(390, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Menu"
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e1kei")
+theme_override_styles/hover = ExtResource("4_p4rvu")
+theme_override_styles/normal = ExtResource("5_d5seg")
+text = "Menú"
 
-[connection signal="pressed" from="VBoxContainer/retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="VBoxContainer/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/menu" to="." method="_on_menu_pressed"]

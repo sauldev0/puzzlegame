@@ -1,14 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://hc3crpfjq0lq"]
+[gd_scene load_steps=16 format=3 uid="uid://hc3crpfjq0lq"]
 
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_83vjm"]
 [ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="1_o36bu"]
 [ext_resource type="Script" uid="uid://cm84tkvpwsg5f" path="res://scripts/popupdeclaraciones.gd" id="1_tpra7"]
-[ext_resource type="FontFile" uid="uid://cxh76u0rvd4ac" path="res://fonts/MotionControl-Bold.otf" id="1_u473q"]
+[ext_resource type="StyleBox" uid="uid://cb74i50f66ori" path="res://themes/hover_button.tres" id="1_vt4qj"]
+[ext_resource type="StyleBox" uid="uid://4s3xu8rqpl6o" path="res://themes/normal_button.tres" id="2_qk382"]
 [ext_resource type="PackedScene" uid="uid://byuk0kyp100rj" path="res://scenes/pop_up_tabla.tscn" id="4_t1dvs"]
+[ext_resource type="Texture2D" uid="uid://c5aha2mt7kpa" path="res://sprites/UID/panel1000.png" id="5_vt4qj"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_u473q"]
-font = ExtResource("1_u473q")
-font_size = 220
-font_color = Color(0.616817, 0.890625, 0.410522, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwxj2"]
+
+[sub_resource type="Theme" id="Theme_b2oep"]
+default_font = ExtResource("1_83vjm")
+Button/styles/focus = SubResource("StyleBoxEmpty_rwxj2")
+Button/styles/hover = ExtResource("1_vt4qj")
+Button/styles/normal = ExtResource("2_qk382")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgwjl"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -39,14 +45,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_right = 8
 border_width_bottom = 8
 
-[sub_resource type="LabelSettings" id="LabelSettings_t1dvs"]
-font = ExtResource("1_o36bu")
-font_size = 48
-font_color = Color(0.894531, 0.74567, 0.429794, 1)
-
 [sub_resource type="Theme" id="Theme_tpra7"]
 default_font = ExtResource("1_o36bu")
-default_font_size = 48
+default_font_size = 64
 
 [node name="PopUpDeclaraciones" type="Control"]
 layout_mode = 3
@@ -57,25 +58,50 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_b2oep")
 script = ExtResource("1_tpra7")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="PanelContainer" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -292.0
-offset_top = -170.0
-offset_right = 988.0
-offset_bottom = 666.0
+offset_left = -759.0
+offset_top = -342.0
+offset_right = 3058.0
+offset_bottom = 1346.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.39183, 0.39183)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_vt4qj")
+region_rect = Rect2(0, 0, 320, 320)
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1290.0
+offset_top = -535.0
+offset_right = 1290.0
+offset_bottom = 535.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 40
@@ -86,844 +112,855 @@ layout_mode = 2
 
 [node name="WinLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Correcto!"
-label_settings = SubResource("LabelSettings_u473q")
+theme_override_colors/font_color = Color(0.419608, 0.921569, 0.521569, 1)
+theme_override_colors/font_outline_color = Color(0.286275, 0.411765, 0.443137, 1)
+theme_override_constants/outline_size = 80
+theme_override_font_sizes/font_size = 350
+text = "¡Correcto!"
 horizontal_alignment = 1
 
 [node name="Espacio" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="TablaLvl4" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TablaLvl4" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer"]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
 theme = SubResource("Theme_t1dvs")
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_428jx")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer/MarginContainer"]
 layout_mode = 2
 text = "Lucas (L)"
 horizontal_alignment = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer2/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer2/MarginContainer"]
 layout_mode = 2
 text = "Marta (M)"
 horizontal_alignment = 1
 
-[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer3"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer3/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer3/MarginContainer"]
 layout_mode = 2
 text = "Sofía (S)"
 horizontal_alignment = 1
 
-[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer4"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer4"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer4/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer4/MarginContainer"]
 layout_mode = 2
 text = "Diego (D)"
 horizontal_alignment = 1
 
-[node name="PanelContainer5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer5"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer5"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer5/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer5/MarginContainer"]
 layout_mode = 2
 text = "Carla (C)"
 horizontal_alignment = 1
 
-[node name="PanelContainer6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer6"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer6"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer6/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer6/MarginContainer"]
 layout_mode = 2
 text = "Lucas
 (M ˃ S)"
 horizontal_alignment = 1
 
-[node name="PanelContainer7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer7"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer7"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer7/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer7/MarginContainer"]
 layout_mode = 2
 text = "Marta
 (ˉ D)"
 horizontal_alignment = 1
 
-[node name="PanelContainer8" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer8" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer8"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer8"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer8/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer8/MarginContainer"]
 layout_mode = 2
 text = "Sofía
 (ˉ S ˄ ˉ D)"
 horizontal_alignment = 1
 
-[node name="PanelContainer9" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer9" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer9"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer9"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer9/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer9/MarginContainer"]
 layout_mode = 2
 text = "Diego
 (L ˅ ˉ S)"
 horizontal_alignment = 1
 
-[node name="PanelContainer10" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer10" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer10"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer10"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer10/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer10/MarginContainer"]
 layout_mode = 2
 text = "Carla
 (ˉ S ˃ M)"
 horizontal_alignment = 1
 
-[node name="PanelContainer11" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer11" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_83vjm")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer11"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer11"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer11/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer11/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer12" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer12" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer12"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer12"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer12/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer12/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer13" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer13" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer13"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer13"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer13/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer13/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer14" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer14" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer14"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer14"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer14/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer14/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer15" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer15" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer15"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer15"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer15/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer15/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer16" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer16" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer16"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer16"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer16/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer16/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer17" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer17" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer17"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer17"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer17/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer17/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer18" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer18" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer18"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer18"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer18/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer18/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer19" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer19" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer19"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer19"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer19/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer19/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer20" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer20" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer20"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer20"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer20/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer20/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer21" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer21" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_83vjm")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer21"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer21"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer21/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer21/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer22" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer22" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer22"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer22"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer22/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer22/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer23" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer23" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer23"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer23"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer23/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer23/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer24" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer24" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer24"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer24"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer24/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer24/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer25" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer25" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer25"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer25"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer25/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer25/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer26" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer26" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer26"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer26"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer26/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer26/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer27" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer27" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer27"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer27"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer27/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer27/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer28" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer28" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer28"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer28"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer28/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer28/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer29" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer29" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer29"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer29"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer29/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer29/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer30" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer30" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer30"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer30"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer30/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer30/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer31" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer31" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_83vjm")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer31"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer31"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer31/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer31/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer32" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer32" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer32"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer32"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer32/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer32/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer33" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer33" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer33"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer33"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer33/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer33/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer34" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer34" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer34"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer34"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer34/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer34/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer35" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer35" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer35"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer35"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer35/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer35/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer36" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer36" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer36"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer36"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer36/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer36/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer37" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer37" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer37"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer37"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer37/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer37/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer38" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer38" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer38"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer38"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer38/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer38/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer39" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer39" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer39"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer39"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer39/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer39/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer40" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer40" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer40"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer40"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer40/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer40/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer41" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer41" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_83vjm")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer41"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer41"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer41/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer41/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer42" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer42" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer42"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer42"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer42/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer42/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer43" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer43" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer43"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer43"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer43/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer43/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer44" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer44" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer44"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer44"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer44/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer44/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer45" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer45" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer45"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer45"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer45/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer45/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer46" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer46" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer46"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer46"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer46/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer46/MarginContainer"]
 layout_mode = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="PanelContainer47" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer47" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer47"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer47"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer47/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer47/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer48" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer48" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer48"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer48"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer48/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer48/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer49" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer49" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer49"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer49"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer49/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer49/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
-[node name="PanelContainer50" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4"]
+[node name="PanelContainer50" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2oep")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer50"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer50"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TablaLvl4/PanelContainer50/MarginContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/TablaLvl4/PanelContainer50/MarginContainer"]
 layout_mode = 2
 text = "V"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.996078, 0.682353, 0.203922, 1)
+theme_override_font_sizes/font_size = 120
 text = "Ya que, según las declaraciones lógicas: "
-label_settings = SubResource("LabelSettings_t1dvs")
+horizontal_alignment = 1
 
 [node name="Espacio2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="DeclaracionesLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2500, 500)
 layout_mode = 2
 theme = SubResource("Theme_tpra7")
 bbcode_enabled = true
 fit_content = true
+scroll_active = false
 autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="ViewTable" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_u473q")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 120
 text = "Ver tabla de la verdad"
 
@@ -931,14 +968,14 @@ text = "Ver tabla de la verdad"
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_u473q")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 120
 text = "Ver declaraciones"
 
 [node name="Next" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_u473q")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 120
 text = "Siguiente"
 
