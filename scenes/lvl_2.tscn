@@ -376,6 +376,7 @@ position = Vector2(225, 189)
 shape = SubResource("CircleShape2D_obn6w")
 
 [node name="UID" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="Control" type="Control" parent="UID"]
 layout_mode = 3

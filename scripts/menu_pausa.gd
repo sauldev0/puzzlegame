@@ -7,8 +7,10 @@ extends Control
 
 signal pressed_menu_pausa
 
+
 func _ready():
 	intentos_screen.text = "Llevas " + str(LEVELCORE.numero_de_intentos) + " intentos"
+	
 	
 	#pop_up_menu.visible = false
 
@@ -36,6 +38,17 @@ func _on_levels_pressed():
 
 
 func _on_boton_pausa_pressed():
+	#pop_up_menu.set_anchors_and_margins_preset(Control.PRESET_CENTER)
+	#var screen_size = get_viewport().get_visible_rect().size
+	#var menu_size = pop_up_menu.size  # o rect_size
+	#pop_up_menu.position = (screen_size - menu_size) / 2
+	#$MenuWrapper.set_anchors_preset(Control.PRESET_CENTER)
+	#var screen_size = get_viewport_rect().size
+	#var menu_size = $MenuWrapper.size
+	#$MenuWrapper.position = (screen_size - menu_size) / 2
+	#print ("resolucion actual en menu pausa " + str(screen_size))
+	#print ("posicion actual del menu pausa: " + str($MenuWrapper.position))
+	
 	get_tree().paused = true
 	$AnimationPaused.play("show_paused")
 	#pop_up_menu.visible = get_tree().paused

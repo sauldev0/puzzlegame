@@ -35,7 +35,7 @@ script = ExtResource("1_6cec6")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 1152.0
+offset_right = 1444.0
 offset_bottom = 247.0
 theme = SubResource("Theme_affc0")
 

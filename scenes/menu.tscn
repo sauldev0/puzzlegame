@@ -66,10 +66,10 @@ text = "Salir"
 
 [node name="score_screen" type="Label" parent="."]
 layout_mode = 1
-offset_left = 142.0
-offset_top = 66.0
-offset_right = 157.0
-offset_bottom = 96.0
+offset_left = 175.0
+offset_top = 67.0
+offset_right = 190.0
+offset_bottom = 97.0
 theme_override_colors/font_color = Color(0.697282, 0.714844, 0.393723, 1)
 theme_override_fonts/font = ExtResource("2_vjb58")
 theme_override_font_sizes/font_size = 32
@@ -78,9 +78,9 @@ label_settings = SubResource("LabelSettings_70i5f")
 
 [node name="player_screen" type="Label" parent="."]
 layout_mode = 1
-offset_left = 114.0
+offset_left = 143.0
 offset_top = 21.0
-offset_right = 129.0
+offset_right = 158.0
 offset_bottom = 51.0
 theme_override_fonts/font = ExtResource("4_mhnvy")
 theme_override_font_sizes/font_size = 32

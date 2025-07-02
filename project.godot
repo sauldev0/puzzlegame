@@ -26,6 +26,7 @@ runtime/balloon_path="res://scenes/dialogue/balloon.tscn"
 
 [display]
 
+window/size/viewport_width=1440
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

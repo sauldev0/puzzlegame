@@ -1,21 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfpj15en837as"]
+[gd_scene load_steps=9 format=3 uid="uid://bfpj15en837as"]
 
-[ext_resource type="StyleBox" uid="uid://cb74i50f66ori" path="res://themes/hover_button.tres" id="1_8ryx1"]
-[ext_resource type="StyleBox" uid="uid://4s3xu8rqpl6o" path="res://themes/normal_button.tres" id="1_iivcj"]
+[ext_resource type="Theme" uid="uid://dw5xla4ampwta" path="res://themes/menu_pausa.tres" id="1_ajpfe"]
 [ext_resource type="Script" uid="uid://xcivy6vaw07u" path="res://scripts/menu_pausa.gd" id="1_jhjql"]
 [ext_resource type="Texture2D" uid="uid://blqx4ltqml8f2" path="res://sprites/UID/panel_pausa.png" id="2_v2jgs"]
-[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="3_8ryx1"]
 [ext_resource type="Texture2D" uid="uid://bt5ox47uvqjf3" path="res://sprites/UID/boton_pausa.png" id="3_ajpfe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ryx1"]
-
-[sub_resource type="Theme" id="Theme_ajpfe"]
-default_font = ExtResource("3_8ryx1")
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 40
-Button/styles/focus = SubResource("StyleBoxEmpty_8ryx1")
-Button/styles/hover = ExtResource("1_8ryx1")
-Button/styles/normal = ExtResource("1_iivcj")
 
 [sub_resource type="Animation" id="Animation_a6xxm"]
 length = 0.001
@@ -57,7 +45,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(2, 2),
 "update": 0,
-"values": [Vector2(326, 65), Vector2(326, -664)]
+"values": [Vector2(470, 65), Vector2(470, -664)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -85,7 +73,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
-"values": [Vector2(326, -664), Vector2(326, 65)]
+"values": [Vector2(470, -664), Vector2(470, 65)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -115,7 +103,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = SubResource("Theme_ajpfe")
+theme = ExtResource("1_ajpfe")
 script = ExtResource("1_jhjql")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -150,16 +138,13 @@ texture_normal = ExtResource("3_ajpfe")
 
 [node name="PopUpMenu" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
+offset_left = 470.0
 offset_top = -988.0
-offset_right = 250.0
+offset_right = 970.0
 offset_bottom = -470.0
-grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_v2jgs")
 patch_margin_left = 14

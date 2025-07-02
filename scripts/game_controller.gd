@@ -100,7 +100,8 @@ func _ready():
 	popupcorrect.visible = false
 	popupincorrect.visible = false
 	#pop_up_declaraciones = false  
-	
+	var size = get_viewport().get_visible_rect().size
+	print("Resolución actual: ", size)
 	print("game controller activo")
 	
 	
