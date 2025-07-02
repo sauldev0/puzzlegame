@@ -355,27 +355,6 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("22_5yul3")
 script = ExtResource("23_bnfrr")
 
-[node name="QuizInputZorro" parent="UID" instance=ExtResource("21_8ohgd")]
-visible = false
-offset_left = 186.0
-offset_top = 129.0
-offset_right = 186.0
-offset_bottom = 129.0
-
-[node name="QuizInputBuho" parent="UID" instance=ExtResource("21_48anx")]
-visible = false
-offset_left = 161.0
-offset_top = 121.0
-offset_right = 161.0
-offset_bottom = 121.0
-
-[node name="QuizInputConejo" parent="UID" instance=ExtResource("23_7wjyk")]
-visible = false
-offset_left = -2.0
-offset_top = 397.0
-offset_right = -2.0
-offset_bottom = 397.0
-
 [node name="menu_pausa" parent="UID" instance=ExtResource("5_lcgj0")]
 process_mode = 3
 
@@ -385,6 +364,23 @@ offset_left = 1.0
 offset_top = -0.600006
 offset_right = 1.0
 offset_bottom = -0.599976
+
+[node name="QuizInputConejo" parent="UID" instance=ExtResource("23_7wjyk")]
+visible = false
+offset_top = 397.0
+offset_bottom = 397.0
+
+[node name="QuizInputBuho" parent="UID" instance=ExtResource("21_48anx")]
+visible = false
+offset_left = 1.0
+offset_top = 397.0
+offset_right = 1.0
+offset_bottom = 397.0
+
+[node name="QuizInputZorro" parent="UID" instance=ExtResource("21_8ohgd")]
+visible = false
+offset_top = 397.0
+offset_bottom = 397.0
 
 [node name="Game Controller" parent="UID" instance=ExtResource("7_o85mm")]
 process_mode = 3

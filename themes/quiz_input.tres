@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://db70ilqnmr0fh"]
+
+[ext_resource type="StyleBox" uid="uid://dsdk1c3dviw6b" path="res://themes/hover_button_correcto.tres" id="1_o63jv"]
+[ext_resource type="StyleBox" uid="uid://b3l0iet6fntmy" path="res://themes/normal_button_correcto.tres" id="2_yss31"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="3_i5i2t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4lf3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_affc0"]
+bg_color = Color(0.266667, 0.278431, 0.454902, 1)
+
+[resource]
+default_font = ExtResource("3_i5i2t")
+Button/styles/focus = SubResource("StyleBoxEmpty_j4lf3")
+Button/styles/hover = ExtResource("1_o63jv")
+Button/styles/normal = ExtResource("2_yss31")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_affc0")
