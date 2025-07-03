@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://btu82kil7pfva"]
+[gd_scene load_steps=9 format=3 uid="uid://btu82kil7pfva"]
 
-[ext_resource type="Script" uid="uid://dxe5xcumtx1nj" path="res://scripts/controls.gd" id="1_nswd7"]
-[ext_resource type="Texture2D" uid="uid://bs2hdncspvumi" path="res://sprites/lineLight22.png" id="1_tygoo"]
-[ext_resource type="Texture2D" uid="uid://bku0c4fq874ub" path="res://sprites/lineLight23.png" id="2_tyk2f"]
-[ext_resource type="Texture2D" uid="uid://mudt8dwm2h87" path="res://sprites/lineLight24.png" id="3_sfbyw"]
-[ext_resource type="Texture2D" uid="uid://bcb63gmbhnh2u" path="res://sprites/lineLight25.png" id="5_jlst0"]
+[ext_resource type="Texture2D" uid="uid://dp4q642gp7mjp" path="res://sprites/UID/boton_izquierda.png" id="2_t622t"]
+[ext_resource type="Texture2D" uid="uid://fowa7li4vkqq" path="res://sprites/UID/boton_izquierda_presionado.png" id="3_vwfca"]
+[ext_resource type="Texture2D" uid="uid://cbci03ctssg6g" path="res://sprites/UID/boton_arriba.png" id="4_dloai"]
+[ext_resource type="Texture2D" uid="uid://gqg067g6mvoc" path="res://sprites/UID/boton_derecha.png" id="4_niyus"]
+[ext_resource type="Texture2D" uid="uid://fhgn1evnuqng" path="res://sprites/UID/boton_derecha_presionado.png" id="5_8sahj"]
+[ext_resource type="Texture2D" uid="uid://rm448watrof3" path="res://sprites/UID/boton_arriba_presionado.png" id="5_k6bol"]
+[ext_resource type="Texture2D" uid="uid://bq78uu5tpdjot" path="res://sprites/UID/boton_abajo.png" id="6_k6bol"]
+[ext_resource type="Texture2D" uid="uid://cut7emwupo88t" path="res://sprites/UID/boton_abajo_presionado.png" id="7_a8sje"]
 
 [node name="Controls" type="CanvasLayer"]
-script = ExtResource("1_nswd7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 2
@@ -20,13 +22,22 @@ offset_bottom = 53.0
 grow_vertical = 0
 
 [node name="left" type="TouchScreenButton" parent="HBoxContainer"]
-position = Vector2(106, -238)
-texture_normal = ExtResource("1_tygoo")
+position = Vector2(78, -328)
+texture_normal = ExtResource("2_t622t")
+texture_pressed = ExtResource("3_vwfca")
+action = "ui_left"
+
+[node name="left2" type="TouchScreenButton" parent="HBoxContainer"]
+visible = false
+position = Vector2(230, -367)
+texture_normal = ExtResource("2_t622t")
+texture_pressed = ExtResource("3_vwfca")
 action = "ui_left"
 
 [node name="right" type="TouchScreenButton" parent="HBoxContainer"]
-position = Vector2(239, -238)
-texture_normal = ExtResource("2_tyk2f")
+position = Vector2(318, -328)
+texture_normal = ExtResource("4_niyus")
+texture_pressed = ExtResource("5_8sahj")
 action = "ui_right"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
@@ -40,17 +51,21 @@ offset_bottom = 53.0
 grow_vertical = 0
 
 [node name="up" type="TouchScreenButton" parent="HBoxContainer2"]
-position = Vector2(173, -305)
-texture_normal = ExtResource("3_sfbyw")
+position = Vector2(198, -448)
+texture_normal = ExtResource("4_dloai")
+texture_pressed = ExtResource("5_k6bol")
 action = "ui_up"
 
 [node name="down" type="TouchScreenButton" parent="HBoxContainer2"]
-position = Vector2(173, -166)
-texture_normal = ExtResource("5_jlst0")
+position = Vector2(198, -208)
+texture_normal = ExtResource("6_k6bol")
+texture_pressed = ExtResource("7_a8sje")
 action = "ui_down"
 
 [connection signal="pressed" from="HBoxContainer/left" to="." method="_on_left_pressed"]
 [connection signal="released" from="HBoxContainer/left" to="." method="_on_left_released"]
+[connection signal="pressed" from="HBoxContainer/left2" to="." method="_on_left_pressed"]
+[connection signal="released" from="HBoxContainer/left2" to="." method="_on_left_released"]
 [connection signal="pressed" from="HBoxContainer/right" to="." method="_on_right_pressed"]
 [connection signal="released" from="HBoxContainer/right" to="." method="_on_right_released"]
 [connection signal="pressed" from="HBoxContainer2/up" to="." method="_on_up_pressed"]

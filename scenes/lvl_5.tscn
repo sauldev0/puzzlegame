@@ -1,18 +1,20 @@
-[gd_scene load_steps=18 format=4 uid="uid://cyjomqohv6l0k"]
+[gd_scene load_steps=20 format=4 uid="uid://cyjomqohv6l0k"]
 
 [ext_resource type="Script" uid="uid://de4s6aiealrlt" path="res://scripts/lvl_5.gd" id="1_dummj"]
 [ext_resource type="Texture2D" uid="uid://446mfhd5wow8" path="res://sprites/tilesets/tileset_lvl5new.png" id="3_ml1p3"]
 [ext_resource type="Script" uid="uid://d3tfux8ae26jx" path="res://scripts/camera_2d.gd" id="4_66ldu"]
 [ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="5_66ldu"]
 [ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="6_ipawo"]
+[ext_resource type="Texture2D" uid="uid://wnlv1byctdnq" path="res://sprites/UID/panel_tiempo.png" id="7_nbnb5"]
 [ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="7_nvppn"]
 [ext_resource type="PackedScene" uid="uid://v2nupdonr0a4" path="res://scenes/player_lvl5.tscn" id="7_theay"]
 [ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_nbnb5"]
 [ext_resource type="PackedScene" uid="uid://btu82kil7pfva" path="res://scenes/controls.tscn" id="9_ml1p3"]
 [ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_yi0qh"]
 [ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="10_ml1p3"]
-[ext_resource type="Texture2D" uid="uid://benv48piv60bw" path="res://icon.svg" id="11_qnu8e"]
-[ext_resource type="FontFile" uid="uid://cxh76u0rvd4ac" path="res://fonts/MotionControl-Bold.otf" id="13_ipawo"]
+[ext_resource type="Texture2D" uid="uid://d4lx72xb4la3p" path="res://sprites/UID/recargar_boton.png" id="13_66ldu"]
+[ext_resource type="Texture2D" uid="uid://cswxyt84gnyb7" path="res://sprites/UID/boton_acercar.png" id="13_nvppn"]
+[ext_resource type="Texture2D" uid="uid://dusghma1nhtlg" path="res://sprites/UID/boton_alejar.png" id="14_nbnb5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnu8e"]
 texture = ExtResource("3_ml1p3")
@@ -64,6 +66,8 @@ size = Vector2(192, 59)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qnu8e"]
 font = ExtResource("10_ml1p3")
+font_size = 32
+font_color = Color(0.88089, 0.881987, 0.898438, 1)
 
 [node name="lvl_5" type="Node2D"]
 script = ExtResource("1_dummj")
@@ -93,26 +97,30 @@ position = Vector2(480, 610)
 [node name="menu_pausa" parent="UID" instance=ExtResource("5_66ldu")]
 process_mode = 3
 
-[node name="TextureRect" type="ColorRect" parent="UID"]
-offset_left = -1.0
-offset_top = 2.0
-offset_right = 358.0
-offset_bottom = 44.0
-color = Color(0.878906, 0.360489, 0.360489, 1)
+[node name="TextureRect" type="NinePatchRect" parent="UID"]
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 641.0
+offset_bottom = 53.0
+texture = ExtResource("7_nbnb5")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
 
 [node name="LabelTimeLeft" type="Label" parent="UID/TextureRect"]
-layout_mode = 0
-offset_left = 13.0
-offset_top = 11.0
-offset_right = 195.0
-offset_bottom = 31.0
-text = "Tiempo restante:  "
+layout_mode = 2
+offset_left = 11.0
+offset_top = 4.5
+offset_right = 393.0
+offset_bottom = 40.5
+text = "Tiempo restante: 100 segundos"
 label_settings = SubResource("LabelSettings_qnu8e")
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="popuptexto" parent="UID" instance=ExtResource("6_ipawo")]
 process_mode = 3
+visible = false
 offset_left = 1.0
 offset_top = -0.600006
 offset_right = 1.0
@@ -123,47 +131,33 @@ process_mode = 3
 
 [node name="popupcorrect" parent="UID" instance=ExtResource("8_nbnb5")]
 process_mode = 3
+visible = false
 
 [node name="popupincorrect" parent="UID" instance=ExtResource("9_yi0qh")]
 process_mode = 3
+visible = false
 
-[node name="MasZoom" type="Button" parent="UID"]
-offset_left = 994.0
-offset_top = 68.0
-offset_right = 1048.0
-offset_bottom = 177.0
-theme_override_fonts/font = ExtResource("13_ipawo")
-theme_override_font_sizes/font_size = 100
-text = "+"
+[node name="MasZoom" type="TextureButton" parent="UID"]
+offset_left = 1258.0
+offset_top = 268.0
+offset_right = 1328.0
+offset_bottom = 368.0
+texture_normal = ExtResource("13_nvppn")
+stretch_mode = 0
 
-[node name="MenosZoom" type="Button" parent="UID"]
-offset_left = 1081.0
-offset_top = 68.0
-offset_right = 1135.0
-offset_bottom = 177.0
-theme_override_fonts/font = ExtResource("13_ipawo")
-theme_override_font_sizes/font_size = 100
-text = "-"
+[node name="MenosZoom" type="TextureButton" parent="UID"]
+offset_left = 1155.0
+offset_top = 268.0
+offset_right = 1225.0
+offset_bottom = 368.0
+texture_normal = ExtResource("14_nbnb5")
 
-[node name="TextureButton" type="TextureButton" parent="UID"]
-offset_left = 6.0
-offset_top = 131.0
-offset_right = 134.0
-offset_bottom = 259.0
-texture_normal = ExtResource("11_qnu8e")
-
-[node name="Label" type="Label" parent="UID/TextureButton"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -36.0
-offset_right = 36.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "Reiniciar "
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ReiniciarButton" type="TextureButton" parent="UID"]
+offset_left = 1182.0
+offset_top = 20.0
+offset_right = 1326.0
+offset_bottom = 164.0
+texture_normal = ExtResource("13_66ldu")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 120.0
@@ -173,7 +167,7 @@ one_shot = true
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
 [connection signal="pressed" from="UID/MasZoom" to="Camera2D" method="_on_mas_zoom_pressed"]
 [connection signal="pressed" from="UID/MenosZoom" to="Camera2D" method="_on_menos_zoom_pressed"]
-[connection signal="pressed" from="UID/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="UID/ReiniciarButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="UID/menu_pausa"]

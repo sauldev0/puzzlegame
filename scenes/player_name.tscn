@@ -1,12 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://ikao05l3p2vo"]
+[gd_scene load_steps=12 format=3 uid="uid://ikao05l3p2vo"]
 
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_4dbad"]
 [ext_resource type="FontFile" uid="uid://cxh76u0rvd4ac" path="res://fonts/MotionControl-Bold.otf" id="1_fnjki"]
 [ext_resource type="Texture2D" uid="uid://t5b4o5c0w558" path="res://sprites/UID/icon_player.png" id="1_po8w2"]
+[ext_resource type="StyleBox" uid="uid://cb74i50f66ori" path="res://themes/hover_button.tres" id="1_qvx12"]
+[ext_resource type="StyleBox" uid="uid://4s3xu8rqpl6o" path="res://themes/normal_button.tres" id="2_4w8t8"]
 [ext_resource type="Script" uid="uid://dnrqteponkse6" path="res://scripts/player_name.gd" id="2_e5ipl"]
+[ext_resource type="Texture2D" uid="uid://od51fa0lqd1l" path="res://sprites/UID/background.png" id="3_4dbad"]
+[ext_resource type="Texture2D" uid="uid://blqx4ltqml8f2" path="res://sprites/UID/panel_pausa.png" id="4_7lyx3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73hwx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvx12"]
+bg_color = Color(0.199127, 0.222945, 0.351563, 1)
 
 [sub_resource type="Theme" id="Theme_2ap2d"]
-default_font = ExtResource("1_fnjki")
-default_font_size = 50
+default_font = ExtResource("1_4dbad")
+Button/styles/focus = SubResource("StyleBoxEmpty_73hwx")
+Button/styles/hover = ExtResource("1_qvx12")
+Button/styles/normal = ExtResource("2_4w8t8")
+LineEdit/colors/font_placeholder_color = Color(0.737091, 0.823588, 0.972656, 0.6)
+LineEdit/styles/focus = null
+LineEdit/styles/normal = SubResource("StyleBoxFlat_qvx12")
 
 [node name="PlayerName" type="Control"]
 layout_mode = 3
@@ -18,22 +33,57 @@ grow_vertical = 2
 theme = SubResource("Theme_2ap2d")
 script = ExtResource("2_e5ipl")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.391388, 0.406258, 0.527344, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4dbad")
+
+[node name="PanelContainer" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -117.5
-offset_top = -46.5
-offset_right = 117.5
-offset_bottom = 46.5
+offset_left = -394.5
+offset_top = -206.0
+offset_right = 394.5
+offset_bottom = 206.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("4_7lyx3")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.5
+offset_top = -191.5
+offset_right = 390.5
+offset_bottom = 191.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
@@ -41,6 +91,10 @@ theme_override_constants/margin_top = 10
 
 [node name="JugadorLabel" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.541176, 0.592157, 0.992157, 1)
+theme_override_colors/font_outline_color = Color(0.232101, 0.211884, 0.414063, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 70
 text = "Nombre de Jugador"
 horizontal_alignment = 1
 
@@ -72,6 +126,7 @@ layout_mode = 2
 theme_override_constants/margin_right = 4
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/MarginContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("1_po8w2")
 stretch_mode = 3
@@ -79,6 +134,7 @@ stretch_mode = 3
 [node name="IngresarNombre" type="LineEdit" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
 placeholder_text = "Ingresa tu nombre"
 alignment = 1
 max_length = 10
@@ -86,14 +142,15 @@ expand_to_text_length = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/HBoxContainer/MarginContainer3"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-theme_override_colors/default_color = Color(0.652344, 0.318527, 0.318527, 1)
+theme_override_colors/default_color = Color(0.996094, 0.459137, 0.459137, 1)
+theme_override_fonts/normal_font = ExtResource("1_fnjki")
 theme_override_font_sizes/normal_font_size = 30
 text = "Tu nombre puede contener hasta 10 caracteres.
 No se puede cambiar luego."
@@ -109,6 +166,8 @@ theme_override_constants/margin_bottom = 20
 [node name="ConfirmarButton" type="Button" parent="PanelContainer/HBoxContainer/MarginContainer4"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 text = "Confirmar"
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer4/ConfirmarButton" to="." method="_on_confirmar_button_pressed"]
