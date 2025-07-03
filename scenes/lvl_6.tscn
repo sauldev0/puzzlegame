@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dxyyevchrl7cl"]
+[gd_scene load_steps=50 format=3 uid="uid://dxyyevchrl7cl"]
 
 [ext_resource type="Script" uid="uid://d36laju2fgxdh" path="res://scripts/lvl_6.gd" id="1_ggdx0"]
 [ext_resource type="Texture2D" uid="uid://bkeospuh4q2ke" path="res://sprites/tilesets/tileset_biblioteca_lvl2.png" id="2_2hfhv"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://c6bdpvfj4dg37" path="res://scripts/culpar_touch_screen_button.gd" id="23_bnfrr"]
 [ext_resource type="PackedScene" uid="uid://cvaldummhvx40" path="res://scenes/cursor_effect.tscn" id="27_lv81u"]
 [ext_resource type="PackedScene" uid="uid://hc3crpfjq0lq" path="res://scenes/popupdeclaraciones.tscn" id="30_23n5e"]
+[ext_resource type="Texture2D" uid="uid://bljc5w0gm02u5" path="res://sprites/puzzles/hojas.png" id="32_qipdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_422u3"]
 texture = ExtResource("2_2hfhv")
@@ -168,6 +169,33 @@ size = Vector2(65, 81.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wjyk"]
 radius = 27.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qipdm"]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_qipdm"]
+offsets = PackedFloat32Array(0.0272727, 0.345455, 0.636364, 0.972727)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_804mp"]
+gradient = SubResource("Gradient_qipdm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2hfhv"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 200, 1)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 50.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.3
+color_ramp = SubResource("GradientTexture1D_804mp")
+anim_offset_max = 1.0
 
 [node name="lvl_6" type="Node2D"]
 script = ExtResource("1_ggdx0")
@@ -400,6 +428,14 @@ offset_right = 3.0
 offset_bottom = 92.0
 
 [node name="Cursor" parent="UID" instance=ExtResource("27_lv81u")]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_qipdm")
+position = Vector2(386, 190)
+amount = 100
+texture = ExtResource("32_qipdm")
+visibility_rect = Rect2(-500, -200, 1000, 400)
+process_material = SubResource("ParticleProcessMaterial_2hfhv")
 
 [connection signal="area_entered" from="NPCZorro" to="Camera2D" method="_on_npc_zorro_area_entered"]
 [connection signal="area_entered" from="NPCZorro" to="NPCZorro" method="_on_area_entered"]

@@ -14,19 +14,19 @@
 script = ExtResource("1_t75eh")
 
 [node name="persona_corte_bueno" type="TextureButton" parent="." groups=["buttons"]]
-offset_left = 120.0
-offset_top = 140.0
-offset_right = 570.0
-offset_bottom = 590.0
+offset_left = 274.0
+offset_top = 120.0
+offset_right = 724.0
+offset_bottom = 570.0
 texture_normal = ExtResource("6_6a3rq")
 stretch_mode = 0
 script = ExtResource("7_t75eh")
 
 [node name="persona_corte_malo" type="TextureButton" parent="." groups=["buttons"]]
-offset_left = 555.0
-offset_top = 146.0
-offset_right = 1005.0
-offset_bottom = 596.0
+offset_left = 709.0
+offset_top = 126.0
+offset_right = 1159.0
+offset_bottom = 576.0
 texture_normal = ExtResource("7_vuq28")
 stretch_mode = 0
 script = ExtResource("7_t75eh")
@@ -52,9 +52,6 @@ process_mode = 3
 
 [node name="popupincorrect" parent="UID" instance=ExtResource("8_dgh7i")]
 process_mode = 3
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(579, 324)
 
 [connection signal="pressed" from="persona_corte_bueno" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
 [connection signal="pressed" from="persona_corte_malo" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]

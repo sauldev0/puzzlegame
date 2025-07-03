@@ -16,7 +16,8 @@ func _ready():
 	var opciones = get_tree().get_nodes_in_group("button") #almacena el resultado de busqueda de grupos
 	for buttons in opciones:
 		buttons.pressed.connect(time_start) # recibe la señal del boton del popuptexto
-
+	
+	print("¿Está emitiendo?: ", $GPUParticles2D.emitting)
 func _on_area_2d_body_entered(body):
 	LEVELCORE.puntuar_por_tiempo = true
 	LEVELCORE.tiempo_final = timer.time_left
