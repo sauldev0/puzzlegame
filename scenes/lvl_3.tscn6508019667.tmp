@@ -1,0 +1,192 @@
+[gd_scene load_steps=21 format=3 uid="uid://dqu4ti6ywiedy"]
+
+[ext_resource type="Script" uid="uid://ry5jw48c63nf" path="res://scripts/lvl_3.gd" id="1_tkm7p"]
+[ext_resource type="PackedScene" uid="uid://dqysnvd4k1dnp" path="res://scenes/tile_sprite.tscn" id="2_ffys1"]
+[ext_resource type="Texture2D" uid="uid://cthgheg2vwuhs" path="res://sprites/puzzles/background_lvl3.png" id="2_yxb5l"]
+[ext_resource type="Script" uid="uid://q2mrb3334ec0" path="res://scripts/verify_answer.gd" id="3_gegca"]
+[ext_resource type="Texture2D" uid="uid://ufwf31vlakrl" path="res://sprites/puzzles/lvl3_A.png" id="3_tkm7p"]
+[ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="5_3ttfa"]
+[ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="6_qwpll"]
+[ext_resource type="Texture2D" uid="uid://bsr87ta6wrjdx" path="res://sprites/puzzles/lvl3_B.png" id="6_vo4vj"]
+[ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="7_v63pg"]
+[ext_resource type="Texture2D" uid="uid://hynd7kvm2h31" path="res://sprites/puzzles/lvl3_C.png" id="7_vbsd7"]
+[ext_resource type="Texture2D" uid="uid://b7b0vjtvyr8ai" path="res://sprites/puzzles/lvl3_D.png" id="8_ffys1"]
+[ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_mr1bn"]
+[ext_resource type="Texture2D" uid="uid://sf5vrneikpgb" path="res://sprites/puzzles/lvl3.png" id="8_th8jk"]
+[ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_qgkrp"]
+[ext_resource type="Texture2D" uid="uid://cl4ciesal6yl2" path="res://sprites/puzzles/lvl3_E.png" id="9_rqi33"]
+[ext_resource type="Texture2D" uid="uid://cerb8jsajr3hh" path="res://sprites/puzzles/lvl3_F.png" id="10_dj1r7"]
+[ext_resource type="Texture2D" uid="uid://tr2roa3jjw37" path="res://sprites/puzzles/lvl3_H.png" id="11_mg484"]
+[ext_resource type="Texture2D" uid="uid://c4ub8hj16t4ov" path="res://sprites/puzzles/lvl3_G.png" id="11_vbsd7"]
+[ext_resource type="Texture2D" uid="uid://itmlyyn1e5x" path="res://sprites/puzzles/lvl3_I.png" id="12_27c8d"]
+[ext_resource type="Texture2D" uid="uid://cp8ihchqn4ow6" path="res://sprites/puzzles/lvl3_J.png" id="13_m1tv4"]
+
+[node name="lvl_3" type="Node2D"]
+script = ExtResource("1_tkm7p")
+
+[node name="CaminoSprites" type="Node2D" parent="."]
+
+[node name="TileSprite" parent="CaminoSprites" instance=ExtResource("2_ffys1")]
+
+[node name="BackgroundLvl3" type="Sprite2D" parent="."]
+position = Vector2(687, 307)
+scale = Vector2(2.32263, 1.71753)
+texture = ExtResource("2_yxb5l")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = 10.0
+offset_right = 34.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Lvl3" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(622, 327)
+scale = Vector2(6, 6)
+texture = ExtResource("8_th8jk")
+
+[node name="A" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 69.0
+offset_right = 484.0
+offset_bottom = 117.0
+texture_normal = ExtResource("3_tkm7p")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="B" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 69.0
+offset_right = 670.0
+offset_bottom = 117.0
+texture_normal = ExtResource("6_vo4vj")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="C" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 99.0
+offset_right = 826.0
+offset_bottom = 147.0
+texture_normal = ExtResource("7_vbsd7")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="D" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 706.0
+offset_top = 201.0
+offset_right = 754.0
+offset_bottom = 249.0
+texture_normal = ExtResource("8_ffys1")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="E" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 327.0
+offset_right = 838.0
+offset_bottom = 375.0
+texture_normal = ExtResource("9_rqi33")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="F" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 399.0
+offset_right = 598.0
+offset_bottom = 447.0
+texture_normal = ExtResource("10_dj1r7")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="G" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 285.0
+offset_right = 670.0
+offset_bottom = 333.0
+texture_normal = ExtResource("11_vbsd7")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="H" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 219.0
+offset_right = 640.0
+offset_bottom = 267.0
+texture_normal = ExtResource("11_mg484")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+is_correct = true
+
+[node name="I" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 249.0
+offset_right = 454.0
+offset_bottom = 297.0
+texture_normal = ExtResource("12_27c8d")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="J" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 387.0
+offset_right = 418.0
+offset_bottom = 435.0
+texture_normal = ExtResource("13_m1tv4")
+stretch_mode = 0
+script = ExtResource("3_gegca")
+
+[node name="UID" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="menu_pausa" parent="UID" instance=ExtResource("5_3ttfa")]
+process_mode = 3
+
+[node name="popuptexto" parent="UID" instance=ExtResource("6_qwpll")]
+process_mode = 3
+offset_left = 1.0
+offset_top = -0.600006
+offset_right = 1.0
+offset_bottom = -0.599976
+
+[node name="Game Controller" parent="UID" instance=ExtResource("7_v63pg")]
+process_mode = 3
+
+[node name="popupcorrect" parent="UID" instance=ExtResource("8_mr1bn")]
+process_mode = 3
+
+[node name="popupincorrect" parent="UID" instance=ExtResource("9_qgkrp")]
+process_mode = 3
+
+[connection signal="pressed" from="Control/A" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/B" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
+[connection signal="pressed" from="Control/C" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/D" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/E" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/F" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/G" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/H" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/I" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/J" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
+
+[editable path="UID/popupcorrect"]

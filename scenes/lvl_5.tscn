@@ -178,6 +178,7 @@ process_mode = 3
 z_index = 100
 z_as_relative = false
 position = Vector2(720, 0)
+visibility_rect = Rect2(-1000, -200, 2000, 1000)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]

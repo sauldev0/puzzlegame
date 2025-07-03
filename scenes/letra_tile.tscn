@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dylg0lsiy4kh1"]
+
+[ext_resource type="Script" uid="uid://cplqbcftuvo1c" path="res://scripts/camino_tile.gd" id="1_sd46n"]
+[ext_resource type="Texture2D" uid="uid://bggim0kw3ngtt" path="res://sprites/puzzles/lvl3/letra_DEFAULT.png" id="2_sd46n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww6pa"]
+size = Vector2(36, 36)
+
+[node name="LetraTile" type="Area2D"]
+script = ExtResource("1_sd46n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sd46n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ww6pa")

@@ -5,13 +5,13 @@ var quiz_resueltos = {}
 var puede_usarse_boton_culpar := false
 signal quiz_resuelto(npc_id)
 
-
-func marcar_quiz_como_resuelto(npc_id: String) -> void:
-	quiz_resueltos[npc_id] = true
-	emit_signal("quiz_resuelto", npc_id)  # Notifica a los botones u otros nodos
-
 func quiz_ya_resuelto(npc_id: String) -> bool:
 	return quiz_resueltos.get(npc_id, false)
+
+#Lvl6 funcionamiento
+var letra_correcta
+#Lvl6 funcionamiento
+
 	
 var player_name = ""
 var nivel_actual = 0

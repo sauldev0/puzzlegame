@@ -1,0 +1,185 @@
+[gd_scene load_steps=20 format=3 uid="uid://cdex05fqsmush"]
+
+[ext_resource type="Script" uid="uid://ry5jw48c63nf" path="res://scripts/lvl_3.gd" id="1_g8hkc"]
+[ext_resource type="Texture2D" uid="uid://cthgheg2vwuhs" path="res://sprites/puzzles/background_lvl3.png" id="2_qmewa"]
+[ext_resource type="Texture2D" uid="uid://sf5vrneikpgb" path="res://sprites/puzzles/lvl3.png" id="3_chc5d"]
+[ext_resource type="Texture2D" uid="uid://ufwf31vlakrl" path="res://sprites/puzzles/lvl3_A.png" id="4_br75k"]
+[ext_resource type="Script" uid="uid://q2mrb3334ec0" path="res://scripts/verify_answer.gd" id="5_lc2rq"]
+[ext_resource type="Texture2D" uid="uid://bsr87ta6wrjdx" path="res://sprites/puzzles/lvl3_B.png" id="6_b8tre"]
+[ext_resource type="Texture2D" uid="uid://hynd7kvm2h31" path="res://sprites/puzzles/lvl3_C.png" id="7_el67x"]
+[ext_resource type="Texture2D" uid="uid://b7b0vjtvyr8ai" path="res://sprites/puzzles/lvl3_D.png" id="8_2u0wq"]
+[ext_resource type="Texture2D" uid="uid://cl4ciesal6yl2" path="res://sprites/puzzles/lvl3_E.png" id="9_fr2wd"]
+[ext_resource type="Texture2D" uid="uid://cerb8jsajr3hh" path="res://sprites/puzzles/lvl3_F.png" id="10_50hym"]
+[ext_resource type="Texture2D" uid="uid://c4ub8hj16t4ov" path="res://sprites/puzzles/lvl3_G.png" id="11_jo6ul"]
+[ext_resource type="Texture2D" uid="uid://tr2roa3jjw37" path="res://sprites/puzzles/lvl3_H.png" id="12_ux8ec"]
+[ext_resource type="Texture2D" uid="uid://itmlyyn1e5x" path="res://sprites/puzzles/lvl3_I.png" id="13_rsdl2"]
+[ext_resource type="Texture2D" uid="uid://cp8ihchqn4ow6" path="res://sprites/puzzles/lvl3_J.png" id="14_a6cbx"]
+[ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="15_sn2eb"]
+[ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="16_m6ifw"]
+[ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="17_yrc61"]
+[ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="18_ue21i"]
+[ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="19_ej0ah"]
+
+[node name="lvl_3" type="Node2D"]
+script = ExtResource("1_g8hkc")
+
+[node name="BackgroundLvl3" type="Sprite2D" parent="."]
+position = Vector2(687, 307)
+scale = Vector2(2.32263, 1.71753)
+texture = ExtResource("2_qmewa")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = 10.0
+offset_right = 34.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Lvl3" type="Sprite2D" parent="Control"]
+position = Vector2(622, 327)
+scale = Vector2(6, 6)
+texture = ExtResource("3_chc5d")
+
+[node name="A" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 69.0
+offset_right = 484.0
+offset_bottom = 117.0
+texture_normal = ExtResource("4_br75k")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="B" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 69.0
+offset_right = 670.0
+offset_bottom = 117.0
+texture_normal = ExtResource("6_b8tre")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="C" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 99.0
+offset_right = 826.0
+offset_bottom = 147.0
+texture_normal = ExtResource("7_el67x")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="D" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 706.0
+offset_top = 201.0
+offset_right = 754.0
+offset_bottom = 249.0
+texture_normal = ExtResource("8_2u0wq")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="E" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 327.0
+offset_right = 838.0
+offset_bottom = 375.0
+texture_normal = ExtResource("9_fr2wd")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="F" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 399.0
+offset_right = 598.0
+offset_bottom = 447.0
+texture_normal = ExtResource("10_50hym")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="G" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 285.0
+offset_right = 670.0
+offset_bottom = 333.0
+texture_normal = ExtResource("11_jo6ul")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="H" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 219.0
+offset_right = 640.0
+offset_bottom = 267.0
+texture_normal = ExtResource("12_ux8ec")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+is_correct = true
+
+[node name="I" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 249.0
+offset_right = 454.0
+offset_bottom = 297.0
+texture_normal = ExtResource("13_rsdl2")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="J" type="TextureButton" parent="Control" groups=["buttons"]]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 387.0
+offset_right = 418.0
+offset_bottom = 435.0
+texture_normal = ExtResource("14_a6cbx")
+stretch_mode = 0
+script = ExtResource("5_lc2rq")
+
+[node name="UID" type="CanvasLayer" parent="."]
+
+[node name="menu_pausa" parent="UID" instance=ExtResource("15_sn2eb")]
+process_mode = 3
+
+[node name="popuptexto" parent="UID" instance=ExtResource("16_m6ifw")]
+process_mode = 3
+offset_left = 1.0
+offset_top = -0.600006
+offset_right = 1.0
+offset_bottom = -0.599976
+
+[node name="Game Controller" parent="UID" instance=ExtResource("17_yrc61")]
+process_mode = 3
+
+[node name="popupcorrect" parent="UID" instance=ExtResource("18_ue21i")]
+process_mode = 3
+
+[node name="popupincorrect" parent="UID" instance=ExtResource("19_ej0ah")]
+process_mode = 3
+
+[connection signal="pressed" from="Control/A" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/B" to="UID/Game Controller" method="_on_persona_corte_malo_pressed"]
+[connection signal="pressed" from="Control/C" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/D" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/E" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/F" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/G" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/H" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/I" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed" from="Control/J" to="UID/Game Controller" method="_on_persona_corte_bueno_pressed"]
+[connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
+
+[editable path="UID/popupcorrect"]
