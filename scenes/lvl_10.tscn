@@ -243,7 +243,7 @@ zoom = Vector2(2.24, 2.24)
 script = ExtResource("11_6fagf")
 
 [node name="NPCNiñoA" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(8, 10)
+position = Vector2(66, -15)
 script = ExtResource("12_y7jdq")
 is_correct = true
 
@@ -438,6 +438,7 @@ action = "Interrogar"
 script = ExtResource("21_q5sbo")
 
 [node name="LabelInterrogar" type="RichTextLabel" parent="UID/Control"]
+layout_mode = 0
 offset_left = 5.0
 offset_top = -11.6667
 offset_right = 61.0
@@ -469,6 +470,7 @@ action = "Culpar"
 script = ExtResource("23_84m8p")
 
 [node name="LabelCulpar" type="RichTextLabel" parent="UID/Control2"]
+layout_mode = 0
 offset_left = 17.0
 offset_top = -12.0
 offset_right = 51.0

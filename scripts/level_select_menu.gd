@@ -180,55 +180,55 @@ func _on_button_2_pressed():
 	if LEVELCORE.lvl1_completed == false:
 		null
 	if LEVELCORE.lvl1_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_2.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_2_intro.tscn")
 		
 func _on_button_3_pressed():
 	if LEVELCORE.lvl2_completed == false:
 		null
 	if LEVELCORE.lvl2_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_3.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_3_intro.tscn")
 		
 func _on_button_4_pressed():
 	if LEVELCORE.lvl3_completed == false:
 		null
 	if LEVELCORE.lvl3_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_4.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_4_intro.tscn")
 
 func _on_button_5_pressed():
 	if LEVELCORE.lvl4_completed == false:
 		null
 	if LEVELCORE.lvl4_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_5.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_5_intro.tscn")
 
 func _on_button_6_pressed():
 	if LEVELCORE.lvl5_completed == false:
 		null
 	if LEVELCORE.lvl5_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_6.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_6_intro.tscn")
 
 func _on_button_7_pressed():
 	if LEVELCORE.lvl6_completed == false:
 		null
 	if LEVELCORE.lvl6_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_7.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_7_intro.tscn")
 
 func _on_button_8_pressed():
 	if LEVELCORE.lvl7_completed == false:
 		null
 	if LEVELCORE.lvl7_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_8.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_8_intro.tscn")
 
 func _on_button_9_pressed():
 	if LEVELCORE.lvl8_completed == false:
 		null
 	if LEVELCORE.lvl8_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_9.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_9_intro.tscn")
 
 func _on_button_10_pressed():
 	if LEVELCORE.lvl9_completed == false:
 		null
 	if LEVELCORE.lvl9_completed == true:
-		get_tree().change_scene_to_file("res://scenes/lvl_10.tscn")
+		get_tree().change_scene_to_file("res://scenes/lvl_10_intro.tscn")
 
 func _on_button_11_pressed():
 	if LEVELCORE.lvl10_completed == false:
