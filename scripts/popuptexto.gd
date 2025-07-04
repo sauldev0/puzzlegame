@@ -5,7 +5,10 @@ extends Control
 
 @onready var texture_button = $VBoxContainer/TextureButton
 @onready var description_label = $"VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Descripción/MarginContainer/DescriptionLabel"
-@onready var rules_label = $VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Reglas/MarginContainer/RulesLabel
+@onready var instructions_label = $VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Instrucciones/MarginContainer/InstructionsLabel
+@onready var conditions_label = $VBoxContainer/NinePatchRect/MarginContainer/TabContainer/Condiciones/MarginContainer/ConditionsLabel
+
+
 
 var popped_up = true 
 var up_anchor = Vector2(1-menu_size,1)
@@ -32,5 +35,8 @@ func _on_menu_pausa_pressed_menu_pausa():
 func set_description(text: String):
 	description_label.text = text
 
-func set_rules(text: String):
-	rules_label.text = text
+func set_instructions(text: String):
+	instructions_label.text = text
+
+func set_conditions(text: String):
+	conditions_label.text = text

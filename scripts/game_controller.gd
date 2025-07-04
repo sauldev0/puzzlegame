@@ -17,60 +17,104 @@ var intentos : int
 var niveles_con_declaraciones = [2, 4]
 
 # Diccionario con descripciones de los niveles
-var descripciones = {1 : "En un pueblo solo hay dos peluqueros uno con un corte mal hecho y otro con un corte muy bien hecho
-\n¿A cuál acudirías para que te cortara el cabello?",
+var descripciones = {
+	1: "En un pueblo hay solo dos peluqueros: uno con un corte mal hecho y otro con un corte muy bien hecho.\n\n" +
+	   "¿A cuál acudirías para que te cortara el cabello?",
 
-	2 : "Un profesor fue encontrado inconsciente en la biblioteca de la universidad, y cuatro personas estaban cerca del lugar.
-\n- Acércate a los sospechosos e interrógalos
-\n- Acércate a los sospechosos e indica al culpable
-",
+	2: "Un profesor fue encontrado inconsciente en la biblioteca de la universidad, y cuatro personas estaban cerca del lugar.",
 
-9 : "Anda por ahí un comensal que no estaba invitado. Sin embargo, tienes información que permite identificarlo.
-\n\"Su mesa está junto a otra que tiene una flor roja. El mantel es de diferente color que el de cualquiera de las mesas que se encuentran junto a ella. Ah, y en la mesa del intruso no hay una flor amarilla. \"
-",
+	3: "Debes encontrar una relojería, pero la única pista que tienes para encontrarla es la siguiente:\n\n" +
+	   "12:00 " +
+	   "3:00 " +
+	   "12:00 " +
+	   "9:00 " +
+	   "6:00",
 
-3 : "Debes encontrar una relojería, pero la única pista que tienes para encontrarla es la siguiente:\n" +
-			"12:00\n" +
-			"3:00\n" +
-			"12:00\n" +
-			"9:00\n" +
-			"6:00",
-4 : "Se ha robado un dispositivo valioso en el laboratorio, y ahora hay cinco sospechosos: Lucas, Marta, Sofía, Diego y Carla.\n" +
-			"Cada uno hace una declaración, pero sabemos que solo uno dice la verdad.\n" +
-			"El jugador deberá construir la tabla de verdad y aplicar conectores lógicos para descubrir quién miente y quién es el verdadero culpable.",
-			
-			
-5 : "Tienes que cruzar este lago congelado. El hielo es suficientemente grueso como para andar por encima, " +
-	"pero tan resbaladizo que cualquier movimiento te hará resbalar en la dirección escogida hasta que llegues a un muro.\n" +
-	"Cuando estás parado, puedes cambiar la dirección en la que te moverá tocando las flechas que aparecen a tu alrededor.",
+	4: "Un dispositivo valioso ha sido robado del laboratorio. Los sospechosos son cinco: Lucas, Marta, Sofía, Diego y Carla.\n\n" +
+   "Cada uno ha dado una declaración relacionada con el caso.",
 
-6 : "En el bosque, desaparecieron las semillas que florecen en primavera. Solo tres animales estaban cerca: Zorro, Conejo y Búho.\n\n" +
-	"Cada uno hizo una declaración, pero solo uno dice la verdad.\n\n" +
-	"¿Puedes encontrar al ladrón de semillas?",
+	5: "Debes cruzar un lago completamente congelado. El hielo es lo suficientemente grueso como para caminar sobre él, " +
+   "pero extremadamente resbaladizo: cualquier movimiento te hará deslizarte en línea recta hasta chocar con un muro de nieve.",
 
-7 : "Si siete días después de hace 70 dias era domingo, siete días antes de 70 dias a partir de hoy ¿Qué dia de la semana es?\n\n",
+	6: "En el bosque han desaparecido las semillas que florecen en primavera. Solo tres animales estaban cerca del lugar del robo: el Zorro, el Conejo y el Búho.\n\n" +
+	   "Cada uno dio una declaración relacionada con lo ocurrido.",
+	
+	7: "Si siete días después de hace 70 días era domingo,\n" +
+	   "¿qué día de la semana fue siete días antes de 70 días a partir de hoy?",
+	
+	8: "Durante una exposición nocturna en el Museo Nacional de Arte Clásico,\n" +
+	   "la valiosa pintura \"La dama del espejo\" fue hallada rota en el suelo poco antes del cierre.\n\n" +
+	   "Solo tres pasantes estuvieron cerca en ese momento.\n\n" +
+	   "¿Quién dice la verdad?",
 
-8 : "Durante una exposición nocturna en el Museo Nacional de Arte Clásico, la valiosa pintura La dama del espejo fue hallada rota en el suelo poco antes del cierre.\n\n" +
-	"Solo tres pasantes estuvieron cerca en ese momento.\n\n" +
-	"¿Quién dice la verdad?",
 
+	9: "Un comensal no invitado se encuentra entre los presentes. Sin embargo, cuentas con pistas que te ayudarán a identificarlo:\n\n" +
+	   "“Su mesa está junto a otra que tiene una flor roja.\n" +
+	   "El mantel es de un color diferente al de cualquiera de las mesas que están junto a ella.\n" +
+	   "Además, en la mesa del intruso no hay una flor amarilla.”",
+
+
+	10: "Durante un juego, una pelota rompió una ventana. Cuatro niños que estaban presentes dieron su testimonio sobre lo ocurrido."
 
 }
 
-# Diccionario con reglas de los niveles
-var reglas = {1 : "",
 
-	2 : "Solo una persona es culpable.
-\nAl menos una persona miente, pero no necesariamente todos.
+# Diccionario con condiciones de los niveles
+var condiciones = {
+	1: "",
 
-	",
+	2: "Solo una persona es culpable.\n" +
+	   "Al menos una persona miente, pero no necesariamente todos.",
 
-9 : " \"Junto a \" significa que dos mesas están conectadas por una línea de puntos.
-",
+	3: "",
+	4: "Solo una de las personas está diciendo la verdad. Todos los demás mienten.",
+	5: "Solo puedes detenerte cuando chocas contra un muro. Mientras te deslizas, no puedes cambiar de dirección.",
 
-8 : "Se sabe que uno dice la verdad y los otros dos mienten."
-	,
+	6: "Solo uno de los tres animales dice la verdad. Los otros dos están mintiendo.",
+	7: "",
+
+	8: "Se sabe que uno dice la verdad y los otros dos mienten.",
+
+	9: "El comensal sospechoso se sienta en una mesa que:\n\n" +
+	   "- Está junto a una mesa con una flor roja.\n" +
+	   "- Tiene un mantel diferente al de todas las mesas adyacentes.\n" +
+	   "- No tiene una flor amarilla.\n"+
+		"Nota: “Junto a” significa que dos mesas están conectadas por una línea de puntos.",
+
+	10: "El niño que rompió la ventana miente.\n" +
+		"Al menos otro niño también está mintiendo.\n" +
+		"Hay exactamente un niño que dice la verdad."
+
 }
+
+
+# Diccionario con instrucciones de los niveles
+var instrucciones = {
+	1: "Selecciona a la persona correcta haciendo clic sobre ella.",
+	2: "- Acércate a los sospechosos e interrógalos.\n\n" +
+	   "- Acércate a los sospechosos e indica al culpable.",
+	3: "- Presiona el punto de inicio.\n\n" +
+	   "- Luego, sin soltar, traza el camino hasta la letra que creas correcta para la ubicación de la relojería.",
+	4: "- Acércate a los sospechosos e interrógalos.\n\n" +
+	   "- Acércate a los sospechosos e indica al culpable.",
+	5: "- Usa las flechas (botones) o desliza el dedo en la dirección deseada para moverte sobre el hielo.\n\n" +
+	   "- Llega al otro lado del lago antes de que se agote el tiempo.",
+	
+	6: "- Acércate a los animales e interrógalos.\n\n" +
+	   "- Completa la proposición lógica.\n\n" +
+	   "- Acércate a los animales e indica cuál de ellos está diciendo la verdad.",
+	7: "- Selecciona el día de la semana que creas correcto.",
+	8: "- Acércate a los sospechosos e interrógalos.\n\n" +
+	   "- Acércate a los sospechosos e indica cuál de ellos está diciendo la verdad.\n\n" + 
+	   "- Completa la tabla de verdad.",
+	9: "Indica con un clic la ubicación del comensal sospechoso.",
+	10: "- Acércate a los niños e interrógalos.\n\n" +
+		"- Acércate a los niños e indica cuál de ellos rompió la ventana.\n\n" + 
+		"- Completa la proposición lógica.",
+}
+
+
+
 
 # Diccionario con declaraciones de los niveles que tienen
 
@@ -139,8 +183,8 @@ func mostrar_popup_correcto():
 func mostrar_popup_descripcion():
 	var nivel = LEVELCORE.nivel_actual
 	popuptexto.set_description(descripciones.get(nivel, "Descripción no disponible."))
-	popuptexto.set_rules(reglas.get(nivel, "Reglas no disponible."))
-
+	popuptexto.set_conditions(condiciones.get(nivel, "Reglas no disponible."))
+	popuptexto.set_instructions(instrucciones.get(nivel, "Reglas no disponible."))
 
 func game_victory():
 	var estrellas = calcular_estrellas()
