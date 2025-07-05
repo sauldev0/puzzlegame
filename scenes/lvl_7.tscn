@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://cen7d1wgoh50t"]
+[gd_scene load_steps=40 format=3 uid="uid://cen7d1wgoh50t"]
 
 [ext_resource type="Script" uid="uid://cki4vjb4r878w" path="res://scripts/lvl_7.gd" id="1_mib78"]
 [ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="2_brbt2"]
+[ext_resource type="Texture2D" uid="uid://cthgheg2vwuhs" path="res://sprites/puzzles/background_lvl3.png" id="2_mib78"]
 [ext_resource type="Script" uid="uid://drcelett4r8bg" path="res://scripts/verify_answer_button.gd" id="3_yj1v4"]
 [ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="5_y7lo0"]
 [ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="6_ad0c2"]
@@ -22,10 +23,6 @@ bg_color = Color(0.980469, 0.379502, 0.321716, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mib78"]
 bg_color = Color(0.909804, 0.298039, 0.239216, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go8os"]
 bg_color = Color(0.753906, 0.256882, 0.209091, 1)
@@ -41,10 +38,6 @@ bg_color = Color(0.379761, 0.456479, 0.953125, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj1v4"]
 bg_color = Color(0.313049, 0.387165, 0.871094, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25bns"]
 bg_color = Color(0.217529, 0.291911, 0.773438, 1)
@@ -57,10 +50,6 @@ Button/styles/pressed = SubResource("StyleBoxFlat_25bns")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7lo0"]
 bg_color = Color(0.277771, 0.686054, 0.960938, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad0c2"]
 bg_color = Color(0.196078, 0.592157, 0.858824, 1)
@@ -136,6 +125,11 @@ Button/styles/pressed = SubResource("StyleBoxFlat_xuer5")
 
 [node name="lvl_7" type="Node2D"]
 script = ExtResource("1_mib78")
+
+[node name="BackgroundLvl3" type="Sprite2D" parent="."]
+position = Vector2(687, 307)
+scale = Vector2(2.32263, 1.71753)
+texture = ExtResource("2_mib78")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 8

@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://ejrdxdx7hcst"]
+
+[ext_resource type="Script" uid="uid://dedounqksfus5" path="res://scripts/game_completed_intro.gd" id="1_e0015"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_vrwjx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e0015"]
+font = ExtResource("1_vrwjx")
+font_size = 120
+font_color = Color(0.372549, 0.631373, 0.905882, 1)
+outline_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3lh4"]
+font = ExtResource("1_vrwjx")
+font_size = 50
+font_color = Color(0.429688, 0.49259, 1, 1)
+
+[node name="game_completed_intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0015")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27451, 0.235294, 0.368627, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -468.154
+offset_top = -238.038
+offset_right = 479.846
+offset_bottom = 202.962
+grow_horizontal = 2
+grow_vertical = 2
+text = "¡Felicidades! 
+
+Has terminado 
+el juego."
+label_settings = SubResource("LabelSettings_e0015")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 896.007
+offset_top = 580.798
+offset_right = 1437.01
+offset_bottom = 626.798
+text = "Cargando creditos... "
+label_settings = SubResource("LabelSettings_v3lh4")
+horizontal_alignment = 1

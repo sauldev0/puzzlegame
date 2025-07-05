@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm3x42lgiu1vj"]
+[gd_scene load_steps=4 format=3 uid="uid://cm3x42lgiu1vj"]
 
 [ext_resource type="Script" uid="uid://bjc7mqnl22rqi" path="res://scripts/credit_scene.gd" id="1_cyc8d"]
-[ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="2_12owj"]
+[ext_resource type="FontFile" uid="uid://bjbtirr5m0apd" path="res://fonts/Perfect DOS VGA 437 Win.ttf" id="2_12owj"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="3_f4eow"]
 
 [node name="CreditScene" type="Control"]
 layout_mode = 3
@@ -11,6 +12,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cyc8d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.591431, 0.901251, 0.996094, 0.227)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(1440, 300)
@@ -39,93 +49,10 @@ custom_minimum_size = Vector2(1440, 648)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_12owj")
-theme_override_fonts/mono_font = ExtResource("2_12owj")
-theme_override_fonts/italics_font = ExtResource("2_12owj")
-theme_override_fonts/bold_italics_font = ExtResource("2_12owj")
-theme_override_fonts/bold_font = ExtResource("2_12owj")
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 130
+theme_override_fonts/bold_font = ExtResource("3_f4eow")
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 100
 bbcode_enabled = true
-text = "[center][b][size=40]CRÉDITOS[/size][/b][/center]
-[size=8]\\n[/size]
-
-[b][size=32]Dirección y Producción[/size][/b]
-[size=24]Director del Proyecto:[/size] Saúl Pérez
-[size=24]Productor Ejecutivo:[/size] Saúl Pérez
-[size=24]Coordinación General:[/size] Saúl Pérez
-
-[size=8]\\n[/size]
-
-[b][size=32]💻 Desarrollo y Programación[/size][/b]
-[size=24]Diseño de Juego (Game Design):[/size] Saúl Pérez
-[size=24]Programación Principal:[/size] Saúl Pérez
-[size=24]Diseño de Mecánicas:[/size] Saúl Pérez
-[size=24]Desarrollo de IA / Sistemas:[/size] Saúl Pérez
-[size=24]Implementación de UI/UX:[/size] Saúl Pérez
-
-[size=8]\\n[/size]
-
-[b][size=32]🎨 Arte y Diseño Visual[/size][/b]
-[size=24]Dirección de Arte:[/size] Saúl Pérez
-[size=24]Diseño de Personajes:[/size] Saúl Pérez
-[size=24]Diseño de Entornos / Escenarios:[/size] Saúl Pérez
-[size=24]Animaciones 2D:[/size] Saúl Pérez
-[size=24]Diseño de Interfaces:[/size] Saúl Pérez
-
-[size=8]\\n[/size]
-
-[b][size=32]✍️ Narrativa y Guion[/size][/b]
-[size=24]Historia y Concepto Narrativo:[/size] Saúl Pérez
-[size=24]Guion Original:[/size] José Casu
-[size=24]Diálogos y Texto In-Game:[/size] Saúl Pérez
-[size=24]Diseño Narrativo:[/size] Saúl Pérez
-
-[size=8]\\n[/size]
-
-[b][size=32]🔊 Música y Sonido[/size][/b]
-[size=24]Diseño de Sonido (SFX):[/size] Saúl Pérez
-[size=24]Implementación de Audio:[/size] Saúl Pérez
-
-[size=8]\\n[/size]
-
-[b][size=32]🧪 Pruebas y QA[/size][/b]
-[size=24]Testing Interno:[/size] Saúl Pérez
-[size=24]Control de Calidad (QA):[/size] Saúl Pérez
-
-[size=8]\\n[/size]
-
-[b][size=32]📣 Marketing y Publicidad[/size][/b]
-[size=24]Diseño de Material Promocional:[/size] Saúl Pérez
-[size=24]Community Manager:[/size] Saúl Pérez
-[size=24]Relaciones Públicas:[/size] Saúl Pérez
-
-[size=8]\\n[/size]
-
-[b][size=32]🛠️ Herramientas y Tecnologías[/size][/b]
-[size=24]Motor del Juego:[/size] Godot Engine
-[size=24]Lenguaje de Programación:[/size] GDScript
-[size=24]Software de Arte:[/size] LibreSprite
-[size=24]Software de Audio:[/size] Audacity
-
-[size=8]\\n[/size]
-
-[b][size=32]📜 Agradecimientos Especiales[/size][/b]
-[size=24]A todas las personas que probaron el juego y dieron su opinión.[/size]
-[size=24]A la comunidad de Godot Engine por su increíble apoyo.[/size]
-[size=24]A familiares y amigos por su paciencia y apoyo incondicional.[/size]
-
-[size=8]\\n[/size]
-
-[b][size=32]🔒 Licencias y Recursos[/size][/b]
-[size=24]Algunos sonidos, imágenes o fuentes pueden haber sido tomados de bibliotecas libres como:[/size]
-[size=24]- Freesound.org[/size]
-[size=24]- OpenGameArt.org[/size]
-[size=24]- Kenney.nl[/size]
-
-[size=8]\\n[/size]
-
-[center][b][size=32]🕹️ Logikazo[/size][/b]
-[size=24]© [year] Saúl Pérez. Todos los derechos reservados.[/size][/center]
-"
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://p3ao7ou7otcj"]
+[gd_scene load_steps=11 format=3 uid="uid://p3ao7ou7otcj"]
 
 [ext_resource type="Script" uid="uid://bslt53hcoapl7" path="res://scripts/lvl_1.gd" id="1_t75eh"]
+[ext_resource type="Texture2D" uid="uid://cthgheg2vwuhs" path="res://sprites/puzzles/background_lvl3.png" id="2_oymhu"]
 [ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="4_eukc1"]
 [ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="5_hg73m"]
 [ext_resource type="Texture2D" uid="uid://nqwyii8ynjgq" path="res://sprites/puzzles/personacortebueno.png" id="6_6a3rq"]
@@ -12,6 +13,11 @@
 
 [node name="lvl_1" type="Node2D"]
 script = ExtResource("1_t75eh")
+
+[node name="BackgroundLvl3" type="Sprite2D" parent="."]
+position = Vector2(687, 307)
+scale = Vector2(2.32263, 1.71753)
+texture = ExtResource("2_oymhu")
 
 [node name="persona_corte_bueno" type="TextureButton" parent="." groups=["buttons"]]
 offset_left = 274.0
