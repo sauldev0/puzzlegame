@@ -570,6 +570,7 @@ layout_mode = 2
 
 [node name="AudioCorrecto" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_72ofm")
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="AudioIncorrecto" type="AudioStreamPlayer" parent="."]

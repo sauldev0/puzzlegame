@@ -152,18 +152,18 @@ process_mode = 3
 process_mode = 3
 
 [node name="MasZoom" type="TextureButton" parent="UID"]
-offset_left = 1258.0
-offset_top = 268.0
-offset_right = 1328.0
-offset_bottom = 368.0
+offset_left = 174.0
+offset_top = 234.0
+offset_right = 244.0
+offset_bottom = 334.0
 texture_normal = ExtResource("13_nvppn")
 stretch_mode = 0
 
 [node name="MenosZoom" type="TextureButton" parent="UID"]
-offset_left = 1155.0
-offset_top = 268.0
-offset_right = 1225.0
-offset_bottom = 368.0
+offset_left = 71.0
+offset_top = 234.0
+offset_right = 141.0
+offset_bottom = 334.0
 texture_normal = ExtResource("14_nbnb5")
 
 [node name="ReiniciarButton" type="TextureButton" parent="UID"]

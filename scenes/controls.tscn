@@ -15,9 +15,9 @@
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -68.0
+offset_left = 965.0
 offset_top = 53.0
-offset_right = -68.0
+offset_right = 965.0
 offset_bottom = 53.0
 grow_vertical = 0
 
@@ -44,9 +44,9 @@ action = "ui_right"
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -68.0
+offset_left = 965.0
 offset_top = 53.0
-offset_right = -68.0
+offset_right = 965.0
 offset_bottom = 53.0
 grow_vertical = 0
 

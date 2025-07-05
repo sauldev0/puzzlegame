@@ -120,6 +120,7 @@ text = "Enviar"
 
 [node name="AudioCorrecto" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_twi7d")
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="AudioIncorrecto" type="AudioStreamPlayer" parent="."]
