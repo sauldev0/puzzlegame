@@ -34,7 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://hc3crpfjq0lq" path="res://scenes/popupdeclaraciones.tscn" id="29_dgtug"]
 [ext_resource type="PackedScene" uid="uid://cvaldummhvx40" path="res://scenes/cursor_effect.tscn" id="30_4q5qe"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_422u3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hmy1o"]
 texture = ExtResource("7_8cjld")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -58,7 +58,7 @@ texture_region_size = Vector2i(32, 32)
 1:5/0 = 0
 1:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyd0f"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l67fq"]
 texture = ExtResource("13_lk6hv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -66,7 +66,7 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4q5qe"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jo5e4"]
 texture = ExtResource("9_dgtug")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -80,7 +80,7 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 1:1/0/custom_data_0 = true
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5emcn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wuu8a"]
 texture = ExtResource("13_obn6w")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -111,7 +111,7 @@ texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
 0:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q373u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enld2"]
 texture = ExtResource("4_q373u")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -131,11 +131,11 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 custom_data_layer_0/name = "Walkable"
 custom_data_layer_0/type = 1
-sources/0 = SubResource("TileSetAtlasSource_422u3")
-sources/4 = SubResource("TileSetAtlasSource_5emcn")
-sources/1 = SubResource("TileSetAtlasSource_pyd0f")
-sources/3 = SubResource("TileSetAtlasSource_4q5qe")
-sources/5 = SubResource("TileSetAtlasSource_q373u")
+sources/0 = SubResource("TileSetAtlasSource_hmy1o")
+sources/4 = SubResource("TileSetAtlasSource_wuu8a")
+sources/1 = SubResource("TileSetAtlasSource_l67fq")
+sources/3 = SubResource("TileSetAtlasSource_jo5e4")
+sources/5 = SubResource("TileSetAtlasSource_enld2")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_obn6w"]
 radius = 22.0
