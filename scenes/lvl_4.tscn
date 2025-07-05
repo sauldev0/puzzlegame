@@ -325,7 +325,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NPCDiego" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(60, 97)
+position = Vector2(107, 95)
 script = ExtResource("16_ngceu")
 metadata/_edit_group_ = true
 

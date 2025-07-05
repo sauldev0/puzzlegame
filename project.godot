@@ -13,7 +13,7 @@ config_version=5
 config/name="questlogica"
 run/main_scene="uid://beniqh2swe4lt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="uid://benv48piv60bw"
+config/icon="uid://due65cut5sva0"
 
 [autoload]
 
