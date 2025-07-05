@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1uvi1um3e15v"]
+
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_limeh"]
+
+[sub_resource type="Theme" id="Theme_0dmgc"]
+default_font = ExtResource("1_limeh")
+
+[node name="GameCompleted" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0dmgc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 252.0
+offset_right = 787.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Fin"

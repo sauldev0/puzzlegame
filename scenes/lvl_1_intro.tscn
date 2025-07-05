@@ -1,39 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp7737hoea4k0"]
+[gd_scene load_steps=9 format=3 uid="uid://dp7737hoea4k0"]
 
 [ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_tobtv"]
 [ext_resource type="Script" uid="uid://bvjvet8wgcj6p" path="res://scripts/lvl_1_intro.gd" id="2_parhd"]
+[ext_resource type="AudioStream" uid="uid://bu1urva3bft0p" path="res://audio/20258__koops__page_turn_24.wav" id="3_endch"]
 
 [sub_resource type="Theme" id="Theme_parhd"]
 default_font = ExtResource("1_tobtv")
 RichTextLabel/fonts/normal_font = ExtResource("1_tobtv")
-
-[sub_resource type="Animation" id="Animation_tobtv"]
-resource_name = "show_title"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/Label:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.5, 0.5),
-"update": 0,
-"values": [Vector2(1494, 50), Vector2(45, 50)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
 
 [sub_resource type="Animation" id="Animation_parhd"]
 length = 0.001
@@ -90,6 +63,34 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_tobtv"]
+resource_name = "show_title"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(1494, 50), Vector2(45, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_endch"]
 _data = {
 &"RESET": SubResource("Animation_parhd"),
@@ -136,3 +137,7 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_endch")
 }
+
+[node name="PageTurn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_endch")
+bus = &"sfx"

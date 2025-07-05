@@ -1,26 +1,40 @@
-[gd_scene load_steps=12 format=3 uid="uid://bof6n6dmpb4p5"]
+[gd_scene load_steps=19 format=3 uid="uid://bof6n6dmpb4p5"]
 
 [ext_resource type="Script" uid="uid://c3xbcbmkryc4m" path="res://scripts/level_select_menu.gd" id="1_wyt36"]
-[ext_resource type="FontFile" uid="uid://da4gcssh8onri" path="res://fonts/PixelOperator8-Bold.ttf" id="2_5wmf4"]
 [ext_resource type="Texture2D" uid="uid://ckujwdinx5xf8" path="res://sprites/puzzles/background.png" id="2_or5k1"]
+[ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="3_lh663"]
 [ext_resource type="Texture2D" uid="uid://ciyux8ndnc6i4" path="res://sprites/puzzles/piezapuzzle.png" id="3_or5k1"]
 [ext_resource type="Script" uid="uid://b03t1uidmmvob" path="res://scenes/button.gd" id="4_ns6ff"]
 [ext_resource type="FontFile" uid="uid://boi7xjw4orujj" path="res://fonts/PixelOperator8.ttf" id="5_eghie"]
 [ext_resource type="Texture2D" uid="uid://dhvvhleclc002" path="res://sprites/puzzles/estrella.png" id="6_lh663"]
+[ext_resource type="StyleBox" uid="uid://cb74i50f66ori" path="res://themes/hover_button.tres" id="8_eghie"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="8_lh663"]
+[ext_resource type="StyleBox" uid="uid://4s3xu8rqpl6o" path="res://themes/normal_button.tres" id="9_lh663"]
+[ext_resource type="AudioStream" uid="uid://c2u3tswfvn8je" path="res://audio/back_style_2_001.ogg" id="11_wjab1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjab1"]
+bg_color = Color(0.372549, 0.431373, 0.905882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1svxa"]
+bg_color = Color(0.494064, 0.547712, 0.980469, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpgvf"]
+bg_color = Color(0.280151, 0.326803, 0.703125, 1)
+
+[sub_resource type="Theme" id="Theme_wjab1"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_wjab1")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1svxa")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_vpgvf")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wjab1"]
-font = ExtResource("2_5wmf4")
-font_size = 18
-font_color = Color(0.180392, 0.14902, 0.133333, 1)
+font = ExtResource("3_lh663")
+font_size = 30
+font_color = Color(0.198181, 0.348001, 0.746094, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1svxa"]
 font = ExtResource("5_eghie")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wmf4"]
-bg_color = Color(0.917969, 0.19722, 0.19722, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or5k1"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wjab1"]
 
 [node name="level_select_menu" type="Node2D"]
 script = ExtResource("1_wyt36")
@@ -38,6 +52,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = SubResource("Theme_wjab1")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
 layout_mode = 0
@@ -50,6 +65,9 @@ horizontal_scroll_mode = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
+
+[node name="Space" type="Control" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -738,7 +756,7 @@ layout_mode = 2
 texture = ExtResource("6_lh663")
 expand_mode = 1
 
-[node name="Space" type="Control" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="Space2" type="Control" parent="Control/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
@@ -1211,16 +1229,20 @@ expand_mode = 1
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 11.0
-offset_top = 16.0
-offset_right = 179.0
-offset_bottom = 40.0
-theme_override_colors/font_color = Color(0.550781, 0.6315, 1, 1)
-theme_override_fonts/font = ExtResource("5_eghie")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/hover = SubResource("StyleBoxFlat_5wmf4")
-theme_override_styles/normal = SubResource("StyleBoxFlat_or5k1")
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_lh663")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wjab1")
+theme_override_styles/hover = ExtResource("8_eghie")
+theme_override_styles/normal = ExtResource("9_lh663")
 text = "Regresar"
+
+[node name="BackButtonAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_wjab1")
 
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

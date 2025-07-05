@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://4dwc4rogjae6"]
+[gd_scene load_steps=12 format=3 uid="uid://4dwc4rogjae6"]
 
 [ext_resource type="Theme" uid="uid://db70ilqnmr0fh" path="res://themes/quiz_input.tres" id="1_0rir0"]
 [ext_resource type="Script" uid="uid://cctcfg8qknfi6" path="res://scripts/quiz_input_buho.gd" id="1_3chr0"]
 [ext_resource type="FontFile" uid="uid://cxh76u0rvd4ac" path="res://fonts/MotionControl-Bold.otf" id="2_0rir0"]
 [ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="3_huk4u"]
 [ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="4_huk4u"]
+[ext_resource type="AudioStream" uid="uid://bravgoxjrv7s3" path="res://audio/confirm_style_1_001.ogg" id="6_8v445"]
+[ext_resource type="AudioStream" uid="uid://cp2wuqj1f231k" path="res://audio/error_style_5_001.ogg" id="7_bk54e"]
 
 [sub_resource type="Theme" id="Theme_yj8t6"]
 default_font = ExtResource("2_0rir0")
@@ -99,3 +101,11 @@ offset_bottom = 190.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
 text = "Enviar"
+
+[node name="AudioCorrecto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8v445")
+bus = &"sfx"
+
+[node name="AudioIncorrecto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bk54e")
+bus = &"sfx"

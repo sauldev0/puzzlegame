@@ -32,7 +32,7 @@ func _on_nextlevel_pressed():
 	elif LEVELCORE.nivel_actual == 9:
 		get_tree().change_scene_to_file("res://scenes/lvl_10_intro.tscn")
 	elif LEVELCORE.nivel_actual == 10:
-		get_tree().change_scene_to_file("res://scenes/lvl_11.tscn")
+		get_tree().change_scene_to_file("res://scenes/game_completed.tscn")
 	elif LEVELCORE.nivel_actual == 11:
 		get_tree().change_scene_to_file("res://scenes/lvl_12.tscn")
 	else:

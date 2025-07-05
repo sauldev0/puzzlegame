@@ -1,9 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfpj15en837as"]
+[gd_scene load_steps=14 format=3 uid="uid://bfpj15en837as"]
 
 [ext_resource type="Theme" uid="uid://dw5xla4ampwta" path="res://themes/menu_pausa.tres" id="1_ajpfe"]
 [ext_resource type="Script" uid="uid://xcivy6vaw07u" path="res://scripts/menu_pausa.gd" id="1_jhjql"]
 [ext_resource type="Texture2D" uid="uid://blqx4ltqml8f2" path="res://sprites/UID/panel_pausa.png" id="2_v2jgs"]
 [ext_resource type="Texture2D" uid="uid://bt5ox47uvqjf3" path="res://sprites/UID/boton_pausa.png" id="3_ajpfe"]
+[ext_resource type="AudioStream" uid="uid://cwuu4cbsaiok" path="res://audio/628445__davo32__level-music-brackground.mp3" id="5_iivcj"]
+[ext_resource type="Script" uid="uid://ckwmrr6d1joal" path="res://scripts/audio_stream_player.gd" id="6_8ryx1"]
+[ext_resource type="AudioStream" uid="uid://cte31nmquawcl" path="res://audio/UI_Select_Plastic_05.wav" id="7_a6xxm"]
+[ext_resource type="PackedScene" uid="uid://qn8jx51gfn7u" path="res://scenes/sonido_ventana.tscn" id="8_1mf5l"]
+[ext_resource type="Texture2D" uid="uid://bv832jjfn6nva" path="res://sprites/UID/boton_X.png" id="9_8u42n"]
 
 [sub_resource type="Animation" id="Animation_a6xxm"]
 length = 0.001
@@ -143,9 +148,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 470.0
+offset_left = 326.0
 offset_top = -988.0
-offset_right = 970.0
+offset_right = 826.0
 offset_bottom = -470.0
 grow_vertical = 2
 texture = ExtResource("2_v2jgs")
@@ -189,13 +194,13 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="restart" type="Button" parent="PopUpMenu/VBoxContainer2"]
-layout_mode = 2
-text = "Reiniciar"
-
 [node name="resume" type="Button" parent="PopUpMenu/VBoxContainer2"]
 layout_mode = 2
 text = "Reanudar"
+
+[node name="restart" type="Button" parent="PopUpMenu/VBoxContainer2"]
+layout_mode = 2
+text = "Reiniciar"
 
 [node name="levels" type="Button" parent="PopUpMenu/VBoxContainer2"]
 layout_mode = 2
@@ -230,9 +235,34 @@ libraries = {
 &"": SubResource("AnimationLibrary_8u42n")
 }
 
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iivcj")
+volume_db = -10.567
+autoplay = true
+bus = &"music"
+script = ExtResource("6_8ryx1")
+
+[node name="Clic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_a6xxm")
+
+[node name="NinePatchRect" parent="." instance=ExtResource("8_1mf5l")]
+visible = false
+layout_mode = 1
+
+[node name="Button" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 4.0
+offset_right = 610.0
+offset_bottom = 74.0
+texture_normal = ExtResource("9_8u42n")
+
 [connection signal="pressed" from="VBoxContainer/menupausa" to="." method="_on_menupausa_pressed"]
 [connection signal="pressed" from="VBoxContainer/BotonPausa" to="." method="_on_boton_pausa_pressed"]
-[connection signal="pressed" from="PopUpMenu/VBoxContainer2/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PopUpMenu/VBoxContainer2/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PopUpMenu/VBoxContainer2/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PopUpMenu/VBoxContainer2/levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="PopUpMenu/VBoxContainer2/mainmenu" to="." method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="PopUpMenu/VBoxContainer2/sound" to="." method="_on_sound_pressed"]
+[connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_finished"]
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]

@@ -21,6 +21,7 @@ func _on_menupausa_pressed():
 	pressed_menu_pausa.emit()
 
 func _on_restart_pressed():
+	#$Clic.play()
 	get_tree().reload_current_scene()
 
 func _on_resume_pressed():
@@ -54,3 +55,11 @@ func _on_boton_pausa_pressed():
 	#pop_up_menu.visible = get_tree().paused
 	background.visible = get_tree().paused
 	pressed_menu_pausa.emit()
+
+
+func _on_sound_pressed():
+	$NinePatchRect.visible = true
+
+
+func _on_button_pressed():
+	$NinePatchRect.visible = false

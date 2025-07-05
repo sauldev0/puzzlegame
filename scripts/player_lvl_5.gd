@@ -78,6 +78,7 @@ func start_slide(dir: Vector2):
 	update_animation(direction)
 	
 func stop_slide():
+	$"../SnowImpact".play()
 	is_moving = false
 	velocity = Vector2.ZERO
 

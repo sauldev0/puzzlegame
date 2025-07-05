@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcw2iu5disj4e"]
+[gd_scene load_steps=10 format=3 uid="uid://dcw2iu5disj4e"]
 
 [ext_resource type="Script" uid="uid://sjloqtgl5h44" path="res://scripts/quiz_input_conejo.gd" id="1_6cec6"]
 [ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_affc0"]
 [ext_resource type="Theme" uid="uid://db70ilqnmr0fh" path="res://themes/quiz_input.tres" id="1_j4lf3"]
 [ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="3_j4lf3"]
+[ext_resource type="AudioStream" uid="uid://bravgoxjrv7s3" path="res://audio/confirm_style_1_001.ogg" id="5_j4lf3"]
+[ext_resource type="AudioStream" uid="uid://cp2wuqj1f231k" path="res://audio/error_style_5_001.ogg" id="6_1r1qq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3e2km"]
 font = ExtResource("1_affc0")
@@ -92,3 +94,11 @@ offset_bottom = 190.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
 text = "Enviar"
+
+[node name="AudioCorrecto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_j4lf3")
+bus = &"sfx"
+
+[node name="AudioIncorrecto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1r1qq")
+bus = &"sfx"

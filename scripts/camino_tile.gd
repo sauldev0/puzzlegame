@@ -24,9 +24,13 @@ func _process(_delta):
 		if !presionado:
 			if es_inicio and !trazando:
 				iniciar_trazado()
+				if has_node("TrazoAudio"):
+					$TrazoAudio.play()
 			elif trazando and puede_continuar():
 				marcar_trazo()
 				tiles_visitados.append(self)
+				if has_node("TrazoAudio"):
+					$TrazoAudio.play()
 				if es_final:
 					finalizar_trazado()
 	else:

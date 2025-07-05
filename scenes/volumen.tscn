@@ -1,0 +1,126 @@
+[gd_scene load_steps=13 format=3 uid="uid://bcmetxvg2o3uv"]
+
+[ext_resource type="StyleBox" uid="uid://cb74i50f66ori" path="res://themes/hover_button.tres" id="1_faeob"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_oh152"]
+[ext_resource type="StyleBox" uid="uid://4s3xu8rqpl6o" path="res://themes/normal_button.tres" id="2_3rk12"]
+[ext_resource type="Script" uid="uid://vo8jgrlynan7" path="res://scripts/volumen_ventana.gd" id="2_30fin"]
+[ext_resource type="AudioStream" uid="uid://cwuu4cbsaiok" path="res://audio/628445__davo32__level-music-brackground.mp3" id="4_g7nsw"]
+[ext_resource type="AudioStream" uid="uid://cr21wliptp4o8" path="res://audio/DM-CGS-18.wav" id="5_30fin"]
+[ext_resource type="PackedScene" uid="uid://qn8jx51gfn7u" path="res://scenes/sonido_ventana.tscn" id="5_dqw53"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnjcd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_faeob"]
+bg_color = Color(0.372549, 0.431373, 0.905882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rk12"]
+bg_color = Color(0.494118, 0.54902, 0.980392, 1)
+
+[sub_resource type="Theme" id="Theme_b4hws"]
+default_font = ExtResource("1_oh152")
+Button/styles/focus = SubResource("StyleBoxEmpty_rnjcd")
+Button/styles/hover = ExtResource("1_faeob")
+Button/styles/normal = ExtResource("2_3rk12")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_faeob")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_3rk12")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faeob"]
+
+[node name="VolumenVentana" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_b4hws")
+script = ExtResource("2_30fin")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.223529, 0.203922, 0.27451, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -517.5
+offset_top = 70.0
+offset_right = 517.5
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.372549, 0.431373, 0.905882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 100
+text = "CONTROL DE VOLUMEN"
+
+[node name="NinePatchRect" parent="." instance=ExtResource("5_dqw53")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -689.0
+offset_top = -90.0
+offset_right = -89.0
+offset_bottom = 252.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 20.0
+offset_right = 744.0
+offset_bottom = 178.0
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="ButtonMusic" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "Prueba música"
+
+[node name="ButtonSoundEffect" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "Prueba SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_g7nsw")
+bus = &"music"
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_30fin")
+bus = &"sfx"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 220.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_oh152")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_faeob")
+theme_override_styles/hover = ExtResource("1_faeob")
+theme_override_styles/normal = ExtResource("2_3rk12")
+text = "Regresar"
+
+[connection signal="pressed" from="HBoxContainer/ButtonMusic" to="." method="_on_button_music_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonSoundEffect" to="." method="_on_button_sound_effect_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

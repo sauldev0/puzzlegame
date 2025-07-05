@@ -1,0 +1,853 @@
+[gd_scene load_steps=58 format=3 uid="uid://dqu4ti6ywiedy"]
+
+[ext_resource type="Script" uid="uid://ry5jw48c63nf" path="res://scripts/lvl_3.gd" id="1_tkm7p"]
+[ext_resource type="PackedScene" uid="uid://dqysnvd4k1dnp" path="res://scenes/camino_tile.tscn" id="2_ffys1"]
+[ext_resource type="Texture2D" uid="uid://cthgheg2vwuhs" path="res://sprites/puzzles/background_lvl3.png" id="2_yxb5l"]
+[ext_resource type="Texture2D" uid="uid://xf8ojgk208ce" path="res://sprites/puzzles/lvl3/flecha_inicio.png" id="3_6f5l0"]
+[ext_resource type="Texture2D" uid="uid://86j6h5fyhd5p" path="res://sprites/puzzles/lvl3/lvl3_camino1.png" id="4_dj1r7"]
+[ext_resource type="Texture2D" uid="uid://dqkr3muwdukc8" path="res://sprites/puzzles/lvl3/casa1.png" id="4_fk0w4"]
+[ext_resource type="PackedScene" uid="uid://bfpj15en837as" path="res://scenes/menu_pausa.tscn" id="5_3ttfa"]
+[ext_resource type="Texture2D" uid="uid://bgf8aiogvc7eg" path="res://sprites/puzzles/lvl3/casa2.png" id="5_b8woo"]
+[ext_resource type="Texture2D" uid="uid://crehy7vc1k6xj" path="res://sprites/puzzles/lvl3/lvl3_camino2.png" id="5_mg484"]
+[ext_resource type="Texture2D" uid="uid://cx2xipfhpqu77" path="res://sprites/puzzles/lvl3/casa3.png" id="6_6f5l0"]
+[ext_resource type="Texture2D" uid="uid://inskpns2eah1" path="res://sprites/puzzles/lvl3/lvl3_camino_rastro_2.png" id="6_27c8d"]
+[ext_resource type="PackedScene" uid="uid://dylg0lsiy4kh1" path="res://scenes/letra_tile.tscn" id="6_mg484"]
+[ext_resource type="PackedScene" uid="uid://drljs618y0uma" path="res://scenes/popuptexto.tscn" id="6_qwpll"]
+[ext_resource type="Texture2D" uid="uid://2i335jtf82f3" path="res://sprites/puzzles/lvl3/lvl3_camino5.png" id="7_m1tv4"]
+[ext_resource type="PackedScene" uid="uid://2rgcr4btgits" path="res://scenes/game_controller.tscn" id="7_v63pg"]
+[ext_resource type="PackedScene" uid="uid://dp3riqumoahq3" path="res://scenes/pop_up_correct.tscn" id="8_mr1bn"]
+[ext_resource type="Texture2D" uid="uid://btd2hkus44aw3" path="res://sprites/puzzles/lvl3/lvl3_camino_rastro_5.png" id="8_svbv1"]
+[ext_resource type="Texture2D" uid="uid://sf5vrneikpgb" path="res://sprites/puzzles/lvl3.png" id="8_th8jk"]
+[ext_resource type="PackedScene" uid="uid://c0c551xym5rou" path="res://scenes/pop_up_incorrect.tscn" id="9_qgkrp"]
+[ext_resource type="Texture2D" uid="uid://oc7x2qlcrd00" path="res://sprites/puzzles/lvl3/lvl3_camino_rastro_1.png" id="10_mifa2"]
+[ext_resource type="Texture2D" uid="uid://wrdsx88osstk" path="res://sprites/puzzles/lvl3/lvl3_camino4.png" id="11_efoyx"]
+[ext_resource type="Texture2D" uid="uid://hbf6ri4falbj" path="res://sprites/puzzles/lvl3/lvl3_camino_rastro_4.png" id="12_o23si"]
+[ext_resource type="Texture2D" uid="uid://doh28yuy625bj" path="res://sprites/puzzles/lvl3/lvl3_camino3.png" id="13_en466"]
+[ext_resource type="Texture2D" uid="uid://b6p12yfj01drg" path="res://sprites/puzzles/lvl3/lvl3_camino_rastro_3.png" id="14_s5o8y"]
+[ext_resource type="Texture2D" uid="uid://cwbnq8q7meet7" path="res://sprites/puzzles/lvl3/lvl3_camino7.png" id="16_4qv70"]
+[ext_resource type="Texture2D" uid="uid://dx1jdo60tjp62" path="res://sprites/puzzles/lvl3/letra_A.png" id="16_en466"]
+[ext_resource type="Texture2D" uid="uid://djvo2ygc3lkpj" path="res://sprites/puzzles/lvl3/letra_B.png" id="16_o23si"]
+[ext_resource type="Texture2D" uid="uid://dxqmsslquwut0" path="res://sprites/puzzles/lvl3/lvl3_camino_rastro_7.png" id="17_7kqa1"]
+[ext_resource type="Texture2D" uid="uid://dgqhnuhqlme08" path="res://sprites/puzzles/lvl3/letra_A_presionada.png" id="17_s5o8y"]
+[ext_resource type="Texture2D" uid="uid://b32jm75gmbgjx" path="res://sprites/puzzles/lvl3/lvl3_camino6.png" id="18_m3eo5"]
+[ext_resource type="Texture2D" uid="uid://blx8faysvkyo0" path="res://sprites/puzzles/lvl3/lvl3_camino_rastro_6.png" id="19_4ol75"]
+[ext_resource type="Texture2D" uid="uid://cqq5s5air74w" path="res://sprites/puzzles/lvl3/letra_B_presionada.png" id="19_b8woo"]
+[ext_resource type="Texture2D" uid="uid://dr2pbl1ib1373" path="res://sprites/puzzles/lvl3/lvl3_camino9.png" id="20_5hqeq"]
+[ext_resource type="Texture2D" uid="uid://b7i7rim5v2vib" path="res://sprites/puzzles/lvl3/letra_C.png" id="20_6f5l0"]
+[ext_resource type="Texture2D" uid="uid://cvs4gqwf0i5ck" path="res://sprites/puzzles/lvl3/lvl3_camino_rastro_9.png" id="21_u5fi6"]
+[ext_resource type="Texture2D" uid="uid://ce5u1lrgeoub3" path="res://sprites/puzzles/lvl3/letra_C_presionada.png" id="21_xftyi"]
+[ext_resource type="Texture2D" uid="uid://di4fj527e1xtf" path="res://sprites/puzzles/lvl3/letra_D.png" id="22_4qv70"]
+[ext_resource type="Texture2D" uid="uid://c8o4pq7thnd6j" path="res://sprites/puzzles/lvl3/letra_D_presionada.png" id="23_7kqa1"]
+[ext_resource type="Texture2D" uid="uid://di65rwlgy1q0l" path="res://sprites/puzzles/lvl3/letra_E.png" id="24_m3eo5"]
+[ext_resource type="Texture2D" uid="uid://0syl46ionk45" path="res://sprites/puzzles/lvl3/letra_E_presionada.png" id="25_4ol75"]
+[ext_resource type="Texture2D" uid="uid://b5i6ryldp3m0x" path="res://sprites/puzzles/lvl3/letra_G.png" id="26_5hqeq"]
+[ext_resource type="Texture2D" uid="uid://bjmut7bhxespe" path="res://sprites/puzzles/lvl3/letra_G_presionada.png" id="27_u5fi6"]
+[ext_resource type="Texture2D" uid="uid://cgipkv8wcf30b" path="res://sprites/puzzles/lvl3/letra_H.png" id="28_goi32"]
+[ext_resource type="Texture2D" uid="uid://c0rneil342m7" path="res://sprites/puzzles/lvl3/letra_H_presionada.png" id="29_2tblq"]
+[ext_resource type="Texture2D" uid="uid://dlxqt2rnqtgyx" path="res://sprites/puzzles/lvl3/letra_I.png" id="30_6hbpk"]
+[ext_resource type="Texture2D" uid="uid://wkjmw0mjl6n1" path="res://sprites/puzzles/lvl3/letra_I_presionada.png" id="31_wfxae"]
+[ext_resource type="Texture2D" uid="uid://ce5f6kbr48mhq" path="res://sprites/puzzles/lvl3/letra_J.png" id="32_f50j7"]
+[ext_resource type="Texture2D" uid="uid://0nrsy8j2ekn6" path="res://sprites/puzzles/lvl3/letra_J_presionada.png" id="33_ynljt"]
+[ext_resource type="Texture2D" uid="uid://c11fnmt63i8rc" path="res://sprites/puzzles/lvl3/letra_F.png" id="34_7n3lu"]
+[ext_resource type="Texture2D" uid="uid://dsomr0y86my78" path="res://sprites/puzzles/lvl3/letra_F_presionada.png" id="35_wq80p"]
+[ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="51_b8woo"]
+[ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="52_6f5l0"]
+[ext_resource type="Script" uid="uid://bmf0ogwhx46x4" path="res://scripts/camera_lvl3.gd" id="53_xftyi"]
+[ext_resource type="AudioStream" uid="uid://snvy6x2aiyf0" path="res://audio/colorpencil_6.wav" id="54_4qv70"]
+[ext_resource type="Script" uid="uid://bdvuu0pbqqe7r" path="res://scripts/trazo_audio.gd" id="55_7kqa1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6f5l0"]
+font = ExtResource("51_b8woo")
+font_size = 24
+font_color = Color(0.0856323, 0.116639, 0.238281, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xftyi"]
+font = ExtResource("52_6f5l0")
+font_size = 50
+font_color = Color(0.197891, 0.232216, 0.511719, 1)
+
+[node name="lvl_3" type="Node2D"]
+script = ExtResource("1_tkm7p")
+
+[node name="BackgroundLvl3" type="Sprite2D" parent="."]
+position = Vector2(687, 307)
+scale = Vector2(2.32263, 1.71753)
+texture = ExtResource("2_yxb5l")
+
+[node name="SpritesNivel" type="Node2D" parent="."]
+position = Vector2(0, -36)
+
+[node name="FlechaInicio" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(611.595, 619.009)
+texture = ExtResource("3_6f5l0")
+
+[node name="Casa1" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(648, 288)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa8" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(540, 144)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa2" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(612, 288)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa5" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(648, 216)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa56" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(576, 288)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa18" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(648, 360)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa19" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(684, 360)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa20" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(720, 360)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa33" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(720, 504)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa54" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(792, 540)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa55" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(684, 576)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa34" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(684, 504)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa35" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(684, 468)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa6" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(612, 216)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa51" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(540, 216)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa52" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(504, 216)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa21" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(756, 360)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa46" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(576, 432)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa61" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(576, 468)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa62" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(576, 504)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa38" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(792, 432)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa39" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(684, 432)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa40" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(648, 432)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa41" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(648, 468)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa42" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(648, 504)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa9" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(792, 216)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa25" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(900, 216)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa57" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(504, 576)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa58" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(468, 576)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa26" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(936, 216)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa10" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(792, 252)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa11" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(792, 288)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa12" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(756, 288)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa13" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(756, 288)
+texture = ExtResource("4_fk0w4")
+
+[node name="Casa7" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(612, 144)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa22" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(972, 144)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa23" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(972, 288)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa24" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(1008, 288)
+texture = ExtResource("5_b8woo")
+
+[node name="Casa3" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(720, 216)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa4" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(684, 216)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa27" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(936, 360)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa30" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(936, 324)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa31" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(972, 324)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa32" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(972, 360)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa28" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(900, 432)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa29" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(900, 432)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa14" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(720, 288)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa47" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(540, 324)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa48" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(504, 324)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa49" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(540, 288)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa50" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(504, 288)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa15" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(720, 324)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa43" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(504, 468)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa59" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(504, 504)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa60" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(540, 504)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa63" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(540, 468)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa44" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(504, 432)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa45" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(540, 432)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa36" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(720, 432)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa53" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(792, 504)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa37" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(756, 432)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa16" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(756, 324)
+texture = ExtResource("6_6f5l0")
+
+[node name="Casa17" type="Sprite2D" parent="SpritesNivel"]
+position = Vector2(792, 324)
+texture = ExtResource("6_6f5l0")
+
+[node name="CaminoTiles" type="Node2D" parent="."]
+position = Vector2(0, -36)
+
+[node name="Lvl3" type="Sprite2D" parent="CaminoTiles"]
+visible = false
+position = Vector2(616, 337)
+scale = Vector2(6, 6)
+texture = ExtResource("8_th8jk")
+
+[node name="CaminoTile" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 576)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+es_inicio = true
+
+[node name="CaminoTile2" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 540)
+textura_normal = ExtResource("7_m1tv4")
+textura_trazo = ExtResource("8_svbv1")
+
+[node name="CaminoTile3" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 504)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile4" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 468)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile5" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 432)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile6" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 396)
+textura_normal = ExtResource("7_m1tv4")
+textura_trazo = ExtResource("8_svbv1")
+
+[node name="CaminoTile7" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 360)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile8" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 324)
+textura_normal = ExtResource("13_en466")
+textura_trazo = ExtResource("14_s5o8y")
+
+[node name="CaminoTile9" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(648, 324)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile10" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(684, 324)
+textura_normal = ExtResource("11_efoyx")
+textura_trazo = ExtResource("12_o23si")
+
+[node name="CaminoTile11" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(684, 288)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile12" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(684, 252)
+textura_normal = ExtResource("18_m3eo5")
+textura_trazo = ExtResource("19_4ol75")
+
+[node name="CaminoTile13" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(648, 252)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile14" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 252)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile15" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(576, 252)
+textura_normal = ExtResource("16_4qv70")
+textura_trazo = ExtResource("17_7kqa1")
+
+[node name="CaminoTile16" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(576, 216)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile17" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(576, 180)
+textura_normal = ExtResource("7_m1tv4")
+textura_trazo = ExtResource("8_svbv1")
+
+[node name="CaminoTile18" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(540, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile19" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(504, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile20" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(468, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile21" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(612, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile22" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(648, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile23" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(684, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile24" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(720, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile25" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(756, 180)
+textura_normal = ExtResource("18_m3eo5")
+textura_trazo = ExtResource("19_4ol75")
+
+[node name="CaminoTile26" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(756, 216)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile27" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(756, 252)
+textura_normal = ExtResource("11_efoyx")
+textura_trazo = ExtResource("12_o23si")
+
+[node name="CaminoTile28" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(720, 252)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile29" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(792, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile30" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 180)
+textura_normal = ExtResource("7_m1tv4")
+textura_trazo = ExtResource("8_svbv1")
+
+[node name="CaminoTile31" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 144)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile32" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 108)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile33" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 72)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile34" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(864, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile35" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(900, 180)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile36" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(936, 180)
+textura_normal = ExtResource("11_efoyx")
+textura_trazo = ExtResource("12_o23si")
+
+[node name="CaminoTile37" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(936, 144)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile38" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(936, 108)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile39" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(936, 72)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile40" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 216)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile41" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 252)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile42" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 288)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile43" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 324)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile44" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 360)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile45" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 396)
+textura_normal = ExtResource("7_m1tv4")
+textura_trazo = ExtResource("8_svbv1")
+
+[node name="CaminoTile46" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(792, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile47" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(756, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile48" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(720, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile49" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(684, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile50" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(648, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile51" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(576, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile52" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(540, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile53" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(504, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile54" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(468, 396)
+textura_normal = ExtResource("13_en466")
+textura_trazo = ExtResource("14_s5o8y")
+
+[node name="CaminoTile55" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(468, 432)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile56" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(576, 540)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile57" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(540, 540)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile58" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(504, 540)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile59" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(468, 540)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile60" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(648, 540)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile61" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(684, 540)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile62" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(720, 540)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile63" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(756, 540)
+textura_normal = ExtResource("11_efoyx")
+textura_trazo = ExtResource("12_o23si")
+
+[node name="CaminoTile64" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(756, 504)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile66" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(756, 468)
+textura_normal = ExtResource("13_en466")
+textura_trazo = ExtResource("14_s5o8y")
+
+[node name="CaminoTile67" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(792, 468)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile68" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 468)
+textura_normal = ExtResource("20_5hqeq")
+textura_trazo = ExtResource("21_u5fi6")
+
+[node name="CaminoTile69" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 504)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile70" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 540)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile71" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 576)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile72" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(828, 432)
+textura_normal = ExtResource("5_mg484")
+textura_trazo = ExtResource("6_27c8d")
+
+[node name="CaminoTile73" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(864, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile74" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(900, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="CaminoTile75" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("2_ffys1")]
+position = Vector2(936, 396)
+textura_normal = ExtResource("4_dj1r7")
+textura_trazo = ExtResource("10_mifa2")
+
+[node name="LetraTile" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(576, 144)
+textura_normal = ExtResource("16_en466")
+textura_trazo = ExtResource("17_s5o8y")
+es_final = true
+letra = "A"
+
+[node name="LetraTile2" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(792, 144)
+textura_normal = ExtResource("16_o23si")
+textura_trazo = ExtResource("19_b8woo")
+es_final = true
+letra = "B"
+
+[node name="LetraTile3" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(972, 180)
+textura_normal = ExtResource("20_6f5l0")
+textura_trazo = ExtResource("21_xftyi")
+es_final = true
+letra = "C"
+
+[node name="LetraTile4" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(864, 252)
+textura_normal = ExtResource("22_4qv70")
+textura_trazo = ExtResource("23_7kqa1")
+es_final = true
+letra = "D"
+
+[node name="LetraTile5" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(972, 396)
+textura_normal = ExtResource("24_m3eo5")
+textura_trazo = ExtResource("25_4ol75")
+es_final = true
+letra = "E"
+
+[node name="LetraTile6" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(792, 360)
+textura_normal = ExtResource("26_5hqeq")
+textura_trazo = ExtResource("27_u5fi6")
+es_final = true
+letra = "G"
+
+[node name="LetraTile7" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(756, 288)
+textura_normal = ExtResource("28_goi32")
+textura_trazo = ExtResource("29_2tblq")
+es_final = true
+letra = "H"
+
+[node name="LetraTile8" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(576, 324)
+textura_normal = ExtResource("30_6hbpk")
+textura_trazo = ExtResource("31_wfxae")
+es_final = true
+letra = "I"
+
+[node name="LetraTile9" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(468, 468)
+textura_normal = ExtResource("32_f50j7")
+textura_trazo = ExtResource("33_ynljt")
+es_final = true
+letra = "J"
+
+[node name="LetraTile10" parent="CaminoTiles" groups=["camino_tile"] instance=ExtResource("6_mg484")]
+position = Vector2(720, 468)
+textura_normal = ExtResource("34_7n3lu")
+textura_trazo = ExtResource("35_wq80p")
+es_final = true
+letra = "F"
+
+[node name="UID" type="CanvasLayer" parent="."]
+
+[node name="menu_pausa" parent="UID" instance=ExtResource("5_3ttfa")]
+process_mode = 3
+
+[node name="popuptexto" parent="UID" instance=ExtResource("6_qwpll")]
+process_mode = 3
+offset_left = 1.0
+offset_top = -0.600006
+offset_right = 1.0
+offset_bottom = -0.599976
+
+[node name="Game Controller" parent="UID" instance=ExtResource("7_v63pg")]
+process_mode = 3
+
+[node name="popupcorrect" parent="UID" instance=ExtResource("8_mr1bn")]
+process_mode = 3
+
+[node name="popupincorrect" parent="UID" instance=ExtResource("9_qgkrp")]
+process_mode = 3
+
+[node name="Label" type="Label" parent="."]
+offset_left = 571.384
+offset_top = 611.983
+offset_right = 687.384
+offset_bottom = 651.983
+text = "INICIO"
+label_settings = SubResource("LabelSettings_6f5l0")
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 131.095
+offset_top = 91.164
+offset_right = 247.095
+offset_bottom = 578.164
+grow_vertical = 2
+text = "12:00
+
+3:00
+
+12:00
+
+9:00
+
+6:00
+"
+label_settings = SubResource("LabelSettings_xftyi")
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(717.727, 322.787)
+enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 1440
+limit_bottom = 648
+script = ExtResource("53_xftyi")
+
+[node name="TrazoAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("54_4qv70")
+script = ExtResource("55_7kqa1")
+
+[connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
+[connection signal="finished" from="TrazoAudio" to="TrazoAudio" method="_on_finished"]
+
+[editable path="UID/popupcorrect"]

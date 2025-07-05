@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://lhnjdwa3qinj"]
+[gd_scene load_steps=9 format=3 uid="uid://lhnjdwa3qinj"]
 
 [ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="1_b2v2b"]
 [ext_resource type="Script" uid="uid://cat8x15mqnt71" path="res://scripts/lvl_6_intro.gd" id="2_b2v2b"]
+[ext_resource type="AudioStream" uid="uid://bu1urva3bft0p" path="res://audio/20258__koops__page_turn_24.wav" id="3_avn1d"]
 
 [sub_resource type="Theme" id="Theme_parhd"]
 default_font = ExtResource("1_b2v2b")
@@ -136,3 +137,7 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_endch")
 }
+
+[node name="PageTurn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_avn1d")
+bus = &"sfx"

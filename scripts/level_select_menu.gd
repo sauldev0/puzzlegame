@@ -47,13 +47,14 @@ func actualizar_estrellas(stars: int, container: Node):
 			estrella.texture = ESTRELLA_VACIA
 
 func _on_button_pressed():
+	#$BackButtonAudio.play()
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _ready():
 	
-	if LEVELCORE.score_total >= 1200: #desbloquear nivel secreto
-		level_button_11.visible = true
-		level_button_12.visible = true
+	#if LEVELCORE.score_total >= 1200: #desbloquear nivel secreto
+		#level_button_11.visible = true
+		#level_button_12.visible = true
 	#button.grab_focus()
 	print("¿Juego en pausa?", get_tree().paused)
 	print("lvl1 =" + str(LEVELCORE.lvl1_completed))

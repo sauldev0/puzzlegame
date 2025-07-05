@@ -21,6 +21,7 @@ func verificar_respuesta():
 	var seleccion1 = opcion1.get_item_text(opcion1.selected)
 
 	if seleccion1 == correcta1:
+		$AudioCorrecto.play()
 		resultado.text = "¡Correcto!"
 		resultado.label_settings.font_color = Color.GREEN_YELLOW
 
@@ -28,5 +29,6 @@ func verificar_respuesta():
 		await get_tree().create_timer(1.5).timeout
 		visible = false
 	else:
+		$AudioIncorrecto.play()
 		resultado.text = "Incorrecto. Intenta de nuevo."
 		resultado.label_settings.font_color = Color.CRIMSON

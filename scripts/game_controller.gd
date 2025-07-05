@@ -187,6 +187,7 @@ func mostrar_popup_descripcion():
 	popuptexto.set_instructions(instrucciones.get(nivel, "Reglas no disponible."))
 
 func game_victory():
+	$GameVictory.play()
 	var estrellas = calcular_estrellas()
 	puntos_nivel = estrellas * 50  
 
@@ -224,7 +225,7 @@ func game_victory():
 	get_tree().paused = popupcorrect.visible
 	
 func game_end():
-	
+	$GameOver.play()
 	LEVELCORE.numero_de_intentos = LEVELCORE.numero_de_intentos + 1
 	print("llevas " + str(LEVELCORE.numero_de_intentos) + " numero de intentos")
 	print("mal")

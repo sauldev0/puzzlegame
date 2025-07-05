@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dqu4ti6ywiedy"]
+[gd_scene load_steps=58 format=3 uid="uid://dqu4ti6ywiedy"]
 
 [ext_resource type="Script" uid="uid://ry5jw48c63nf" path="res://scripts/lvl_3.gd" id="1_tkm7p"]
 [ext_resource type="PackedScene" uid="uid://dqysnvd4k1dnp" path="res://scenes/camino_tile.tscn" id="2_ffys1"]
@@ -53,6 +53,8 @@
 [ext_resource type="FontFile" uid="uid://cxwbilgpqr6kd" path="res://fonts/nokiafc22modify.ttf" id="51_b8woo"]
 [ext_resource type="FontFile" uid="uid://drarc7vxcjiar" path="res://fonts/upheavtt.ttf" id="52_6f5l0"]
 [ext_resource type="Script" uid="uid://bmf0ogwhx46x4" path="res://scripts/camera_lvl3.gd" id="53_xftyi"]
+[ext_resource type="AudioStream" uid="uid://cdjoryajbe57b" path="res://audio/colorpencil_modificado2.wav" id="54_7kqa1"]
+[ext_resource type="Script" uid="uid://bdvuu0pbqqe7r" path="res://scripts/trazo_audio.gd" id="55_7kqa1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6f5l0"]
 font = ExtResource("51_b8woo")
@@ -841,6 +843,11 @@ limit_right = 1440
 limit_bottom = 648
 script = ExtResource("53_xftyi")
 
+[node name="TrazoAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("54_7kqa1")
+script = ExtResource("55_7kqa1")
+
 [connection signal="pressed_menu_pausa" from="UID/menu_pausa" to="UID/popuptexto" method="_on_menu_pausa_pressed_menu_pausa"]
+[connection signal="finished" from="TrazoAudio" to="TrazoAudio" method="_on_finished"]
 
 [editable path="UID/popupcorrect"]

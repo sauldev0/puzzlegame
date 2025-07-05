@@ -27,6 +27,7 @@ func verificar_respuesta():
 	var seleccion2 = opcion2.get_item_text(opcion2.selected)
 	
 	if seleccion1 == correcta1 and seleccion2 == correcta2:
+		$AudioCorrecto.play()
 		resultado.text = "Correcto!!"
 		var settings = resultado.label_settings
 		if settings == null:
@@ -42,6 +43,7 @@ func verificar_respuesta():
 		visible = false
 		
 	else:
+		$AudioIncorrecto.play()
 		resultado.text = "Incorrecto, intenta de nuevo"
 		var settings = resultado.label_settings
 		if settings == null:

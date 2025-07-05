@@ -32,9 +32,11 @@ func _process(delta):
 func time_start():
 	if !nivel_reiniciado:
 		$Timer.start()
+		$TickAudio.play()
 	nivel_reiniciado = true
 
 func _on_timer_timeout():
+	$TickAudio.stop()
 	game_controller.call('game_end')
 
 

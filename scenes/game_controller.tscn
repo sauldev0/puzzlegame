@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://2rgcr4btgits"]
+[gd_scene load_steps=4 format=3 uid="uid://2rgcr4btgits"]
 
 [ext_resource type="Script" uid="uid://cqarangpng3or" path="res://scripts/game_controller.gd" id="1_vq0e2"]
+[ext_resource type="AudioStream" uid="uid://brskiiw2iupx7" path="res://audio/win.wav" id="2_ts4rt"]
+[ext_resource type="AudioStream" uid="uid://bx086vq2qgchw" path="res://audio/incorrect.wav" id="3_rc0pn"]
 
 [node name="Game Controller" type="Node2D"]
 script = ExtResource("1_vq0e2")
+
+[node name="GameVictory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ts4rt")
+bus = &"sfx"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rc0pn")
+bus = &"sfx"

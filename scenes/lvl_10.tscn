@@ -243,7 +243,7 @@ zoom = Vector2(2.24, 2.24)
 script = ExtResource("11_6fagf")
 
 [node name="NPCNiñoA" type="Area2D" parent="." groups=["areas"]]
-position = Vector2(66, -15)
+position = Vector2(50, -16)
 script = ExtResource("12_y7jdq")
 is_correct = true
 

@@ -4,7 +4,7 @@ var Tile_map: TileMap
 var Astar = AStarGrid2D
 @onready var collision_shape_2d = $Areaplayer/CollisionShape2D
 var current_id_path:Array[Vector2i] # lista que guarda los puntos (celdas) del camino que debe seguir el personaje
-var speed := 200 #70
+var speed := 100 #70
 @onready var animated_sprite = $AnimatedSprite2D2
 
 func _ready():
@@ -13,6 +13,7 @@ func _ready():
 	
 func _unhandled_input(event: InputEvent): # se cambio a unhandled para evitar el movimiento en nodos de uid
 	if event.is_action_pressed("RightClick"):
+		$ClicPosicion.play()
 		get_coord()
 	
 	
@@ -27,17 +28,26 @@ func _physics_process(delta):
 	if current_id_path.is_empty():
 		collision_shape_2d.disabled = false # Está quieto → activar colisión
 		animated_sprite.play("default")
+		
+		if $FootSteeps.playing: #detener sonido si está reproduciéndose
+			$FootSteeps.stop()
+		
 		return
 	var target_position = Tile_map.map_to_local(current_id_path[0]) 
 	if global_position.distance_to(target_position) < 2:
 		current_id_path.pop_front()
 		if current_id_path.is_empty():
 			collision_shape_2d.disabled = false  # Llegó al destino → activar colisión
+			if $FootSteeps.playing: #detener sonido si está reproduciéndose
+				$FootSteeps.stop()
 			return
 		target_position = Tile_map.map_to_local(current_id_path[0])
  	
 	collision_shape_2d.disabled = true # Está en movimiento → desactivar colisión
 	move_PlayerTo(target_position , delta) 
+	
+	if !$FootSteeps.playing: #detener sonido si está reproduciéndose
+			$FootSteeps.play()
 	
 	
 # actualiza la animacion 
