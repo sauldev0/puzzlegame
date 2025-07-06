@@ -398,9 +398,9 @@ script = ExtResource("25_15pvj")
 
 [node name="LabelCulpar" type="RichTextLabel" parent="UID/Control2"]
 layout_mode = 0
-offset_left = 17.0
+offset_left = -6.33333
 offset_top = -12.0
-offset_right = 51.0
+offset_right = 74.6667
 offset_bottom = -2.0
 theme_override_colors/default_color = Color(0.168627, 0.160784, 0.160784, 1)
 theme_override_colors/font_outline_color = Color(0.835294, 0.831373, 0.831373, 1)
@@ -408,8 +408,7 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("22_x6de3")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "Culpar"
-fit_content = true
+text = "Indicar Verdad "
 scroll_active = false
 
 [node name="PopUpTablaQuiz" parent="UID" instance=ExtResource("18_iyydo")]

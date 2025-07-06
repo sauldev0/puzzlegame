@@ -67,7 +67,7 @@ var condiciones = {
 	   "Al menos una persona miente, pero no necesariamente todos.",
 
 	3: "",
-	4: "Solo una de las personas está diciendo la verdad. Todos los demás mienten.",
+	4: "Solo dos de las personas están diciendo la verdad. Todos los demás mienten.",
 	5: "Solo puedes detenerte cuando chocas contra un muro. Mientras te deslizas, no puedes cambiar de dirección.",
 
 	6: "Solo uno de los tres animales dice la verdad. Los otros dos están mintiendo.",

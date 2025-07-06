@@ -39,4 +39,11 @@ func set_instructions(text: String):
 	instructions_label.text = text
 
 func set_conditions(text: String):
-	conditions_label.text = text
+	var tab_container = $"VBoxContainer/NinePatchRect/MarginContainer/TabContainer"
+	var condiciones_tab = tab_container.get_node_or_null("Condiciones")
+
+	if text.strip_edges() == "" and condiciones_tab:
+		tab_container.set_tab_hidden(tab_container.get_tab_idx_from_control(condiciones_tab), true)
+	else:
+		conditions_label.text = text
+		tab_container.set_tab_hidden(tab_container.get_tab_idx_from_control(condiciones_tab), false)
