@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://xcivy6vaw07u" path="res://scripts/menu_pausa.gd" id="1_jhjql"]
 [ext_resource type="Texture2D" uid="uid://blqx4ltqml8f2" path="res://sprites/UID/panel_pausa.png" id="2_v2jgs"]
 [ext_resource type="Texture2D" uid="uid://bt5ox47uvqjf3" path="res://sprites/UID/boton_pausa.png" id="3_ajpfe"]
-[ext_resource type="AudioStream" uid="uid://b3yfp8qvinxl0" path="res://audio/Puzzlessongshort.wav" id="5_8u42n"]
+[ext_resource type="AudioStream" uid="uid://d28ny8p1wydkf" path="res://audio/Puzzlessongshort.mp3" id="5_8u42n"]
 [ext_resource type="Script" uid="uid://ckwmrr6d1joal" path="res://scripts/audio_stream_player.gd" id="6_8ryx1"]
 [ext_resource type="AudioStream" uid="uid://cte31nmquawcl" path="res://audio/UI_Select_Plastic_05.wav" id="7_a6xxm"]
 [ext_resource type="PackedScene" uid="uid://qn8jx51gfn7u" path="res://scenes/sonido_ventana.tscn" id="8_1mf5l"]
