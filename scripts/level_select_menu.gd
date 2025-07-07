@@ -7,6 +7,10 @@ const ESTRELLA_VACIA = preload("res://sprites/puzzles/estrella_vacia.png")
 @onready var h_box_container_4 = $Control/ScrollContainer/VBoxContainer/HBoxContainer4
 @onready var level_button_11 = $Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton11
 @onready var level_button_12 = $Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton12
+@onready var level_button_10 = $Control/ScrollContainer/VBoxContainer/HBoxContainer3/LevelButton10
+
+
+
 
 @onready var button_1 = $Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton1/VBoxContainer/Button1
 @onready var button_2 = $Control/ScrollContainer/VBoxContainer/HBoxContainer/LevelButton2/VBoxContainer/Button2
@@ -52,7 +56,8 @@ func _on_button_pressed():
 
 func _ready():
 	
-	#if LEVELCORE.score_total >= 1200: #desbloquear nivel secreto
+	#if LEVELCORE.score_total >= 900: #desbloquear nivel secreto
+		#level_button_10.visible = true
 		#level_button_11.visible = true
 		#level_button_12.visible = true
 	#button.grab_focus()
