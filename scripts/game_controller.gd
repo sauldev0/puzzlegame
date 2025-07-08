@@ -102,7 +102,7 @@ var instrucciones = {
 	
 	6: "- Acércate a los animales e interrógalos.\n\n" +
 	   "- Completa la proposición lógica.\n\n" +
-	   "- Acércate a los animales e indica cuál de ellos está diciendo la verdad.",
+	   "- Acércate a los animales e indica cuál de ellos es el ladrón de semillas.",
 	7: "- Selecciona el día de la semana que creas correcto.",
 	8: "- Acércate a los sospechosos e interrógalos.\n\n" +
 	   "- Acércate a los sospechosos e indica cuál de ellos está diciendo la verdad.\n\n" + 

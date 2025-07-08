@@ -178,6 +178,7 @@ script = ExtResource("14_lk6hv")
 position = Vector2(184, 232)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(386, 190)
 scale = Vector2(12.9747, 8.3746)
 zoom = Vector2(2.24, 2.24)
@@ -230,7 +231,6 @@ vertical_alignment = 1
 [node name="NPCPersonaB" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(287, -27)
 script = ExtResource("13_44hrr")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCPersonaB"]
 position = Vector2(225, 187)
@@ -276,7 +276,6 @@ vertical_alignment = 1
 position = Vector2(158, -69)
 script = ExtResource("15_vhfxh")
 is_correct = true
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCPersonaC"]
 position = Vector2(225, 187)
@@ -321,7 +320,6 @@ vertical_alignment = 1
 [node name="NPCPersonaD" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(344, 64)
 script = ExtResource("14_44hrr")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCPersonaD"]
 position = Vector2(225, 187)
@@ -366,7 +364,6 @@ vertical_alignment = 1
 [node name="NPCProfesor" type="Area2D" parent="." groups=["areas"]]
 position = Vector2(165, 10)
 script = ExtResource("16_bd3eg")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPCProfesor"]
 position = Vector2(225, 187)

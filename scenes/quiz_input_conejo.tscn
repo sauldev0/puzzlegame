@@ -79,7 +79,7 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_1wapd")
-text = "C"
+text = "Z"
 
 [node name="Espacio3" type="Control" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
