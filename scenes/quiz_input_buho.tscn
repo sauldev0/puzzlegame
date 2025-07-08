@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://4dwc4rogjae6"]
+[gd_scene load_steps=14 format=3 uid="uid://4dwc4rogjae6"]
 
 [ext_resource type="Theme" uid="uid://db70ilqnmr0fh" path="res://themes/quiz_input.tres" id="1_0rir0"]
 [ext_resource type="Script" uid="uid://cctcfg8qknfi6" path="res://scripts/quiz_input_buho.gd" id="1_3chr0"]
@@ -23,6 +23,15 @@ default_font_size = 96
 [sub_resource type="Theme" id="Theme_xe683"]
 default_font = ExtResource("3_huk4u")
 default_font_size = 64
+
+[sub_resource type="Theme" id="Theme_8v445"]
+default_font = ExtResource("2_0rir0")
+default_font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_bk54e"]
+font = ExtResource("4_huk4u")
+font_size = 50
+font_color = Color(1, 0.40625, 0.40625, 1)
 
 [node name="QuizInputBuho" type="Control"]
 layout_mode = 3
@@ -89,8 +98,15 @@ theme = SubResource("Theme_1wapd")
 text = "C"
 
 [node name="Espacio2" type="Control" parent="PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_8v445")
+text = "Mentir es negar una verdad"
+label_settings = SubResource("LabelSettings_bk54e")
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

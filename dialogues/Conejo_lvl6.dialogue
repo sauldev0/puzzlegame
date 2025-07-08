@@ -2,6 +2,6 @@
 if LEVELCORE.quiz_ya_resuelto("conejo")
 	Conejo: Ya me has interrogado.
 else
-	Conejo: Zorro es inocente.
+	Conejo: Niego rotundamente que zorro sea el culpable.
 	Conejo: Para asegurarme de que has entendido mis declaraciones, completa la siguiente proposición lógica.
 => END

@@ -120,7 +120,7 @@ var instrucciones = {
 
 var declaraciones = {
 	2 : "A: \"Yo no fui, y B miente.\"  [color=#feae34] ˃ A ˹ (ˉ A ˄ ˉ B ) [/color]\n\n" +
-		"B: \"C fue el culpable.\" [color=#feae34] ˉ B ˹ C [/color]\n\n" +
+		"B: \"C fue el culpable.\" [color=#feae34] ˃ B ˹ C [/color]\n\n" +
 		"C: \"A y B mienten.\" [color=#feae34] ˃ C ˹ ( ˉ A ˄ ˉ B) [/color]\n\n" +
 		"D: \"Si C dice la verdad, entonces A es culpable,\" [color=#feae34] ˃ D ˹ (C ˃  A) [/color]\n\n",
 			

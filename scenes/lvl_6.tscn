@@ -335,9 +335,9 @@ text = "Conejo"
 
 [node name="PanelDialogoConejo" type="PanelContainer" parent="NPCConejo"]
 visible = false
-offset_left = 171.0
-offset_top = 131.0
-offset_right = 271.0
+offset_left = 154.0
+offset_top = 118.0
+offset_right = 289.0
 offset_bottom = 161.0
 theme = SubResource("Theme_hmy1o")
 
@@ -348,7 +348,8 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="NPCConejo/PanelDialogoConejo/MarginContainer"]
 layout_mode = 2
-text = "Zorro es inocente."
+text = "Niego rotundamente 
+que zorro sea el culpable"
 label_settings = SubResource("LabelSettings_l67fq")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -433,9 +434,9 @@ offset_bottom = 397.0
 [node name="QuizInputBuho" parent="UID" instance=ExtResource("21_48anx")]
 visible = false
 offset_left = 1.0
-offset_top = 397.0
+offset_top = 350.0
 offset_right = 1.0
-offset_bottom = 397.0
+offset_bottom = 350.0
 
 [node name="QuizInputZorro" parent="UID" instance=ExtResource("21_8ohgd")]
 visible = false
